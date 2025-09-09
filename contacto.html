@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Sensus</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="description" content="Contáctanos para resolver tus dudas sobre Sensus, nuestra aplicación para el manejo de la ansiedad.">
+</head>
+<body class="contacto-page">
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="assets/images/logo.svg" alt="Sensus Logo" class="logo" onerror="this.src='assets/images/placeholder-logo.svg'">
+                <h1>Sensus</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="como-funciona.html">Cómo Funciona</a></li>
+                    <li><a href="test.html">Test</a></li>
+                    <li><a href="diario.html">Diario</a></li>
+                    <li><a href="ansiedad.html">Síntomas</a></li>
+                    <li><a href="planes.html">Planes</a></li>
+                    <li><a href="equipo.html">Equipo</a></li>
+                    <li><a href="contacto.html" class="active">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-outline" id="login-btn">Iniciar sesión</button>
+                <button class="btn btn-primary" id="register-btn">Registrarse</button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section para Contacto -->
+        <section class="page-hero gta-style">
+            <div class="container">
+                <h1 class="gta-title">CONTACTO</h1>
+                <p class="hero-description">¿Tienes alguna pregunta o sugerencia? Estamos aquí para ayudarte.</p>
+            </div>
+        </section>
+
+        <!-- Contacto Section -->
+        <section class="contact-section" id="contacto">
+            <div class="container">
+                <div class="contact-container gta-style-container">
+                    <div class="contact-info">
+                        <h2 class="gta-style-subtitle">INFORMACIÓN DE CONTACTO</h2>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Dirección</h3>
+                                <p>Calle Innovación 123, 28001 Madrid, España</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Teléfono</h3>
+                                <p>+34 91 123 45 67</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Email</h3>
+                                <p>contacto@sensus-app.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Horario de atención</h3>
+                                <p>Lunes a Viernes: 9:00 - 18:00</p>
+                                <p>Sábados: 10:00 - 14:00</p>
+                            </div>
+                        </div>
+                        <div class="social-contact">
+                            <h3>Síguenos en redes sociales</h3>
+                            <div class="social-icons">
+                                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <h2 class="gta-style-subtitle">ENVÍANOS UN MENSAJE</h2>
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-name">Nombre completo</label>
+                                    <input type="text" id="contact-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-email">Email</label>
+                                    <input type="email" id="contact-email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-subject">Asunto</label>
+                                <input type="text" id="contact-subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-message">Mensaje</label>
+                                <textarea id="contact-message" rows="6" required></textarea>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="privacy-policy" required>
+                                    <span class="checkmark"></span>
+                                    Acepto la <a href="#">política de privacidad</a>
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg gta-style-btn">ENVIAR MENSAJE</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Mapa Section -->
+        <section class="map-section">
+            <div class="container">
+                <h2 class="section-title gta-style-title">ENCUÉNTRANOS</h2>
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <!-- Aquí iría un mapa interactivo -->
+                        <img src="map-placeholder.jpg" alt="Mapa de ubicación" class="map-image" onerror="this.src='placeholder-map.svg'">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title gta-style-title">PREGUNTAS FRECUENTES</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>¿Cómo puedo cancelar mi suscripción?</h3>
+                            <button class="toggle-answer"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Puedes cancelar tu suscripción en cualquier momento desde tu perfil de usuario. Ve a "Mi cuenta" > "Suscripciones" y haz clic en "Cancelar suscripción". Tu acceso a las funciones premium continuará hasta el final del período de facturación.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>¿Mis datos están seguros?</h3>
+                            <button class="toggle-answer"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, la seguridad de tus datos es nuestra prioridad. Utilizamos encriptación de extremo a extremo y cumplimos con todas las normativas de protección de datos. Nunca compartimos tu información personal con terceros sin tu consentimiento explícito.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>¿Puedo usar Sensus sin conexión a internet?</h3>
+                            <button class="toggle-answer"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Algunas funciones básicas de Sensus están disponibles sin conexión, como el registro de emociones en el diario. Sin embargo, para sincronizar tus datos y acceder a todas las funcionalidades, necesitarás conexión a internet.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>¿El test GAD-7 reemplaza la consulta con un profesional?</h3>
+                            <button class="toggle-answer"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No, el test GAD-7 es una herramienta de evaluación, no un diagnóstico. Si experimentas síntomas de ansiedad, te recomendamos consultar con un profesional de la salud mental para una evaluación completa y un tratamiento adecuado.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>¿LISTO PARA COMENZAR?</h2>
+                    <p>Únete a miles de usuarios que ya están mejorando su bienestar emocional con Sensus.</p>
+                    <div class="cta-buttons">
+                        <a href="planes.html" class="btn btn-primary btn-lg">VER PLANES</a>
+                        <a href="test.html" class="btn btn-outline btn-lg">REALIZAR TEST GRATUITO</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/Logo.jpeg" alt="Sensus Logo" class="logo-small">
+                    <p>© 2025 Sensus. Todos los derechos reservados.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Enlaces útiles</h3>
+                    <ul>
+                        <li><a href="como-funciona.html">Cómo Funciona</a></li>
+                        <li><a href="test.html">Test GAD-7</a></li>
+                        <li><a href="diario.html">Diario Emocional</a></li>
+                        <li><a href="ansiedad.html">Tipos de Ansiedad</a></li>
+                        <li><a href="planes.html">Planes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Compañía</h3>
+                    <ul>
+                        <li><a href="equipo.html">Nuestro Equipo</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos de Uso</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div class="modal" id="auth-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Iniciar sesión</button>
+                <button class="auth-tab" data-tab="register">Registrarse</button>
+            </div>
+            
+            <div class="auth-form-container">
+                <form id="login-form" class="auth-form active">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Contraseña</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+                    <div class="auth-options">
+                        <button type="button" class="btn-google">
+                            <i class="fab fa-google"></i> Continuar con Google
+                        </button>
+                        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </form>
+                
+                <form id="register-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="register-name">Nombre completo</label>
+                        <input type="text" id="register-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Contraseña</label>
+                        <input type="password" id="register-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm-password">Confirmar contraseña</label>
+                        <input type="password" id="register-confirm-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+                    <div class="auth-options">
+                        <button type="button" class="btn-google">
+                            <i class="fab fa-google"></i> Registrarse con Google
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <script src="js/modules/firebase-config.js"></script>
+    <script src="js/script.min.js" async></script>
+    <script src="js/modules/auth.js"></script>
+</body>
+</html>

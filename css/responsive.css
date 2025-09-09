@@ -1,0 +1,139 @@
+/* Sensus - Estilos responsivos */
+
+/* Estilos para tablets */
+@media (max-width: 1024px) {
+    .header-container {
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .nav-links {
+        gap: var(--spacing-sm);
+    }
+    
+    .nav-links li a {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-content {
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .feature-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+    .header-container {
+        position: relative;
+    }
+    
+    .menu-toggle {
+        display: block;
+        z-index: 1001;
+    }
+    
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--white);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-lg);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+        padding: var(--spacing-xxl) var(--spacing-lg);
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-links li {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        transition-delay: calc(0.1s * var(--item-index, 0));
+    }
+    
+    .nav-links.active li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    .nav-links li a {
+        font-size: 1.2rem;
+        padding: var(--spacing-sm) var(--spacing-lg);
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .auth-buttons {
+        margin-left: auto;
+    }
+    
+    .feature-cards,
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: var(--spacing-xl);
+        text-align: center;
+    }
+    
+    .footer-links,
+    .footer-social {
+        width: 100%;
+    }
+}
+
+/* Animaciones para elementos al hacer scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animación para el menú móvil */
+@keyframes menuFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

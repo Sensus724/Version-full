@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensus - Encuentra tu Calma</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="description" content="Sensus - Tu espacio seguro y personal para el manejo de la ansiedad.">
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <!-- Viewport para dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body class="landing-page">
+    <div class="page-loader">
+        <div class="loader"></div>
+    </div>
+    
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="assets/images/Logo.jpeg" alt="Sensus Logo" class="logo">
+                <h1>Sensus</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="como-funciona.html">Cómo Funciona</a></li>
+                    <li><a href="test.html">Test</a></li>
+                    <li><a href="diario.html">Diario</a></li>
+                    <li><a href="ansiedad.html">Síntomas</a></li>
+                    <li><a href="planes.html">Planes</a></li>
+                    <li><a href="equipo.html">Equipo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-outline" id="login-btn">Iniciar sesión</button>
+                <button class="btn btn-primary" id="register-btn">Registrarse</button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section con estilo GTA -->
+        <section class="hero gta-style" id="inicio">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 class="gta-title">SENSUS</h1>
+                    <p class="hero-tagline">ENCUENTRA TU CALMA</p>
+                    <p class="hero-description">Tu espacio seguro y personal para el manejo de la ansiedad.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-lg" id="start-journey-btn">COMENZAR AHORA</button>
+                        <button class="btn btn-outline btn-lg" id="learn-more-btn">SABER MÁS</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="hero-image.svg" alt="Ilustración de bienestar mental" onerror="this.src='placeholder-hero.svg'">
+                </div>
+            </div>
+        </section>
+
+        <!-- Características Principales (Estilo GTA) -->
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title gta-style-title">CARACTERÍSTICAS PRINCIPALES</h2>
+                
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3>TEST GAD-7</h3>
+                        <p>Evalúa tu nivel de ansiedad con un test clínico validado y recibe recomendaciones personalizadas.</p>
+                        <a href="test.html" class="btn btn-secondary">REALIZAR TEST</a>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3>DIARIO EMOCIONAL</h3>
+                        <p>Registra tus emociones diarias, mantén una racha y visualiza tu progreso emocional.</p>
+                        <a href="diario.html" class="btn btn-secondary">IR AL DIARIO</a>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>TIPOS DE ANSIEDAD</h3>
+                        <p>Conoce los diferentes tipos de ansiedad, sus síntomas y técnicas para manejarlos.</p>
+                        <a href="ansiedad.html" class="btn btn-secondary">EXPLORAR</a>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3>PLANES PREMIUM</h3>
+                        <p>Accede a funciones exclusivas con nuestros planes de suscripción personalizados.</p>
+                        <a href="planes.html" class="btn btn-secondary">VER PLANES</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cómo Empezar (Estilo GTA) -->
+        <section class="getting-started-section">
+            <div class="container">
+                <h2 class="section-title gta-style-title">CÓMO EMPEZAR</h2>
+                
+                <div class="steps-container gta-style-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>REGÍSTRATE</h3>
+                        <p>Crea tu cuenta en minutos para acceder a todas las funcionalidades.</p>
+                        <button class="btn btn-outline" id="register-step-btn">CREAR CUENTA</button>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>REALIZA EL TEST</h3>
+                        <p>Evalúa tu nivel de ansiedad para obtener recomendaciones personalizadas.</p>
+                        <a href="test.html" class="btn btn-outline">IR AL TEST</a>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>USA EL DIARIO</h3>
+                        <p>Registra tus emociones diariamente y mantén tu racha activa.</p>
+                        <a href="diario.html" class="btn btn-outline">ABRIR DIARIO</a>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3>EXPLORA RECURSOS</h3>
+                        <p>Accede a información sobre tipos de ansiedad y técnicas de manejo.</p>
+                        <a href="ansiedad.html" class="btn btn-outline">VER RECURSOS</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>¿LISTO PARA COMENZAR TU VIAJE?</h2>
+                    <p>Únete a miles de personas que ya están mejorando su bienestar mental con Sensus.</p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary btn-lg" id="cta-register-btn">CREAR CUENTA AHORA</button>
+                        <a href="como-funciona.html" class="btn btn-outline btn-lg">SABER MÁS</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.svg" alt="Sensus Logo" class="logo-small" onerror="this.src='placeholder-logo.svg'">
+                    <p>© 2025 Sensus. Todos los derechos reservados.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Enlaces útiles</h3>
+                    <ul>
+                        <li><a href="como-funciona.html">Cómo Funciona</a></li>
+                        <li><a href="test.html">Test GAD-7</a></li>
+                        <li><a href="diario.html">Diario Emocional</a></li>
+                        <li><a href="ansiedad.html">Tipos de Ansiedad</a></li>
+                        <li><a href="planes.html">Planes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Compañía</h3>
+                    <ul>
+                        <li><a href="equipo.html">Nuestro Equipo</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos de Uso</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div class="modal" id="auth-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Iniciar sesión</button>
+                <button class="auth-tab" data-tab="register">Registrarse</button>
+            </div>
+            
+            <div class="auth-form-container">
+                <form id="login-form" class="auth-form active">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Contraseña</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+                    <div class="auth-options">
+                        <button type="button" class="btn-google">
+                            <i class="fab fa-google"></i> Continuar con Google
+                        </button>
+                        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </form>
+                
+                <form id="register-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="register-name">Nombre completo</label>
+                        <input type="text" id="register-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Contraseña</label>
+                        <input type="password" id="register-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm-password">Confirmar contraseña</label>
+                        <input type="password" id="register-confirm-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+                    <div class="auth-options">
+                        <button type="button" class="btn-google">
+                            <i class="fab fa-google"></i> Registrarse con Google
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics-compat.js"></script>
+    
+    <!-- Configuración de Firebase -->
+    <script>
+        // Configuración de Firebase
+        const firebaseConfig = {
+            // Aquí debes colocar tu configuración de Firebase
+            apiKey: "TU_API_KEY",
+            authDomain: "tu-proyecto.firebaseapp.com",
+            projectId: "tu-proyecto",
+            storageBucket: "tu-proyecto.appspot.com",
+            messagingSenderId: "tu-messaging-sender-id",
+            appId: "tu-app-id",
+            measurementId: "tu-measurement-id"
+        };
+        
+        // Inicializar Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    
+    <!-- Estilos responsivos -->
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Scripts de la aplicación -->
+    <script src="js/script.min.js" async></script>
+    <script src="js/modules/auth.js"></script>
+    <script src="js/modules/firebase-config.js"></script>
+    <script src="js/modules/responsive.js"></script>
+</body>
+</html>

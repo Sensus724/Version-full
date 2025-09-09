@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planes de Suscripción | Sensus</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="description" content="Descubre nuestros planes de suscripción y elige el que mejor se adapte a tus necesidades para gestionar tu ansiedad.">
+</head>
+<body class="planes-page">
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="assets/images/logo.svg" alt="Sensus Logo" class="logo" onerror="this.src='assets/images/placeholder-logo.svg'">
+                <h1>Sensus</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="como-funciona.html">Cómo Funciona</a></li>
+                    <li><a href="test.html">Test</a></li>
+                    <li><a href="diario.html">Diario</a></li>
+                    <li><a href="ansiedad.html">Síntomas</a></li>
+                    <li><a href="planes.html" class="active">Planes</a></li>
+                    <li><a href="equipo.html">Equipo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-outline" id="login-btn">Iniciar sesión</button>
+                <button class="btn btn-primary" id="register-btn">Registrarse</button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section para Planes -->
+        <section class="page-hero gta-style">
+            <div class="container">
+                <h1 class="gta-title">PLANES DE SUSCRIPCIÓN</h1>
+                <p class="hero-description">Elige el plan que mejor se adapte a tus necesidades y comienza tu camino hacia el bienestar emocional.</p>
+            </div>
+        </section>
+
+        <!-- Planes de Suscripción Section -->
+        <section class="plans-section" id="planes">
+            <div class="container">
+                <div class="plans-container gta-style-container">
+                    <div class="plan-toggle">
+                        <span class="toggle-label active">Mensual</span>
+                        <label class="switch">
+                            <input type="checkbox" id="billing-toggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <span class="toggle-label">Anual <span class="discount">20% descuento</span></span>
+                    </div>
+                    
+                    <div class="plans-grid">
+                        <div class="plan-card">
+                            <div class="plan-header">
+                                <h3 class="plan-name">BÁSICO</h3>
+                                <div class="plan-price">
+                                    <span class="price">GRATIS</span>
+                                    <span class="period">para siempre</span>
+                                </div>
+                            </div>
+                            <div class="plan-features">
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Test GAD-7 con resultados básicos</li>
+                                    <li><i class="fas fa-check"></i> Diario emocional (5 entradas/mes)</li>
+                                    <li><i class="fas fa-check"></i> Sistema de racha básico</li>
+                                    <li><i class="fas fa-check"></i> Información sobre tipos de ansiedad</li>
+                                    <li><i class="fas fa-check"></i> Acceso a la comunidad</li>
+                                    <li class="feature-disabled"><i class="fas fa-times"></i> Análisis avanzado de emociones</li>
+                                    <li class="feature-disabled"><i class="fas fa-times"></i> Ejercicios de respiración guiados</li>
+                                    <li class="feature-disabled"><i class="fas fa-times"></i> Meditaciones para la ansiedad</li>
+                                    <li class="feature-disabled"><i class="fas fa-times"></i> Soporte prioritario</li>
+                                </ul>
+                            </div>
+                            <div class="plan-cta">
+                                <button class="btn btn-outline btn-lg gta-style-btn">COMENZAR GRATIS</button>
+                            </div>
+                        </div>
+                        
+                        <div class="plan-card featured">
+                            <div class="plan-badge">MÁS POPULAR</div>
+                            <div class="plan-header">
+                                <h3 class="plan-name">PREMIUM</h3>
+                                <div class="plan-price">
+                                    <span class="price">€9.99</span>
+                                    <span class="period">/mes</span>
+                                </div>
+                                <div class="plan-price annual-price hidden">
+                                    <span class="price">€7.99</span>
+                                    <span class="period">/mes, facturado anualmente</span>
+                                </div>
+                            </div>
+                            <div class="plan-features">
+                                <ul>
+                                    <li><i class="fas fa-check"></i> <strong>Todo lo del plan Básico</strong></li>
+                                    <li><i class="fas fa-check"></i> Diario emocional ilimitado</li>
+                                    <li><i class="fas fa-check"></i> Sistema de racha avanzado</li>
+                                    <li><i class="fas fa-check"></i> Análisis detallado de patrones emocionales</li>
+                                    <li><i class="fas fa-check"></i> Recomendaciones personalizadas</li>
+                                    <li><i class="fas fa-check"></i> Ejercicios de respiración guiados</li>
+                                    <li><i class="fas fa-check"></i> 10 meditaciones para la ansiedad</li>
+                                    <li><i class="fas fa-check"></i> Soporte por email</li>
+                                    <li class="feature-disabled"><i class="fas fa-times"></i> Sesiones con especialistas</li>
+                                </ul>
+                            </div>
+                            <div class="plan-cta">
+                                <button class="btn btn-primary btn-lg gta-style-btn">SUSCRIBIRSE</button>
+                            </div>
+                        </div>
+                        
+                        <div class="plan-card">
+                            <div class="plan-header">
+                                <h3 class="plan-name">PROFESIONAL</h3>
+                                <div class="plan-price">
+                                    <span class="price">€19.99</span>
+                                    <span class="period">/mes</span>
+                                </div>
+                                <div class="plan-price annual-price hidden">
+                                    <span class="price">€15.99</span>
+                                    <span class="period">/mes, facturado anualmente</span>
+                                </div>
+                            </div>
+                            <div class="plan-features">
+                                <ul>
+                                    <li><i class="fas fa-check"></i> <strong>Todo lo del plan Premium</strong></li>
+                                    <li><i class="fas fa-check"></i> Biblioteca completa de meditaciones</li>
+                                    <li><i class="fas fa-check"></i> Análisis avanzado con IA</li>
+                                    <li><i class="fas fa-check"></i> Planes personalizados semanales</li>
+                                    <li><i class="fas fa-check"></i> 1 sesión mensual con especialista</li>
+                                    <li><i class="fas fa-check"></i> Soporte prioritario 24/7</li>
+                                    <li><i class="fas fa-check"></i> Acceso anticipado a nuevas funciones</li>
+                                    <li><i class="fas fa-check"></i> Exportación de datos y reportes</li>
+                                    <li><i class="fas fa-check"></i> Sin publicidad</li>
+                                </ul>
+                            </div>
+                            <div class="plan-cta">
+                                <button class="btn btn-outline btn-lg gta-style-btn">SUSCRIBIRSE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Comparativa de Planes -->
+        <section class="plan-comparison-section">
+            <div class="container">
+                <h2 class="section-title gta-style-title">COMPARATIVA DE PLANES</h2>
+                <div class="comparison-table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Características</th>
+                                <th>BÁSICO</th>
+                                <th>PREMIUM</th>
+                                <th>PROFESIONAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Test GAD-7</td>
+                                <td><i class="fas fa-check"></i> Básico</td>
+                                <td><i class="fas fa-check"></i> Completo</td>
+                                <td><i class="fas fa-check"></i> Completo</td>
+                            </tr>
+                            <tr>
+                                <td>Diario Emocional</td>
+                                <td>5 entradas/mes</td>
+                                <td>Ilimitado</td>
+                                <td>Ilimitado</td>
+                            </tr>
+                            <tr>
+                                <td>Sistema de Racha</td>
+                                <td>Básico</td>
+                                <td>Avanzado</td>
+                                <td>Avanzado</td>
+                            </tr>
+                            <tr>
+                                <td>Análisis de Emociones</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td>Básico</td>
+                                <td>Avanzado con IA</td>
+                            </tr>
+                            <tr>
+                                <td>Ejercicios de Respiración</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td>5 ejercicios</td>
+                                <td>Biblioteca completa</td>
+                            </tr>
+                            <tr>
+                                <td>Meditaciones</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td>10 meditaciones</td>
+                                <td>Biblioteca completa</td>
+                            </tr>
+                            <tr>
+                                <td>Sesiones con Especialistas</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td>1 sesión/mes</td>
+                            </tr>
+                            <tr>
+                                <td>Soporte</td>
+                                <td>Comunidad</td>
+                                <td>Email</td>
+                                <td>Prioritario 24/7</td>
+                            </tr>
+                            <tr>
+                                <td>Publicidad</td>
+                                <td>Sí</td>
+                                <td>Reducida</td>
+                                <td>Sin publicidad</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonios -->
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title gta-style-title">LO QUE DICEN NUESTROS USUARIOS</h2>
+                <div class="testimonials-container">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Sensus ha cambiado completamente mi forma de gestionar la ansiedad. El diario emocional me ayuda a identificar patrones y las meditaciones son perfectas para momentos difíciles."</p>
+                        <div class="testimonial-author">
+                            <img src="user1.jpg" alt="Usuario" class="author-image" onerror="this.src='placeholder-user.svg'">
+                            <div class="author-info">
+                                <h4>Laura Martínez</h4>
+                                <p>Usuario Premium desde 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Las sesiones con especialistas del plan Profesional son increíbles. He aprendido técnicas que realmente funcionan y el seguimiento personalizado marca la diferencia."</p>
+                        <div class="testimonial-author">
+                            <img src="user2.jpg" alt="Usuario" class="author-image" onerror="this.src='placeholder-user.svg'">
+                            <div class="author-info">
+                                <h4>Carlos Rodríguez</h4>
+                                <p>Usuario Profesional desde 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">"Empecé con el plan Básico y me sorprendió lo útil que era incluso siendo gratuito. Después de unos meses, actualicé a Premium y ha sido una de las mejores inversiones para mi salud mental."</p>
+                        <div class="testimonial-author">
+                            <img src="user3.jpg" alt="Usuario" class="author-image" onerror="this.src='placeholder-user.svg'">
+                            <div class="author-info">
+                                <h4>Ana López</h4>
+                                <p>Usuario Premium desde 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title gta-style-title">PREGUNTAS FRECUENTES</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>¿Puedo cambiar de plan en cualquier momento?</h3>
+                            <button class="toggle-answer"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, puedes actualizar o cambiar tu plan en cualquier momento. Si actualizas, el cambio será efectivo inmediatamente. Si bajas de categoría, el cambio se aplicará al final de tu período de facturación actual.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>¿Hay período de prueba para los planes de pago?</h3>
+                            <button class="toggle-answer"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, ofrecemos un período de prueba gratuito de 7 días para los planes Premium y Profesional. Puedes cancelar en cualquier momento durante este período sin cargo alguno.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>¿Cómo funciona la facturación anual?</h3>
+                            <button class="toggle-answer"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Con la facturación anual, se te cobrará por adelantado el costo total del año con un 20% de descuento sobre el precio mensual. Esto significa un ahorro significativo comparado con la facturación mensual.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>¿Qué métodos de pago aceptan?</h3>
+                            <button class="toggle-answer"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Aceptamos tarjetas de crédito/débito (Visa, Mastercard, American Express), PayPal, y en algunos países, transferencia bancaria. Todas las transacciones están protegidas con encriptación SSL.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>¿LISTO PARA COMENZAR TU CAMINO HACIA EL BIENESTAR?</h2>
+                    <p>Elige el plan que mejor se adapte a tus necesidades y comienza hoy mismo.</p>
+                    <div class="cta-buttons">
+                        <a href="#planes" class="btn btn-primary btn-lg">ELEGIR PLAN</a>
+                        <a href="contacto.html" class="btn btn-outline btn-lg">CONTACTAR SOPORTE</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/Logo.jpeg" alt="Sensus Logo" class="logo-small">
+                    <p>© 2025 Sensus. Todos los derechos reservados.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Enlaces útiles</h3>
+                    <ul>
+                        <li><a href="como-funciona.html">Cómo Funciona</a></li>
+                        <li><a href="test.html">Test GAD-7</a></li>
+                        <li><a href="diario.html">Diario Emocional</a></li>
+                        <li><a href="ansiedad.html">Tipos de Ansiedad</a></li>
+                        <li><a href="planes.html">Planes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Compañía</h3>
+                    <ul>
+                        <li><a href="equipo.html">Nuestro Equipo</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos de Uso</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div class="modal" id="auth-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Iniciar sesión</button>
+                <button class="auth-tab" data-tab="register">Registrarse</button>
+            </div>
+            
+            <div class="auth-form-container">
+                <form id="login-form" class="auth-form active">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Contraseña</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+                    <div class="auth-options">
+                        <button type="button" class="btn-google">
+                            <i class="fab fa-google"></i> Continuar con Google
+                        </button>
+                        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </form>
+                
+                <form id="register-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="register-name">Nombre completo</label>
+                        <input type="text" id="register-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Contraseña</label>
+                        <input type="password" id="register-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm-password">Confirmar contraseña</label>
+                        <input type="password" id="register-confirm-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+                    <div class="auth-options">
+                        <button type="button" class="btn-google">
+                            <i class="fab fa-google"></i> Registrarse con Google
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <script src="js/modules/firebase-config.js"></script>
+    <script src="js/script.min.js" async></script>
+    <script src="js/modules/auth.js"></script>
+</body>
+</html>
