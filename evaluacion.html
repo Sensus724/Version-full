@@ -39,7 +39,6 @@
                 </button>
                 <ul class="nav-links">
                     <li><a href="index.html">Inicio</a></li>
-                    <li><a href="como-funciona.html">Cómo Funciona</a></li>
                     <li><a href="evaluacion.html" class="active">Evaluación</a></li>
                     <li><a href="diario.html">Diario</a></li>
                     <li><a href="ansiedad.html">Síntomas</a></li>
@@ -255,7 +254,6 @@
                 <div class="footer-links">
                     <h3>Enlaces útiles</h3>
                     <ul>
-                        <li><a href="como-funciona.html">Cómo Funciona</a></li>
                         <li><a href="evaluacion.html">Evaluaciones</a></li>
                         <li><a href="diario.html">Diario Emocional</a></li>
                         <li><a href="ansiedad.html">Tipos de Ansiedad</a></li>
@@ -285,6 +283,49 @@
             </div>
         </div>
     </footer>
+
+    <!-- Test Modal -->
+    <div class="modal" id="test-modal">
+        <div class="modal-content test-modal-content">
+            <span class="close-modal" id="close-test-modal">&times;</span>
+            <div class="test-header">
+                <h2 id="test-title">Test de Evaluación</h2>
+                <p id="test-description">Descripción del test</p>
+                <div class="test-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="test-progress-fill"></div>
+                    </div>
+                    <span class="progress-text" id="test-progress-text">Pregunta 1 de 7</span>
+                </div>
+            </div>
+            
+            <div class="test-content">
+                <form id="test-form">
+                    <div class="questions-container" id="questions-container">
+                        <!-- Las preguntas se cargarán dinámicamente aquí -->
+                    </div>
+                    
+                    <div class="test-actions">
+                        <button type="button" class="btn btn-outline" id="prev-question" style="display: none;">Anterior</button>
+                        <button type="button" class="btn btn-primary" id="next-question">Siguiente</button>
+                        <button type="submit" class="btn btn-primary" id="finish-test" style="display: none;">Finalizar Test</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="test-result" id="test-result" style="display: none;">
+                <h3>Resultado del Test</h3>
+                <div class="result-content" id="result-content">
+                    <!-- El resultado se mostrará aquí -->
+                </div>
+                <div class="result-actions">
+                    <button class="btn btn-primary" id="save-result">Guardar Resultado</button>
+                    <button class="btn btn-outline" id="retake-test">Realizar Test Nuevamente</button>
+                    <button class="btn btn-outline" id="close-test-result">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Auth Modal -->
     <div class="modal" id="auth-modal">
@@ -357,6 +398,8 @@
     <script src="js/modules/auth.js?v=2"></script>
     <script src="js/modules/visitor-counter.js?v=2"></script>
     <script src="js/modules/responsive.js?v=2"></script>
+    <script src="js/modules/test-questions.js?v=2"></script>
+    <script src="js/modules/test-modal.js?v=2"></script>
     <script src="js/script.js?v=2"></script>
     
     <!-- Service Worker -->

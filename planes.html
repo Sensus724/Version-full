@@ -26,7 +26,7 @@
                 </button>
                 <ul class="nav-links">
                     <li><a href="index.html">Inicio</a></li>
-                    <li><a href="como-funciona.html">Cómo Funciona</a></li>
+                    <li><a href="evaluacion.html">Evaluación</a></li>
                     <li><a href="test.html">Test</a></li>
                     <li><a href="diario.html">Diario</a></li>
                     <li><a href="ansiedad.html">Síntomas</a></li>
@@ -47,114 +47,287 @@
     </header>
 
     <main>
-        <!-- Hero Section para Planes -->
-        <section class="page-hero gta-style">
+        <!-- Hero Section Profesional para Planes -->
+        <section class="professional-hero plans-hero">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+                <div class="hero-pattern"></div>
+            </div>
             <div class="container">
-                <h1 class="gta-title">PLANES DE SUSCRIPCIÓN</h1>
-                <p class="hero-description">Elige el plan que mejor se adapte a tus necesidades y comienza tu camino hacia el bienestar emocional.</p>
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-crown"></i>
+                        <span>Planes Premium</span>
+                    </div>
+                    <h1 class="hero-title">Planes de Suscripción</h1>
+                    <p class="hero-subtitle">Elige el plan que mejor se adapte a tus necesidades de bienestar mental. Desde acceso gratuito hasta herramientas avanzadas de IA para tu crecimiento personal.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Planes Disponibles</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">10K+</div>
+                            <div class="stat-label">Usuarios Activos</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.9★</div>
+                            <div class="stat-label">Valoración Media</div>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#planes" class="btn btn-primary btn-lg">
+                            <i class="fas fa-rocket"></i>
+                            Ver Planes
+                        </a>
+                        <a href="#comparison" class="btn btn-outline btn-lg">
+                            <i class="fas fa-balance-scale"></i>
+                            Comparar
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="visual-container">
+                        <div class="pricing-animation">
+                            <div class="pricing-card">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <div class="floating-icons">
+                                <div class="feature-icon">💎</div>
+                                <div class="feature-icon">🚀</div>
+                                <div class="feature-icon">🎯</div>
+                                <div class="feature-icon">⭐</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Planes de Suscripción Section -->
-        <section class="plans-section" id="planes">
+        <!-- Planes de Suscripción Profesionales Section -->
+        <section class="professional-plans-section" id="planes">
             <div class="container">
-                <div class="plans-container gta-style-container">
-                    <div class="plan-toggle">
-                        <span class="toggle-label active">Mensual</span>
+                <div class="section-header">
+                    <div class="section-badge">
+                        <i class="fas fa-star"></i>
+                        <span>Opciones de Suscripción</span>
+                    </div>
+                    <h2 class="section-title">Elige tu Plan Ideal</h2>
+                    <p class="section-description">Selecciona el plan que mejor se adapte a tus necesidades de bienestar mental. Todos los planes incluyen acceso completo a nuestras herramientas básicas.</p>
+                </div>
+                
+                <div class="billing-toggle-container">
+                    <div class="billing-toggle">
+                        <span class="toggle-label" data-period="monthly">Mensual</span>
                         <label class="switch">
                             <input type="checkbox" id="billing-toggle">
                             <span class="slider round"></span>
                         </label>
-                        <span class="toggle-label">Anual <span class="discount">20% descuento</span></span>
+                        <span class="toggle-label" data-period="yearly">
+                            Anual 
+                            <span class="discount-badge">Ahorra 20%</span>
+                        </span>
+                    </div>
+                </div>
+                    
+                <div class="plans-grid">
+                    <div class="plan-card professional-plan-card">
+                        <div class="plan-header">
+                            <div class="plan-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h3 class="plan-name">Básico</h3>
+                            <p class="plan-description">Perfecto para comenzar tu viaje de bienestar mental</p>
+                        </div>
+                        <div class="plan-pricing">
+                            <div class="price-container">
+                                <span class="price">Gratis</span>
+                                <span class="period">para siempre</span>
+                            </div>
+                        </div>
+                        <div class="plan-features">
+                            <div class="feature-category">
+                                <h4>Herramientas Básicas</h4>
+                                <ul class="feature-list">
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Test GAD-7 con resultados básicos</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Diario emocional (5 entradas/mes)</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Sistema de racha básico</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Información sobre tipos de ansiedad</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Acceso a la comunidad</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="feature-category">
+                                <h4>Limitaciones</h4>
+                                <ul class="feature-list disabled">
+                                    <li class="feature-item disabled">
+                                        <i class="fas fa-times"></i>
+                                        <span>Análisis avanzado de emociones</span>
+                                    </li>
+                                    <li class="feature-item disabled">
+                                        <i class="fas fa-times"></i>
+                                        <span>Ejercicios de respiración guiados</span>
+                                    </li>
+                                    <li class="feature-item disabled">
+                                        <i class="fas fa-times"></i>
+                                        <span>Meditaciones para la ansiedad</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="plan-cta">
+                            <button class="btn btn-outline btn-lg">
+                                <i class="fas fa-rocket"></i>
+                                Comenzar Gratis
+                            </button>
+                        </div>
                     </div>
                     
-                    <div class="plans-grid">
-                        <div class="plan-card">
-                            <div class="plan-header">
-                                <h3 class="plan-name">BÁSICO</h3>
-                                <div class="plan-price">
-                                    <span class="price">GRATIS</span>
-                                    <span class="period">para siempre</span>
-                                </div>
+                    <div class="plan-card professional-plan-card featured">
+                        <div class="plan-badge">
+                            <i class="fas fa-star"></i>
+                            Más Popular
+                        </div>
+                        <div class="plan-header">
+                            <div class="plan-icon">
+                                <i class="fas fa-crown"></i>
                             </div>
-                            <div class="plan-features">
-                                <ul>
-                                    <li><i class="fas fa-check"></i> Test GAD-7 con resultados básicos</li>
-                                    <li><i class="fas fa-check"></i> Diario emocional (5 entradas/mes)</li>
-                                    <li><i class="fas fa-check"></i> Sistema de racha básico</li>
-                                    <li><i class="fas fa-check"></i> Información sobre tipos de ansiedad</li>
-                                    <li><i class="fas fa-check"></i> Acceso a la comunidad</li>
-                                    <li class="feature-disabled"><i class="fas fa-times"></i> Análisis avanzado de emociones</li>
-                                    <li class="feature-disabled"><i class="fas fa-times"></i> Ejercicios de respiración guiados</li>
-                                    <li class="feature-disabled"><i class="fas fa-times"></i> Meditaciones para la ansiedad</li>
-                                    <li class="feature-disabled"><i class="fas fa-times"></i> Soporte prioritario</li>
-                                </ul>
+                            <h3 class="plan-name">Premium</h3>
+                            <p class="plan-description">Ideal para usuarios que buscan un seguimiento completo de su bienestar</p>
+                        </div>
+                        <div class="plan-pricing">
+                            <div class="price-container monthly-price">
+                                <span class="price">€9.99</span>
+                                <span class="period">/mes</span>
                             </div>
-                            <div class="plan-cta">
-                                <button class="btn btn-outline btn-lg gta-style-btn">COMENZAR GRATIS</button>
+                            <div class="price-container annual-price hidden">
+                                <span class="price">€7.99</span>
+                                <span class="period">/mes, facturado anualmente</span>
+                                <div class="savings">Ahorra €24/año</div>
                             </div>
                         </div>
-                        
-                        <div class="plan-card featured">
-                            <div class="plan-badge">MÁS POPULAR</div>
-                            <div class="plan-header">
-                                <h3 class="plan-name">PREMIUM</h3>
-                                <div class="plan-price">
-                                    <span class="price">€9.99</span>
-                                    <span class="period">/mes</span>
-                                </div>
-                                <div class="plan-price annual-price hidden">
-                                    <span class="price">€7.99</span>
-                                    <span class="period">/mes, facturado anualmente</span>
-                                </div>
-                            </div>
-                            <div class="plan-features">
-                                <ul>
-                                    <li><i class="fas fa-check"></i> <strong>Todo lo del plan Básico</strong></li>
-                                    <li><i class="fas fa-check"></i> Diario emocional ilimitado</li>
-                                    <li><i class="fas fa-check"></i> Sistema de racha avanzado</li>
-                                    <li><i class="fas fa-check"></i> Análisis detallado de patrones emocionales</li>
-                                    <li><i class="fas fa-check"></i> Recomendaciones personalizadas</li>
-                                    <li><i class="fas fa-check"></i> Ejercicios de respiración guiados</li>
-                                    <li><i class="fas fa-check"></i> 10 meditaciones para la ansiedad</li>
-                                    <li><i class="fas fa-check"></i> Soporte por email</li>
-                                    <li class="feature-disabled"><i class="fas fa-times"></i> Sesiones con especialistas</li>
+                        <div class="plan-features">
+                            <div class="feature-category">
+                                <h4>Incluye todo del plan Básico</h4>
+                                <ul class="feature-list">
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Diario emocional ilimitado</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Sistema de racha avanzado</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Análisis detallado de patrones emocionales</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Recomendaciones personalizadas con IA</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Ejercicios de respiración guiados</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>10 meditaciones para la ansiedad</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Soporte por email prioritario</span>
+                                    </li>
                                 </ul>
                             </div>
-                            <div class="plan-cta">
-                                <button class="btn btn-primary btn-lg gta-style-btn">SUSCRIBIRSE</button>
+                        </div>
+                        <div class="plan-cta">
+                            <button class="btn btn-primary btn-lg">
+                                <i class="fas fa-gem"></i>
+                                Suscribirse
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="plan-card professional-plan-card">
+                        <div class="plan-header">
+                            <div class="plan-icon">
+                                <i class="fas fa-diamond"></i>
+                            </div>
+                            <h3 class="plan-name">Profesional</h3>
+                            <p class="plan-description">Para usuarios que buscan el máximo nivel de apoyo y personalización</p>
+                        </div>
+                        <div class="plan-pricing">
+                            <div class="price-container monthly-price">
+                                <span class="price">€19.99</span>
+                                <span class="period">/mes</span>
+                            </div>
+                            <div class="price-container annual-price hidden">
+                                <span class="price">€15.99</span>
+                                <span class="period">/mes, facturado anualmente</span>
+                                <div class="savings">Ahorra €48/año</div>
                             </div>
                         </div>
-                        
-                        <div class="plan-card">
-                            <div class="plan-header">
-                                <h3 class="plan-name">PROFESIONAL</h3>
-                                <div class="plan-price">
-                                    <span class="price">€19.99</span>
-                                    <span class="period">/mes</span>
-                                </div>
-                                <div class="plan-price annual-price hidden">
-                                    <span class="price">€15.99</span>
-                                    <span class="period">/mes, facturado anualmente</span>
-                                </div>
-                            </div>
-                            <div class="plan-features">
-                                <ul>
-                                    <li><i class="fas fa-check"></i> <strong>Todo lo del plan Premium</strong></li>
-                                    <li><i class="fas fa-check"></i> Biblioteca completa de meditaciones</li>
-                                    <li><i class="fas fa-check"></i> Análisis avanzado con IA</li>
-                                    <li><i class="fas fa-check"></i> Planes personalizados semanales</li>
-                                    <li><i class="fas fa-check"></i> 1 sesión mensual con especialista</li>
-                                    <li><i class="fas fa-check"></i> Soporte prioritario 24/7</li>
-                                    <li><i class="fas fa-check"></i> Acceso anticipado a nuevas funciones</li>
-                                    <li><i class="fas fa-check"></i> Exportación de datos y reportes</li>
-                                    <li><i class="fas fa-check"></i> Sin publicidad</li>
+                        <div class="plan-features">
+                            <div class="feature-category">
+                                <h4>Incluye todo del plan Premium</h4>
+                                <ul class="feature-list">
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Biblioteca completa de meditaciones</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Análisis avanzado con IA</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Planes personalizados semanales</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>1 sesión mensual con especialista</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Soporte prioritario 24/7</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Acceso anticipado a nuevas funciones</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Exportación de datos y reportes</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Sin publicidad</span>
+                                    </li>
                                 </ul>
                             </div>
-                            <div class="plan-cta">
-                                <button class="btn btn-outline btn-lg gta-style-btn">SUSCRIBIRSE</button>
-                            </div>
                         </div>
+                        <div class="plan-cta">
+                            <button class="btn btn-outline btn-lg">
+                                <i class="fas fa-diamond"></i>
+                                Suscribirse
+                            </button>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -368,7 +541,7 @@
                 <div class="footer-links">
                     <h3>Enlaces útiles</h3>
                     <ul>
-                        <li><a href="como-funciona.html">Cómo Funciona</a></li>
+                        <li><a href="evaluacion.html">Evaluación</a></li>
                         <li><a href="test.html">Test GAD-7</a></li>
                         <li><a href="diario.html">Diario Emocional</a></li>
                         <li><a href="ansiedad.html">Tipos de Ansiedad</a></li>

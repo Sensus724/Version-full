@@ -213,12 +213,12 @@ function initNavigationButtons() {
         });
     }
     
-    // Botón "SABER MÁS" del hero - Lleva a Cómo Funciona
+    // Botón "SABER MÁS" del hero - Lleva a Síntomas
     const learnMoreBtn = document.getElementById('learn-more-btn');
     if (learnMoreBtn) {
         learnMoreBtn.addEventListener('click', function() {
-            // Navegar a la página Cómo Funciona
-            window.location.href = 'como-funciona.html';
+            // Navegar a la página de Síntomas
+            window.location.href = 'ansiedad.html';
         });
     }
     
