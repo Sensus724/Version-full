@@ -10,6 +10,15 @@ function initFirebaseAuth() {
     // Verificar si Firebase está disponible
     if (typeof firebase === 'undefined') {
         console.error('Firebase no está disponible. Verifica la conexión a los scripts de Firebase.');
+        // Reintentar después de un tiempo
+        setTimeout(initFirebaseAuth, 1000);
+        return;
+    }
+    
+    // Verificar si Firebase está inicializado
+    if (!firebase.apps.length) {
+        console.log('Firebase no está inicializado. Esperando...');
+        setTimeout(initFirebaseAuth, 500);
         return;
     }
     

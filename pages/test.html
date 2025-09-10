@@ -10,8 +10,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta name="description" content="Evalúa tu nivel de ansiedad con el test GAD-7 validado clínicamente y recibe recomendaciones personalizadas.">
+    <meta name="keywords" content="ansiedad, salud mental, test GAD-7, diario emocional, bienestar, mindfulness, terapia online">
+    <meta name="author" content="Sensus Team">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sensus-app.com/test.html">
+    <meta property="og:title" content="Test GAD-7 | Sensus">
+    <meta property="og:description" content="Evalúa tu nivel de ansiedad con el test GAD-7 validado clínicamente y recibe recomendaciones personalizadas.">
+    <meta property="og:image" content="assets/images/Logo.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sensus-app.com/test.html">
+    <meta property="twitter:title" content="Test GAD-7 | Sensus">
+    <meta property="twitter:description" content="Evalúa tu nivel de ansiedad con el test GAD-7 validado clínicamente y recibe recomendaciones personalizadas.">
+    <meta property="twitter:image" content="assets/images/Logo.jpeg">
+    
     <!-- Favicon -->
-    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/Logo.jpeg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="assets/images/Logo.jpeg">
+    <meta name="theme-color" content="#d7cdf2">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="js/script.js" as="script">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
     <!-- Viewport para dispositivos móviles -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
@@ -23,8 +50,7 @@
     <header class="header">
         <div class="container header-container">
             <div class="logo-container">
-                <img src="logo.svg" alt="Sensus Logo" class="logo" onerror="this.src='placeholder-logo.svg'">
-                <h1>Sensus</h1>
+                <img src="assets/images/Logo.jpeg" alt="Sensus Logo" class="logo">
             </div>
             <nav class="main-nav">
                 <button class="menu-toggle" aria-label="Abrir menú">
@@ -56,10 +82,29 @@
 
     <main>
         <!-- Hero Section para Test -->
-        <section class="page-hero gta-style">
+        <section class="page-hero gta-style test-hero">
             <div class="container">
-                <h1 class="gta-title">TEST DE ANSIEDAD GAD-7</h1>
-                <p class="hero-description">Evalúa tu nivel de ansiedad con este test clínico validado y recibe recomendaciones personalizadas.</p>
+                <div class="hero-content">
+                    <h1 class="gta-title">TEST DE ANSIEDAD GAD-7</h1>
+                    <p class="hero-description">Evalúa tu nivel de ansiedad con este test clínico validado y recibe recomendaciones personalizadas.</p>
+                    <div class="test-info-cards">
+                        <div class="info-card">
+                            <i class="fas fa-clock"></i>
+                            <span>5 minutos</span>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>100% Confidencial</span>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-certificate"></i>
+                            <span>Clínicamente Validado</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/images/WhatsApp Image 2025-09-08 at 6.11.09 PM.jpeg" alt="Test GAD-7" class="hero-main-image" loading="eager">
+                </div>
             </div>
         </section>
 
@@ -68,32 +113,77 @@
             <div class="container">
                 <div class="test-container gta-style-container">
                     <div class="auth-required-message hidden">
-                        <i class="fas fa-lock"></i>
-                        <h3>Inicia sesión para acceder al test</h3>
-                        <p>Para realizar el test y guardar tus resultados, necesitas iniciar sesión o crear una cuenta.</p>
-                        <div class="auth-buttons-container">
-                            <button class="btn btn-primary" id="test-login-btn">Iniciar sesión</button>
-                            <button class="btn btn-outline" id="test-register-btn">Registrarse</button>
+                        <div class="auth-message-content">
+                            <i class="fas fa-lock"></i>
+                            <h3>Inicia sesión para acceder al test</h3>
+                            <p>Para realizar el test y guardar tus resultados, necesitas iniciar sesión o crear una cuenta.</p>
+                            <div class="auth-buttons-container">
+                                <button class="btn btn-primary" id="test-login-btn">Iniciar sesión</button>
+                                <button class="btn btn-outline" id="test-register-btn">Registrarse</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="test-progress-container">
+                        <div class="test-progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <div class="test-progress-text">
+                            <span id="current-question">1</span> de <span id="total-questions">7</span> preguntas
                         </div>
                     </div>
                     
                     <form id="anxiety-test" class="test-form">
-                        <p class="test-instructions">Durante las últimas 2 semanas, ¿con qué frecuencia ha sentido molestias por los siguientes problemas?</p>
+                        <div class="test-header">
+                            <h2 class="test-title">Test de Ansiedad GAD-7</h2>
+                            <p class="test-instructions">Durante las últimas 2 semanas, ¿con qué frecuencia ha sentido molestias por los siguientes problemas?</p>
+                        </div>
                         
-                        <div class="question-container">
-                            <p class="question">1. ¿Se ha sentido nervioso/a, ansioso/a o muy alterado/a?</p>
+                        <div class="question-container" data-question="1">
+                            <div class="question-header">
+                                <div class="question-number">1</div>
+                                <p class="question">¿Se ha sentido nervioso/a, ansioso/a o muy alterado/a?</p>
+                            </div>
                             <div class="options">
-                                <label class="option">
-                                    <input type="radio" name="q1" value="0"> Nunca
+                                <label class="option-card">
+                                    <input type="radio" name="q1" value="0">
+                                    <div class="option-content">
+                                        <div class="option-icon">😌</div>
+                                        <div class="option-text">
+                                            <span class="option-label">Nunca</span>
+                                            <span class="option-description">No me he sentido así</span>
+                                        </div>
+                                    </div>
                                 </label>
-                                <label class="option">
-                                    <input type="radio" name="q1" value="1"> Algunos días
+                                <label class="option-card">
+                                    <input type="radio" name="q1" value="1">
+                                    <div class="option-content">
+                                        <div class="option-icon">😐</div>
+                                        <div class="option-text">
+                                            <span class="option-label">Algunos días</span>
+                                            <span class="option-description">1-2 veces por semana</span>
+                                        </div>
+                                    </div>
                                 </label>
-                                <label class="option">
-                                    <input type="radio" name="q1" value="2"> Más de la mitad de los días
+                                <label class="option-card">
+                                    <input type="radio" name="q1" value="2">
+                                    <div class="option-content">
+                                        <div class="option-icon">😟</div>
+                                        <div class="option-text">
+                                            <span class="option-label">Más de la mitad de los días</span>
+                                            <span class="option-description">3-4 veces por semana</span>
+                                        </div>
+                                    </div>
                                 </label>
-                                <label class="option">
-                                    <input type="radio" name="q1" value="3"> Casi todos los días
+                                <label class="option-card">
+                                    <input type="radio" name="q1" value="3">
+                                    <div class="option-content">
+                                        <div class="option-icon">😰</div>
+                                        <div class="option-text">
+                                            <span class="option-label">Casi todos los días</span>
+                                            <span class="option-description">5-7 veces por semana</span>
+                                        </div>
+                                    </div>
                                 </label>
                             </div>
                         </div>
@@ -375,12 +465,54 @@
         </div>
     </div>
 
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/Logo.jpeg" alt="Sensus Logo" class="logo-small">
+                    <p>© 2025 Sensus. Todos los derechos reservados.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Enlaces útiles</h3>
+                    <ul>
+                        <li><a href="como-funciona.html">Cómo Funciona</a></li>
+                        <li><a href="test.html">Test GAD-7</a></li>
+                        <li><a href="diario.html">Diario Emocional</a></li>
+                        <li><a href="ansiedad.html">Tipos de Ansiedad</a></li>
+                        <li><a href="planes.html">Planes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Compañía</h3>
+                    <ul>
+                        <li><a href="equipo.html">Nuestro Equipo</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos de Uso</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <!-- Scripts -->
     <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics-compat.js"></script>
     
     <!-- Configuración de Firebase -->
     <script>
@@ -405,12 +537,25 @@
     <link rel="stylesheet" href="css/responsive.css">
     
     <!-- Scripts de la aplicación -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
-    <script src="js/modules/firebase-config.js"></script>
     <script src="js/script.min.js" async></script>
     <script src="js/modules/auth.js"></script>
+    <script src="js/modules/firebase-config.js"></script>
     <script src="js/modules/test.js"></script>
     <script src="js/modules/responsive.js"></script>
+    
+    <!-- Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registrado exitosamente:', registration.scope);
+                    })
+                    .catch(function(error) {
+                        console.log('Error al registrar ServiceWorker:', error);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluaciones Psicológicas | Sensus</title>
+    <link rel="stylesheet" href="css/styles.css?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="description" content="Herramientas profesionales para evaluar tu estado mental y emocional con tests clínicos validados.">
+    <meta name="keywords" content="evaluación psicológica, test ansiedad, test depresión, test estrés, salud mental">
+    <meta name="author" content="Sensus Team">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/Logo.jpeg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="assets/images/Logo.jpeg">
+    <meta name="theme-color" content="#d7cdf2">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+</head>
+<body class="evaluacion-page">
+    <div class="page-loader">
+        <div class="loader"></div>
+    </div>
+    
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="assets/images/Logo.jpeg" alt="Sensus Logo" class="logo">
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="como-funciona.html">Cómo Funciona</a></li>
+                    <li><a href="evaluacion.html" class="active">Evaluación</a></li>
+                    <li><a href="diario.html">Diario</a></li>
+                    <li><a href="ansiedad.html">Síntomas</a></li>
+                    <li><a href="planes.html">Planes</a></li>
+                    <li><a href="equipo.html">Equipo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-outline" id="login-btn">Iniciar sesión</button>
+                <button class="btn btn-primary" id="register-btn">Registrarse</button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="evaluation-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Evaluaciones Psicológicas</h1>
+                    <p class="hero-subtitle">Herramientas profesionales para evaluar tu estado mental y emocional.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tests Grid -->
+        <section class="tests-section">
+            <div class="container">
+                <div class="tests-grid">
+                    <!-- Test de Hamilton -->
+                    <div class="test-card professional-card">
+                        <div class="test-header">
+                            <div class="test-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>Test de Hamilton</h3>
+                            <p class="test-description">Evaluación profesional del nivel de ansiedad basada en criterios clínicos.</p>
+                        </div>
+                        <div class="test-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Duración: 10-15 minutos</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-question-circle"></i>
+                                <span>Preguntas: 14 preguntas</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Clínicamente validado</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block start-test-btn" data-test="hamilton">
+                            Comenzar Evaluación
+                        </button>
+                    </div>
+
+                    <!-- Test de Estrés -->
+                    <div class="test-card professional-card">
+                        <div class="test-header">
+                            <div class="test-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h3>Evaluación de Estrés</h3>
+                            <p class="test-description">Medición del nivel de estrés y su impacto en la vida diaria.</p>
+                        </div>
+                        <div class="test-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Duración: 5-10 minutos</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-question-circle"></i>
+                                <span>Preguntas: 10 preguntas</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Análisis detallado</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block start-test-btn" data-test="estres">
+                            Comenzar Evaluación
+                        </button>
+                    </div>
+
+                    <!-- Test de Depresión -->
+                    <div class="test-card professional-card">
+                        <div class="test-header">
+                            <div class="test-icon">
+                                <i class="fas fa-cloud-rain"></i>
+                            </div>
+                            <h3>Test de Depresión</h3>
+                            <p class="test-description">Evaluación de síntomas depresivos y su severidad.</p>
+                        </div>
+                        <div class="test-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Duración: 8-12 minutos</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-question-circle"></i>
+                                <span>Preguntas: 12 preguntas</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-user-md"></i>
+                                <span>Basado en DSM-5</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block start-test-btn" data-test="depresion">
+                            Comenzar Evaluación
+                        </button>
+                    </div>
+
+                    <!-- Test GAD-7 -->
+                    <div class="test-card professional-card">
+                        <div class="test-header">
+                            <div class="test-icon">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <h3>Test GAD-7</h3>
+                            <p class="test-description">Evaluación rápida de ansiedad generalizada con 7 preguntas.</p>
+                        </div>
+                        <div class="test-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Duración: 3-5 minutos</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-question-circle"></i>
+                                <span>Preguntas: 7 preguntas</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-certificate"></i>
+                                <span>Gold standard</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block start-test-btn" data-test="gad7">
+                            Comenzar Evaluación
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Información Importante -->
+        <section class="info-section">
+            <div class="container">
+                <h2 class="section-title">Información Importante</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3>Privacidad Garantizada</h3>
+                        <p>Todos tus resultados son completamente privados y solo tú tienes acceso a ellos.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3>No es un Diagnóstico</h3>
+                        <p>Estas evaluaciones son herramientas de screening, no reemplazan la consulta profesional.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Resultados Inmediatos</h3>
+                        <p>Recibe tus resultados al instante con recomendaciones personalizadas.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Seguimiento del Progreso</h3>
+                        <p>Guarda tus resultados para hacer seguimiento de tu evolución a lo largo del tiempo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>¿Listo para comenzar tu evaluación?</h2>
+                    <p>Selecciona el test que mejor se adapte a tus necesidades y comienza tu camino hacia el bienestar mental.</p>
+                    <div class="cta-buttons">
+                        <a href="diario.html" class="btn btn-outline btn-lg">Ver Diario Emocional</a>
+                        <a href="planes.html" class="btn btn-primary btn-lg">Conocer Planes</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/Logo.jpeg" alt="Sensus Logo" class="logo-small">
+                    <p>© 2025 Sensus. Todos los derechos reservados.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Enlaces útiles</h3>
+                    <ul>
+                        <li><a href="como-funciona.html">Cómo Funciona</a></li>
+                        <li><a href="evaluacion.html">Evaluaciones</a></li>
+                        <li><a href="diario.html">Diario Emocional</a></li>
+                        <li><a href="ansiedad.html">Tipos de Ansiedad</a></li>
+                        <li><a href="planes.html">Planes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Compañía</h3>
+                    <ul>
+                        <li><a href="equipo.html">Nuestro Equipo</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos de Uso</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div class="modal" id="auth-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Iniciar sesión</button>
+                <button class="auth-tab" data-tab="register">Registrarse</button>
+            </div>
+            
+            <div class="auth-form-container">
+                <form id="login-form" class="auth-form active">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Contraseña</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+                    <div class="auth-options">
+                        <button type="button" class="btn-google">
+                            <i class="fab fa-google"></i> Continuar con Google
+                        </button>
+                        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </form>
+                
+                <form id="register-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="register-name">Nombre completo</label>
+                        <input type="text" id="register-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Contraseña</label>
+                        <input type="password" id="register-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm-password">Confirmar contraseña</label>
+                        <input type="password" id="register-confirm-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+                    <div class="auth-options">
+                        <button type="button" class="btn-google">
+                            <i class="fab fa-google"></i> Registrarse con Google
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics-compat.js"></script>
+    
+    <!-- Estilos responsivos -->
+    <link rel="stylesheet" href="css/responsive.css?v=2">
+    
+    <!-- Scripts de la aplicación -->
+    <script src="js/modules/firebase-config.js?v=2"></script>
+    <script src="js/modules/auth.js?v=2"></script>
+    <script src="js/modules/visitor-counter.js?v=2"></script>
+    <script src="js/modules/responsive.js?v=2"></script>
+    <script src="js/script.js?v=2"></script>
+    
+    <!-- Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registrado exitosamente:', registration.scope);
+                    })
+                    .catch(function(error) {
+                        console.log('Error al registrar ServiceWorker:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

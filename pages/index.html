@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensus - Encuentra tu Calma</title>
+    <link rel="stylesheet" href="css/styles.css?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="description" content="Sensus - Tu espacio seguro y personal para el manejo de la ansiedad. Test GAD-7, diario emocional y recursos profesionales.">
+    <meta name="keywords" content="ansiedad, salud mental, test GAD-7, diario emocional, bienestar, mindfulness, terapia online">
+    <meta name="author" content="Sensus Team">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sensus-app.com/">
+    <meta property="og:title" content="Sensus - Encuentra tu Calma">
+    <meta property="og:description" content="Tu espacio seguro y personal para el manejo de la ansiedad.">
+    <meta property="og:image" content="assets/images/Logo.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sensus-app.com/">
+    <meta property="twitter:title" content="Sensus - Encuentra tu Calma">
+    <meta property="twitter:description" content="Tu espacio seguro y personal para el manejo de la ansiedad.">
+    <meta property="twitter:image" content="assets/images/Logo.jpeg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/Logo.jpeg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="assets/images/Logo.jpeg">
+    <meta name="theme-color" content="#d7cdf2">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="js/script.js" as="script">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Viewport para dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body class="landing-page">
+    <div class="page-loader">
+        <div class="loader"></div>
+    </div>
+    
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="assets/images/Logo.jpeg" alt="Sensus Logo" class="logo">
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="como-funciona.html">Cómo Funciona</a></li>
+                    <li><a href="evaluacion.html">Evaluación</a></li>
+                    <li><a href="diario.html">Diario</a></li>
+                    <li><a href="ansiedad.html">Síntomas</a></li>
+                    <li><a href="planes.html">Planes</a></li>
+                    <li><a href="equipo.html">Equipo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-outline" id="login-btn">Iniciar sesión</button>
+                <button class="btn btn-primary" id="register-btn">Registrarse</button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section con estilo GTA -->
+        <section class="hero gta-style" id="inicio">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 class="gta-title">SENSUS</h1>
+                    <p class="hero-tagline">ENCUENTRA TU CALMA</p>
+                    <p class="hero-description">Tu espacio seguro y personal para el manejo de la ansiedad.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-lg" id="start-journey-btn">COMENZAR AHORA</button>
+                        <button class="btn btn-outline btn-lg" id="learn-more-btn">SABER MÁS</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/images/WhatsApp Image 2025-09-08 at 6.04.51 PM.jpeg" alt="Ilustración de bienestar mental" class="hero-main-image" loading="eager">
+                </div>
+            </div>
+        </section>
+
+        <!-- Características Principales (Estilo GTA) -->
+        <section class="features-section" id="caracteristicas">
+            <div class="container">
+                <h2 class="section-title gta-style-title">CARACTERÍSTICAS PRINCIPALES</h2>
+                
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3>TEST GAD-7</h3>
+                        <p>Evalúa tu nivel de ansiedad con un test clínico validado y recibe recomendaciones personalizadas.</p>
+                        <a href="test.html" class="btn btn-secondary">REALIZAR TEST</a>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3>DIARIO EMOCIONAL</h3>
+                        <p>Registra tus emociones diarias, mantén una racha y visualiza tu progreso emocional.</p>
+                        <a href="diario.html" class="btn btn-secondary">IR AL DIARIO</a>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>TIPOS DE ANSIEDAD</h3>
+                        <p>Conoce los diferentes tipos de ansiedad, sus síntomas y técnicas para manejarlos.</p>
+                        <a href="ansiedad.html" class="btn btn-secondary">EXPLORAR</a>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3>PLANES PREMIUM</h3>
+                        <p>Accede a funciones exclusivas con nuestros planes de suscripción personalizados.</p>
+                        <a href="planes.html" class="btn btn-secondary">VER PLANES</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Estadísticas y Logros -->
+        <section class="stats-section">
+            <div class="container">
+                <h2 class="section-title gta-style-title">NUESTRO IMPACTO</h2>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-number" data-target="12500">0</div>
+                        <div class="stat-label">Usuarios Activos</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div class="stat-number" data-target="45000">0</div>
+                        <div class="stat-label">Tests Completados</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="stat-number" data-target="85000">0</div>
+                        <div class="stat-label">Entradas de Diario</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-number" data-target="96">0</div>
+                        <div class="stat-label">% Satisfacción</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cómo Empezar (Estilo Profesional) -->
+        <section class="getting-started-section" id="como-empezar">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title gta-style-title">CÓMO EMPEZAR</h2>
+                    <p class="section-subtitle">Sigue estos simples pasos para comenzar tu viaje hacia el bienestar mental</p>
+                </div>
+                
+                <div class="steps-container">
+                    <div class="step-card">
+                        <div class="step-visual">
+                            <div class="step-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="step-number">01</div>
+                        </div>
+                        <div class="step-content">
+                            <h3>CREA TU CUENTA</h3>
+                            <p>Regístrate en menos de 2 minutos y accede a todas las funcionalidades de Sensus de forma gratuita.</p>
+                            <div class="step-features">
+                                <span class="feature-tag">Gratis</span>
+                                <span class="feature-tag">2 minutos</span>
+                            </div>
+                            <button class="btn btn-primary" id="register-step-btn">
+                                <i class="fas fa-arrow-right"></i>
+                                CREAR CUENTA
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-visual">
+                            <div class="step-icon">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <div class="step-number">02</div>
+                        </div>
+                        <div class="step-content">
+                            <h3>EVALÚA TU ANSIEDAD</h3>
+                            <p>Realiza nuestro test GAD-7 clínicamente validado para obtener un análisis personalizado de tu nivel de ansiedad.</p>
+                            <div class="step-features">
+                                <span class="feature-tag">Clínico</span>
+                                <span class="feature-tag">5 minutos</span>
+                            </div>
+                            <a href="test.html" class="btn btn-outline">
+                                <i class="fas fa-arrow-right"></i>
+                                REALIZAR TEST
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-visual">
+                            <div class="step-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div class="step-number">03</div>
+                        </div>
+                        <div class="step-content">
+                            <h3>MANTÉN TU DIARIO</h3>
+                            <p>Registra tus emociones diariamente, mantén tu racha activa y observa tu progreso a lo largo del tiempo.</p>
+                            <div class="step-features">
+                                <span class="feature-tag">Diario</span>
+                                <span class="feature-tag">Racha</span>
+                            </div>
+                            <a href="diario.html" class="btn btn-outline">
+                                <i class="fas fa-arrow-right"></i>
+                                ABRIR DIARIO
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-visual">
+                            <div class="step-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="step-number">04</div>
+                        </div>
+                        <div class="step-content">
+                            <h3>APRENDE Y CRECE</h3>
+                            <p>Accede a recursos educativos, técnicas de manejo y consejos profesionales para tu bienestar mental.</p>
+                            <div class="step-features">
+                                <span class="feature-tag">Educativo</span>
+                                <span class="feature-tag">Profesional</span>
+                            </div>
+                            <a href="ansiedad.html" class="btn btn-outline">
+                                <i class="fas fa-arrow-right"></i>
+                                EXPLORAR RECURSOS
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="steps-cta">
+                    <div class="cta-content">
+                        <h3>¿Listo para comenzar?</h3>
+                        <p>Únete a miles de personas que ya están mejorando su bienestar mental con Sensus</p>
+                        <button class="btn btn-primary btn-lg" id="start-now-btn">
+                            <i class="fas fa-rocket"></i>
+                            COMENZAR AHORA
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonios -->
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title gta-style-title">TESTIMONIOS REALES</h2>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="assets/images/WhatsApp Image 2025-09-08 at 6.07.23 PM.jpeg" alt="Usuario satisfecho" class="testimonial-img" loading="lazy">
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"Sensus me ha ayudado a entender mejor mis emociones y a mantener una rutina saludable de autocuidado."</p>
+                            <div class="testimonial-author">
+                                <h4>María González</h4>
+                                <span>Usuaria desde 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="assets/images/WhatsApp Image 2025-09-08 at 6.07.33 PM.jpeg" alt="Usuario satisfecho" class="testimonial-img" loading="lazy">
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"El test GAD-7 me dio una perspectiva clara de mi ansiedad y las herramientas para manejarla mejor."</p>
+                            <div class="testimonial-author">
+                                <h4>Carlos Rodríguez</h4>
+                                <span>Usuario desde 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="assets/images/WhatsApp Image 2025-09-08 at 6.11.09 PM.jpeg" alt="Usuario satisfecho" class="testimonial-img" loading="lazy">
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"El diario emocional se ha convertido en una parte esencial de mi rutina diaria. ¡Altamente recomendado!"</p>
+                            <div class="testimonial-author">
+                                <h4>Ana Martínez</h4>
+                                <span>Usuaria desde 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería de Funcionalidades -->
+        <section class="features-gallery-section">
+            <div class="container">
+                <h2 class="section-title gta-style-title">FUNCIONALIDADES EN ACCIÓN</h2>
+                <p class="section-subtitle">Descubre cómo Sensus transforma la vida de miles de usuarios</p>
+                
+                <div class="features-gallery-grid">
+                    <div class="feature-gallery-item">
+                        <img src="assets/images/WhatsApp Image 2025-09-08 at 6.46.59 PM.jpeg" alt="Interfaz de Sensus" class="feature-gallery-img" loading="lazy">
+                        <div class="feature-gallery-content">
+                            <h3>Interfaz Intuitiva</h3>
+                            <p>Diseño fácil de usar que hace que el cuidado de tu salud mental sea accesible para todos.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-gallery-item">
+                        <img src="assets/images/WhatsApp Image 2025-09-08 at 6.50.55 PM.jpeg" alt="Análisis de datos" class="feature-gallery-img" loading="lazy">
+                        <div class="feature-gallery-content">
+                            <h3>Análisis Personalizado</h3>
+                            <p>Visualiza tu progreso y obtén insights valiosos sobre tu bienestar emocional.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>¿LISTO PARA COMENZAR TU VIAJE?</h2>
+                    <p>Únete a miles de personas que ya están mejorando su bienestar mental con Sensus.</p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary btn-lg" id="cta-register-btn">CREAR CUENTA AHORA</button>
+                        <a href="como-funciona.html" class="btn btn-outline btn-lg">SABER MÁS</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/Logo.jpeg" alt="Sensus Logo" class="logo-small">
+                    <p>© 2025 Sensus. Todos los derechos reservados.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Enlaces útiles</h3>
+                    <ul>
+                        <li><a href="como-funciona.html">Cómo Funciona</a></li>
+                        <li><a href="test.html">Test GAD-7</a></li>
+                        <li><a href="diario.html">Diario Emocional</a></li>
+                        <li><a href="ansiedad.html">Tipos de Ansiedad</a></li>
+                        <li><a href="planes.html">Planes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Compañía</h3>
+                    <ul>
+                        <li><a href="equipo.html">Nuestro Equipo</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos de Uso</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div class="modal" id="auth-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Iniciar sesión</button>
+                <button class="auth-tab" data-tab="register">Registrarse</button>
+            </div>
+            
+            <div class="auth-form-container">
+                <form id="login-form" class="auth-form active">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Contraseña</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+                    <div class="auth-options">
+                        <button type="button" class="btn-google">
+                            <i class="fab fa-google"></i> Continuar con Google
+                        </button>
+                        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </form>
+                
+                <form id="register-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="register-name">Nombre completo</label>
+                        <input type="text" id="register-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Contraseña</label>
+                        <input type="password" id="register-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm-password">Confirmar contraseña</label>
+                        <input type="password" id="register-confirm-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+                    <div class="auth-options">
+                        <button type="button" class="btn-google">
+                            <i class="fab fa-google"></i> Registrarse con Google
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics-compat.js"></script>
+    
+    <!-- Estilos responsivos -->
+    <link rel="stylesheet" href="css/responsive.css?v=2">
+    
+    <!-- Scripts de la aplicación -->
+    <!-- Cargar configuración de Firebase primero -->
+    <script src="js/modules/firebase-config.js?v=2"></script>
+    <script src="js/modules/auth.js?v=2"></script>
+    <script src="js/modules/visitor-counter.js?v=2"></script>
+    <script src="js/modules/responsive.js?v=2"></script>
+    <script src="js/script.js?v=2"></script>
+    
+    <!-- Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registrado exitosamente:', registration.scope);
+                    })
+                    .catch(function(error) {
+                        console.log('Error al registrar ServiceWorker:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

@@ -11,7 +11,27 @@ window.addEventListener('load', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar componentes
+    // Inicializar módulos de compatibilidad primero
+    if (typeof CrossBrowserCompatibility !== 'undefined') {
+        // Los módulos de compatibilidad se inicializan automáticamente
+    }
+    
+    // Inicializar módulos responsive
+    if (typeof initResponsiveModule !== 'undefined') {
+        initResponsiveModule();
+    }
+    
+    // Inicializar optimizaciones de imágenes
+    if (typeof initImageOptimizer !== 'undefined') {
+        initImageOptimizer();
+    }
+    
+    // Inicializar interacciones táctiles
+    if (typeof initTouchInteractions !== 'undefined') {
+        initTouchInteractions();
+    }
+    
+    // Inicializar componentes principales
     initThemeToggle();
     initMobileMenu();
     initAuthModal();
@@ -27,6 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Marcar el enlace de navegación activo
     highlightActiveNavLink(currentPage);
+    
+    // Aplicar optimizaciones finales
+    applyFinalOptimizations();
 });
 
 // Obtener la página actual basada en la URL
@@ -77,6 +100,356 @@ function initAnimations() {
     featureCards.forEach((card, index) => {
         card.style.animationDelay = `${0.2 + (0.1 * index)}s`;
         card.style.animation = 'fadeIn 0.8s forwards';
+    });
+    
+    // Inicializar animación de estadísticas
+    initStatsAnimation();
+    
+    // Inicializar sección Cómo Empezar
+    initGettingStartedSection();
+    
+    // Inicializar botones de navegación
+    initNavigationButtons();
+    
+    // Inicializar contador de visitantes
+    initVisitorCounter();
+    
+    // Inicializar test interactivo
+    initInteractiveTest();
+}
+
+// Inicializar animación de estadísticas
+function initStatsAnimation() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    if (!statNumbers.length) return;
+    
+    // Crear observer para animar cuando las estadísticas sean visibles
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateNumber(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    statNumbers.forEach(stat => observer.observe(stat));
+}
+
+// Animar números de estadísticas
+function animateNumber(element) {
+    const target = parseInt(element.getAttribute('data-target'));
+    const duration = 2000; // 2 segundos
+    const increment = target / (duration / 16); // 60fps
+    let current = 0;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        element.textContent = Math.floor(current).toLocaleString();
+    }, 16);
+}
+
+// Inicializar sección Cómo Empezar
+function initGettingStartedSection() {
+    const stepCards = document.querySelectorAll('.step-card');
+    const startNowBtn = document.getElementById('start-now-btn');
+    
+    // Animación de entrada para las tarjetas de pasos
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 200);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    stepCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+    });
+    
+    // Evento para el botón "Comenzar Ahora"
+    if (startNowBtn) {
+        startNowBtn.addEventListener('click', function() {
+            // Scroll suave al formulario de registro
+            const registerBtn = document.getElementById('register-btn');
+            if (registerBtn) {
+                registerBtn.click();
+            }
+        });
+    }
+    
+    // Efecto hover mejorado para las tarjetas
+    stepCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+}
+
+// Inicializar botones de navegación
+function initNavigationButtons() {
+    // Botón "COMENZAR AHORA" del hero - Lleva al Test
+    const startJourneyBtn = document.getElementById('start-journey-btn');
+    if (startJourneyBtn) {
+        startJourneyBtn.addEventListener('click', function() {
+            // Navegar a la página de test
+            window.location.href = 'test.html';
+        });
+    }
+    
+    // Botón "SABER MÁS" del hero - Lleva a Cómo Funciona
+    const learnMoreBtn = document.getElementById('learn-more-btn');
+    if (learnMoreBtn) {
+        learnMoreBtn.addEventListener('click', function() {
+            // Navegar a la página Cómo Funciona
+            window.location.href = 'como-funciona.html';
+        });
+    }
+    
+    // Botón "CREAR CUENTA AHORA" del CTA
+    const ctaRegisterBtn = document.getElementById('cta-register-btn');
+    if (ctaRegisterBtn) {
+        ctaRegisterBtn.addEventListener('click', function() {
+            // Abrir modal de registro
+            const registerBtn = document.getElementById('register-btn');
+            if (registerBtn) {
+                registerBtn.click();
+            }
+        });
+    }
+    
+    // Botón "CREAR CUENTA" de la sección Cómo Empezar
+    const registerStepBtn = document.getElementById('register-step-btn');
+    if (registerStepBtn) {
+        registerStepBtn.addEventListener('click', function() {
+            // Abrir modal de registro
+            const registerBtn = document.getElementById('register-btn');
+            if (registerBtn) {
+                registerBtn.click();
+            }
+        });
+    }
+    
+    // Botón "COMENZAR AHORA" de la sección Cómo Empezar
+    const startNowBtn = document.getElementById('start-now-btn');
+    if (startNowBtn) {
+        startNowBtn.addEventListener('click', function() {
+            // Abrir modal de registro
+            const registerBtn = document.getElementById('register-btn');
+            if (registerBtn) {
+                registerBtn.click();
+            }
+        });
+    }
+    
+    // Añadir eventos a todos los botones de autenticación en toda la página
+    const allAuthButtons = document.querySelectorAll('[id*="login"], [id*="register"], [id*="auth"]');
+    allAuthButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const buttonId = this.id;
+            
+            if (buttonId.includes('login')) {
+                // Abrir modal con tab de login
+                const loginBtn = document.getElementById('login-btn');
+                if (loginBtn) {
+                    loginBtn.click();
+                }
+            } else if (buttonId.includes('register')) {
+                // Abrir modal con tab de registro
+                const registerBtn = document.getElementById('register-btn');
+                if (registerBtn) {
+                    registerBtn.click();
+                }
+            }
+        });
+    });
+    
+    // Añadir scroll suave a todos los enlaces internos
+    const internalLinks = document.querySelectorAll('a[href^="#"], a[href$=".html"]');
+    internalLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Si es un enlace a una página HTML, permitir navegación normal
+            if (href.endsWith('.html')) {
+                return;
+            }
+            
+            // Si es un enlace interno (#), hacer scroll suave
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
+    
+    // Añadir efecto de scroll para el header
+    initScrollHeader();
+}
+
+// Inicializar efecto de scroll para el header
+function initScrollHeader() {
+    const header = document.querySelector('.header');
+    
+    if (!header) return;
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+}
+
+// Inicializar contador de visitantes
+function initVisitorCounter() {
+    // Cargar el módulo de contador de visitantes
+    if (typeof VisitorCounter !== 'undefined') {
+        window.visitorCounter = new VisitorCounter();
+    }
+}
+
+// Inicializar test interactivo
+function initInteractiveTest() {
+    const testForm = document.getElementById('anxiety-test');
+    const progressFill = document.getElementById('progress-fill');
+    const currentQuestionSpan = document.getElementById('current-question');
+    const totalQuestionsSpan = document.getElementById('total-questions');
+    
+    if (!testForm || !progressFill) return;
+    
+    const totalQuestions = 7;
+    let currentQuestion = 1;
+    
+    if (totalQuestionsSpan) {
+        totalQuestionsSpan.textContent = totalQuestions;
+    }
+    
+    // Actualizar progreso
+    function updateProgress() {
+        const answeredQuestions = testForm.querySelectorAll('input[type="radio"]:checked').length;
+        const progress = (answeredQuestions / totalQuestions) * 100;
+        
+        progressFill.style.width = `${progress}%`;
+        
+        if (currentQuestionSpan) {
+            currentQuestionSpan.textContent = answeredQuestions + 1;
+        }
+        
+        // Resaltar preguntas sin responder
+        const questionContainers = testForm.querySelectorAll('.question-container');
+        questionContainers.forEach((container, index) => {
+            const questionNumber = index + 1;
+            const hasAnswer = container.querySelector('input[type="radio"]:checked');
+            
+            if (questionNumber <= answeredQuestions + 1) {
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            } else {
+                container.style.opacity = '0.6';
+                container.style.transform = 'translateY(10px)';
+            }
+            
+            if (questionNumber === answeredQuestions + 1) {
+                container.style.borderColor = 'var(--primary-color)';
+                container.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                container.style.borderColor = 'transparent';
+                container.style.boxShadow = 'none';
+            }
+        });
+    }
+    
+    // Añadir eventos a las opciones
+    const optionCards = testForm.querySelectorAll('.option-card');
+    optionCards.forEach(card => {
+        const radio = card.querySelector('input[type="radio"]');
+        
+        card.addEventListener('click', function() {
+            // Desmarcar otras opciones del mismo grupo
+            const name = radio.name;
+            const groupRadios = testForm.querySelectorAll(`input[name="${name}"]`);
+            groupRadios.forEach(r => r.checked = false);
+            
+            // Marcar la opción seleccionada
+            radio.checked = true;
+            
+            // Añadir efecto visual
+            card.style.borderColor = 'var(--primary-color)';
+            card.style.backgroundColor = 'rgba(215, 205, 242, 0.1)';
+            
+            // Actualizar progreso
+            updateProgress();
+            
+            // Scroll suave a la siguiente pregunta
+            setTimeout(() => {
+                const nextQuestion = card.closest('.question-container').nextElementSibling;
+                if (nextQuestion) {
+                    nextQuestion.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start',
+                        inline: 'nearest'
+                    });
+                }
+            }, 300);
+        });
+        
+        // Efecto hover
+        card.addEventListener('mouseenter', function() {
+            if (!radio.checked) {
+                card.style.borderColor = 'var(--primary-color)';
+                card.style.transform = 'translateY(-2px)';
+            }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            if (!radio.checked) {
+                card.style.borderColor = 'var(--light)';
+                card.style.transform = 'translateY(0)';
+            }
+        });
+    });
+    
+    // Inicializar progreso
+    updateProgress();
+    
+    // Añadir animación de entrada a las preguntas
+    const questionContainers = testForm.querySelectorAll('.question-container');
+    questionContainers.forEach((container, index) => {
+        container.style.opacity = '0';
+        container.style.transform = 'translateY(20px)';
+        container.style.transition = 'all 0.5s ease';
+        
+        setTimeout(() => {
+            container.style.opacity = '1';
+            container.style.transform = 'translateY(0)';
+        }, index * 100);
     });
 }
 
@@ -436,3 +809,200 @@ document.addEventListener('scroll', function() {
         }
     });
 });
+
+// Aplicar optimizaciones finales
+function applyFinalOptimizations() {
+    // Optimizar performance
+    optimizePerformance();
+    
+    // Configurar service worker si está disponible
+    if ('serviceWorker' in navigator) {
+        registerServiceWorker();
+    }
+    
+    // Configurar PWA si es posible
+    setupPWA();
+    
+    // Aplicar optimizaciones específicas del dispositivo
+    applyDeviceSpecificOptimizations();
+}
+
+// Optimizar performance general
+function optimizePerformance() {
+    // Preload recursos críticos
+    preloadCriticalResources();
+    
+    // Optimizar animaciones según el dispositivo
+    optimizeAnimations();
+    
+    // Configurar lazy loading para elementos no críticos
+    setupLazyLoadingForNonCritical();
+}
+
+// Precargar recursos críticos
+function preloadCriticalResources() {
+    const criticalImages = document.querySelectorAll('img[data-preload="true"]');
+    criticalImages.forEach(img => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = img.src || img.dataset.src;
+        document.head.appendChild(link);
+    });
+}
+
+// Optimizar animaciones según el dispositivo
+function optimizeAnimations() {
+    const deviceInfo = window.deviceInfo;
+    if (!deviceInfo) return;
+    
+    // Reducir animaciones en dispositivos de baja potencia
+    if (deviceInfo.isMobile && deviceInfo.prefersReducedMotion) {
+        const style = document.createElement('style');
+        style.textContent = `
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+}
+
+// Configurar lazy loading para elementos no críticos
+function setupLazyLoadingForNonCritical() {
+    const nonCriticalElements = document.querySelectorAll('[data-lazy="true"]');
+    
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    
+                    // Cargar contenido lazy
+                    if (element.dataset.src) {
+                        element.src = element.dataset.src;
+                    }
+                    
+                    if (element.dataset.background) {
+                        element.style.backgroundImage = `url(${element.dataset.background})`;
+                    }
+                    
+                    observer.unobserve(element);
+                }
+            });
+        }, { rootMargin: '50px' });
+        
+        nonCriticalElements.forEach(element => {
+            observer.observe(element);
+        });
+    }
+}
+
+// Registrar service worker
+function registerServiceWorker() {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+                console.log('Service Worker registrado correctamente:', registration.scope);
+            })
+            .catch(function(error) {
+                console.log('Error al registrar Service Worker:', error);
+            });
+    });
+}
+
+// Configurar PWA
+function setupPWA() {
+    // Detectar si la app se puede instalar
+    let deferredPrompt;
+    
+    window.addEventListener('beforeinstallprompt', function(e) {
+        e.preventDefault();
+        deferredPrompt = e;
+        
+        // Mostrar botón de instalación si es necesario
+        showInstallButton();
+    });
+    
+    // Detectar si la app se instaló
+    window.addEventListener('appinstalled', function() {
+        console.log('PWA instalada correctamente');
+        hideInstallButton();
+    });
+}
+
+// Mostrar botón de instalación
+function showInstallButton() {
+    // Solo mostrar en móviles y si no está ya instalada
+    if (window.deviceInfo?.isMobile && !window.matchMedia('(display-mode: standalone)').matches) {
+        const installBtn = document.createElement('button');
+        installBtn.id = 'install-pwa-btn';
+        installBtn.className = 'btn btn-primary install-pwa-btn';
+        installBtn.innerHTML = '<i class="fas fa-download"></i> Instalar App';
+        installBtn.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: slideUp 0.3s ease;
+        `;
+        
+        installBtn.addEventListener('click', function() {
+            if (window.deferredPrompt) {
+                window.deferredPrompt.prompt();
+                window.deferredPrompt.userChoice.then(function(choiceResult) {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('Usuario aceptó instalar la PWA');
+                    }
+                    window.deferredPrompt = null;
+                });
+            }
+        });
+        
+        document.body.appendChild(installBtn);
+    }
+}
+
+// Ocultar botón de instalación
+function hideInstallButton() {
+    const installBtn = document.getElementById('install-pwa-btn');
+    if (installBtn) {
+        installBtn.remove();
+    }
+}
+
+// Aplicar optimizaciones específicas del dispositivo
+function applyDeviceSpecificOptimizations() {
+    const deviceInfo = window.deviceInfo;
+    if (!deviceInfo) return;
+    
+    // Optimizaciones para móviles
+    if (deviceInfo.isMobile) {
+        // Reducir calidad de imágenes en móviles de baja potencia
+        if (deviceInfo.width < 768) {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.style.imageRendering = 'auto';
+            });
+        }
+        
+        // Optimizar scroll en iOS
+        if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+            document.body.style.webkitOverflowScrolling = 'touch';
+        }
+    }
+    
+    // Optimizaciones para pantallas de alta densidad
+    if (deviceInfo.isHighDensity) {
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.style.imageRendering = 'crisp-edges';
+        });
+    }
+}

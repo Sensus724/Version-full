@@ -2,16 +2,28 @@
 
 ## Descripción
 
-Sensus es una aplicación web responsiva diseñada para ayudar a las personas a gestionar su ansiedad a través de herramientas como el test GAD-7 validado clínicamente, un diario emocional con sistema de racha, y recursos informativos sobre la ansiedad.
+Sensus es una aplicación web profesional y responsiva diseñada para ayudar a las personas a gestionar su ansiedad a través de herramientas como el test GAD-7 validado clínicamente, un diario emocional con sistema de racha, y recursos informativos sobre la ansiedad.
 
-## Características Principales
+## ✨ Características Principales
 
-- **Diseño Responsivo**: Funciona perfectamente en dispositivos móviles, tablets y escritorio
+### 🎯 Funcionalidades Core
 - **Test GAD-7**: Evaluación clínicamente validada para medir niveles de ansiedad
 - **Diario Emocional**: Seguimiento diario de emociones con sistema de racha
-- **Autenticación**: Sistema completo de registro e inicio de sesión con Firebase
+- **Autenticación Segura**: Sistema completo de registro e inicio de sesión con Firebase
 - **Información sobre Ansiedad**: Recursos educativos sobre síntomas y tipos de ansiedad
 - **Planes de Suscripción**: Diferentes niveles de acceso a funcionalidades
+
+### 🚀 Características Profesionales
+- **PWA (Progressive Web App)**: Instalable en dispositivos móviles
+- **Service Worker**: Caché inteligente para mejor rendimiento
+- **SEO Optimizado**: Meta tags, Open Graph, Twitter Cards
+- **Diseño Responsivo**: Funciona perfectamente en todos los dispositivos
+- **Tema Claro/Oscuro**: Personalización visual del usuario
+- **Animaciones Suaves**: Interfaz moderna y atractiva
+- **Testimonios Reales**: Sección de usuarios satisfechos
+- **Estadísticas Animadas**: Métricas de impacto de la aplicación
+- **Lazy Loading**: Carga optimizada de imágenes
+- **Preload de Recursos**: Carga más rápida de elementos críticos
 
 ## Tecnologías Utilizadas
 

@@ -10,8 +10,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta name="description" content="Registra tus emociones diarias y mantén un seguimiento de tu bienestar mental con nuestro Diario Emocional.">
+    <meta name="keywords" content="ansiedad, salud mental, test GAD-7, diario emocional, bienestar, mindfulness, terapia online">
+    <meta name="author" content="Sensus Team">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sensus-app.com/diario.html">
+    <meta property="og:title" content="Diario Emocional | Sensus">
+    <meta property="og:description" content="Registra tus emociones diarias y mantén un seguimiento de tu bienestar mental con nuestro Diario Emocional.">
+    <meta property="og:image" content="assets/images/Logo.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sensus-app.com/diario.html">
+    <meta property="twitter:title" content="Diario Emocional | Sensus">
+    <meta property="twitter:description" content="Registra tus emociones diarias y mantén un seguimiento de tu bienestar mental con nuestro Diario Emocional.">
+    <meta property="twitter:image" content="assets/images/Logo.jpeg">
+    
     <!-- Favicon -->
-    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/Logo.jpeg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="assets/images/Logo.jpeg">
+    <meta name="theme-color" content="#d7cdf2">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="js/script.js" as="script">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
     <!-- Viewport para dispositivos móviles -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
@@ -23,8 +50,7 @@
     <header class="header">
         <div class="container header-container">
             <div class="logo-container">
-                <img src="logo.svg" alt="Sensus Logo" class="logo" onerror="this.src='placeholder-logo.svg'">
-                <h1>Sensus</h1>
+                <img src="assets/images/Logo.jpeg" alt="Sensus Logo" class="logo">
             </div>
             <nav class="main-nav">
                 <button class="menu-toggle" aria-label="Abrir menú">
