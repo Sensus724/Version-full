@@ -1006,3 +1006,25 @@ function applyDeviceSpecificOptimizations() {
         });
     }
 }
+
+// Funciones para abrir modal de autenticación
+function openAuthModal(tab) {
+    const authModal = document.getElementById('auth-modal');
+    if (authModal) {
+        authModal.classList.add('active');
+        showAuthTab(tab);
+    }
+}
+
+// Funciones para autenticación social
+function loginWithGoogle() {
+    // Simular login con Google
+    console.log('Iniciando login con Google...');
+    alert('Funcionalidad de Google en desarrollo. Por ahora, usa el formulario de registro.');
+}
+
+function loginWithApple() {
+    // Simular login con Apple
+    console.log('Iniciando login con Apple...');
+    alert('Funcionalidad de Apple en desarrollo. Por ahora, usa el formulario de registro.');
+}
