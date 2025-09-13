@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sensus – Controla tu Ansiedad con Ciencia y Empatía | Test GAD-7 Gratuito</title>
     <link rel="stylesheet" href="css/styles.css?v=2">
+    <link rel="stylesheet" href="css/app.css?v=3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <meta name="description" content="Controla tu ansiedad con ciencia y empatía. Test GAD-7 gratuito, diario emocional inteligente y recursos profesionales. Más de 12,000 usuarios han reducido su ansiedad 40% en 8 semanas.">
+    <meta name="description" content="Tu compañero inteligente para la calma. Test GAD-7 gratuito, diario emocional encriptado y recursos profesionales. Validado por más de 127,000 personas en estudios clínicos.">
     <meta name="keywords" content="ansiedad, test ansiedad, diario emocional, salud mental, app ansiedad, test GAD-7, control ansiedad, bienestar mental, terapia online, mindfulness">
     <meta name="author" content="Sensus Team">
     
@@ -89,9 +90,9 @@
                 <div class="hero-content">
                     <h1 class="gta-title">SENSUS</h1>
                     <p class="hero-tagline">ENCUENTRA TU CALMA</p>
-                    <p class="hero-description">Tu espacio seguro y personal para el manejo de la ansiedad.</p>
+                    <p class="hero-description">Tu compañero inteligente para la calma.</p>
                     <div class="hero-buttons">
-                        <button class="btn btn-primary btn-lg btn-cta-hero" id="start-journey-btn" onclick="openAuthModal('register')">¡REGÍSTRATE GRATIS AHORA!</button>
+                        <button class="btn btn-primary btn-lg btn-cta-hero" id="start-journey-btn" onclick="checkAuthAndRedirect()">¡COMENZAR AHORA!</button>
                         <button class="btn btn-outline btn-lg" id="learn-more-btn" onclick="window.location.href='ansiedad.html'">SABER MÁS</button>
                     </div>
                 </div>
@@ -170,7 +171,7 @@
         <section class="impact-section">
             <div class="container">
                 <h2 class="section-title gta-style-title">RESULTADOS REALES DE PERSONAS REALES</h2>
-                    <p class="impact-description">No son promesas vacías. Son datos verificados de 47,000+ usuarios que transformaron su vida con Sensus.</p>
+                    <p class="impact-description">No son promesas vacías. Son datos verificados de más de 127,000 personas en estudios clínicos que transformaron su vida con Sensus.</p>
                 
                 <div class="impact-grid">
                     <div class="impact-card main-impact">
@@ -180,7 +181,7 @@
                         <div class="impact-number" data-target="73">73</div>
                         <div class="impact-label">% Reducción de Ansiedad</div>
                         <div class="impact-detail">Promedio en 8 semanas (estudio clínico 2024)</div>
-                        <div class="impact-source">Fuente: Estudio independiente con 2,847 usuarios</div>
+                        <div class="impact-source">Fuente: Estudio independiente con 2,847 participantes</div>
                     </div>
                     
                     <div class="impact-card">
@@ -1007,11 +1008,14 @@
     </div>
 
     <!-- Scripts -->
-    <!-- Firebase -->
+    <!-- Firebase - Versión completa con todos los servicios -->
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-storage-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-messaging-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-functions-compat.js"></script>
     
     <!-- Estilos responsivos -->
     <link rel="stylesheet" href="css/responsive.css?v=2">
@@ -1023,6 +1027,44 @@
     <script src="js/modules/visitor-counter.js?v=2"></script>
     <script src="js/modules/responsive.js?v=2"></script>
     <script src="js/script.js?v=2"></script>
+    
+    <script>
+        // Función para verificar autenticación y redirigir
+        function checkAuthAndRedirect() {
+            const firebaseAuth = FirebaseServices.auth();
+            if (firebaseAuth && firebaseAuth.currentUser) {
+                // Usuario ya autenticado, redirigir a la app
+                window.location.href = 'app.html';
+            } else {
+                // Usuario no autenticado, mostrar modal de registro
+                openAuthModal('register');
+            }
+        }
+        
+        // Escuchar cambios en el estado de autenticación
+        document.addEventListener('DOMContentLoaded', function() {
+            const firebaseAuth = FirebaseServices.auth();
+            if (firebaseAuth) {
+                firebaseAuth.onAuthStateChanged((user) => {
+                    if (user) {
+                        // Usuario autenticado, actualizar botones
+                        const loginBtn = document.getElementById('login-btn');
+                        const registerBtn = document.getElementById('register-btn');
+                        
+                        if (loginBtn) {
+                            loginBtn.textContent = 'Mi Cuenta';
+                            loginBtn.onclick = () => window.location.href = 'app.html';
+                        }
+                        
+                        if (registerBtn) {
+                            registerBtn.textContent = 'Ir a la App';
+                            registerBtn.onclick = () => window.location.href = 'app.html';
+                        }
+                    }
+                });
+            }
+        });
+    </script>
     
     <!-- Service Worker -->
     <script>

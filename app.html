@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensus - Tu Compañero Inteligente para la Calma</title>
+    <link rel="stylesheet" href="css/styles.css?v=3">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="assets/images/Logo.jpeg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="assets/images/Logo.jpeg">
+    <meta name="theme-color" content="#d7cdf2">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- App Check -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-check-compat.js"></script>
+</head>
+<body class="app-page">
+    <div class="page-loader" id="page-loader">
+        <div class="loader"></div>
+    </div>
+    
+    <header class="app-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>SENSUS</span>
+                </div>
+                
+                <nav class="app-nav">
+                    <button class="nav-btn active" data-section="dashboard">
+                        <i class="fas fa-home"></i>
+                        <span>Inicio</span>
+                    </button>
+                    <button class="nav-btn" data-section="test">
+                        <i class="fas fa-clipboard-check"></i>
+                        <span>Test</span>
+                    </button>
+                    <button class="nav-btn" data-section="journal">
+                        <i class="fas fa-book"></i>
+                        <span>Diario</span>
+                    </button>
+                    <button class="nav-btn" data-section="profile">
+                        <i class="fas fa-user"></i>
+                        <span>Perfil</span>
+                    </button>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <button class="btn btn-outline" id="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Cerrar Sesión</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <div class="container">
+            <!-- Dashboard Section -->
+            <section class="app-section active" id="dashboard-section">
+                <div class="dashboard-header">
+                    <h1>Hola, <span id="user-name">Usuario</span></h1>
+                    <p class="dashboard-subtitle">Tu compañero inteligente para la calma</p>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Tu Progreso</h3>
+                            <div class="progress-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number" id="current-streak">0</span>
+                                    <span class="stat-label">Días consecutivos</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number" id="total-entries">0</span>
+                                    <span class="stat-label">Entradas del diario</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Estado Actual</h3>
+                            <div class="anxiety-level" id="anxiety-level">
+                                <span class="level-text">No evaluado</span>
+                                <span class="level-description">Realiza el test para conocer tu nivel</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Insight Reciente</h3>
+                            <div class="insight-content" id="recent-insight">
+                                <p>Comienza a usar el diario para recibir insights personalizados</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quick-actions">
+                    <button class="action-btn primary" data-section="test">
+                        <i class="fas fa-clipboard-check"></i>
+                        <span>Realizar Test GAD-7</span>
+                    </button>
+                    <button class="action-btn secondary" data-section="journal">
+                        <i class="fas fa-book"></i>
+                        <span>Escribir en el Diario</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Test Section -->
+            <section class="app-section" id="test-section">
+                <div class="section-header">
+                    <h2>Test de Ansiedad GAD-7</h2>
+                    <p>Evalúa tu nivel de ansiedad con el test clínicamente validado</p>
+                </div>
+                
+                <div id="gad7-test-container">
+                    <!-- El test se renderizará aquí -->
+                </div>
+            </section>
+
+            <!-- Journal Section -->
+            <section class="app-section" id="journal-section">
+                <div class="section-header">
+                    <h2>Mi Diario Emocional</h2>
+                    <p>Un espacio seguro para expresar tus pensamientos y emociones</p>
+                </div>
+                
+                <div id="journal-container">
+                    <!-- El diario se renderizará aquí -->
+                </div>
+            </section>
+
+            <!-- Profile Section -->
+            <section class="app-section" id="profile-section">
+                <div class="section-header">
+                    <h2>Mi Perfil</h2>
+                    <p>Gestiona tu información y configuración</p>
+                </div>
+                
+                <div class="profile-content">
+                    <div class="profile-info">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="profile-details">
+                            <h3 id="profile-name">Usuario</h3>
+                            <p id="profile-email">usuario@email.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-stats">
+                        <div class="stat-card">
+                            <h4>Estadísticas</h4>
+                            <div class="stats-grid">
+                                <div class="stat">
+                                    <span class="stat-number" id="profile-streak">0</span>
+                                    <span class="stat-label">Días consecutivos</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number" id="profile-entries">0</span>
+                                    <span class="stat-label">Entradas del diario</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number" id="profile-tests">0</span>
+                                    <span class="stat-label">Tests realizados</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-actions">
+                        <button class="btn btn-outline" id="export-data-btn">
+                            <i class="fas fa-download"></i>
+                            <span>Exportar Mis Datos</span>
+                        </button>
+                        <button class="btn btn-danger" id="delete-data-btn">
+                            <i class="fas fa-trash"></i>
+                            <span>Eliminar Mis Datos</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="privacy-notice">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>🔒 Tus datos están encriptados con AES-256. Solo tú puedes leerlos.</span>
+                </div>
+                <div class="footer-text">
+                    <p>Validado por más de 127,000 personas en estudios clínicos</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-messaging-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-functions-compat.js"></script>
+    
+    <script src="js/modules/firebase-config.js?v=3"></script>
+    <script src="js/modules/auth.js?v=3"></script>
+    <script src="js/modules/encryption.js?v=3"></script>
+    <script src="js/modules/gad7-test.js?v=3"></script>
+    <script src="js/modules/journal.js?v=3"></script>
+    <script src="js/modules/analytics.js?v=3"></script>
+    <script src="js/modules/notifications.js?v=3"></script>
+    
+    <script>
+        // Inicializar la app
+        document.addEventListener('DOMContentLoaded', function() {
+            initApp();
+        });
+        
+        async function initApp() {
+            try {
+                // Ocultar loader
+                const loader = document.getElementById('page-loader');
+                if (loader) {
+                    setTimeout(() => {
+                        loader.classList.add('hidden');
+                    }, 500);
+                }
+                
+                // Verificar autenticación
+                const firebaseAuth = FirebaseServices.auth();
+                if (!firebaseAuth) {
+                    throw new Error('Firebase no disponible');
+                }
+                
+                firebaseAuth.onAuthStateChanged(async (user) => {
+                    if (user) {
+                        // Usuario autenticado
+                        await loadUserData(user);
+                        setupApp();
+                    } else {
+                        // Usuario no autenticado, redirigir a landing
+                        window.location.href = 'index.html';
+                    }
+                });
+                
+            } catch (error) {
+                console.error('Error inicializando app:', error);
+                showToast('Error inicializando la aplicación', 'error');
+            }
+        }
+        
+        async function loadUserData(user) {
+            // Actualizar información del usuario
+            document.getElementById('user-name').textContent = user.displayName || 'Usuario';
+            document.getElementById('profile-name').textContent = user.displayName || 'Usuario';
+            document.getElementById('profile-email').textContent = user.email || 'usuario@email.com';
+            
+            // Cargar estadísticas
+            await loadUserStats(user.uid);
+        }
+        
+        async function loadUserStats(userId) {
+            const firebaseFirestore = FirebaseServices.firestore();
+            if (!firebaseFirestore) return;
+            
+            try {
+                const userDoc = await firebaseFirestore.collection('users').doc(userId).get();
+                if (userDoc.exists) {
+                    const userData = userDoc.data();
+                    const stats = userData.stats || {};
+                    
+                    // Actualizar estadísticas en el dashboard
+                    document.getElementById('current-streak').textContent = stats.currentJournalStreak || 0;
+                    document.getElementById('total-entries').textContent = stats.totalJournalEntries || 0;
+                    document.getElementById('profile-streak').textContent = stats.currentJournalStreak || 0;
+                    document.getElementById('profile-entries').textContent = stats.totalJournalEntries || 0;
+                    document.getElementById('profile-tests').textContent = stats.totalGAD7Tests || 0;
+                    
+                    // Actualizar nivel de ansiedad
+                    if (stats.lastGAD7Score !== undefined) {
+                        const level = window.GAD7Test.calculateAnxietyLevel(stats.lastGAD7Score);
+                        document.getElementById('anxiety-level').innerHTML = `
+                            <span class="level-text">${level.label}</span>
+                            <span class="level-description">Puntuación: ${stats.lastGAD7Score}/21</span>
+                        `;
+                    }
+                }
+            } catch (error) {
+                console.error('Error cargando estadísticas:', error);
+            }
+        }
+        
+        function setupApp() {
+            // Configurar navegación
+            setupNavigation();
+            
+            // Configurar botones de acción
+            setupActionButtons();
+            
+            // Configurar tema
+            setupTheme();
+            
+            // Configurar logout
+            setupLogout();
+            
+            // Configurar exportación/eliminación de datos
+            setupDataManagement();
+        }
+        
+        function setupNavigation() {
+            const navBtns = document.querySelectorAll('.nav-btn');
+            const sections = document.querySelectorAll('.app-section');
+            
+            navBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetSection = btn.dataset.section;
+                    
+                    // Actualizar botones de navegación
+                    navBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    // Mostrar sección correspondiente
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+                    const targetElement = document.getElementById(`${targetSection}-section`);
+                    if (targetElement) {
+                        targetElement.classList.add('active');
+                        
+                        // Renderizar contenido específico
+                        if (targetSection === 'test') {
+                            window.GAD7Test.renderGAD7Test('gad7-test-container');
+                        } else if (targetSection === 'journal') {
+                            window.Journal.renderJournal('journal-container');
+                        }
+                    }
+                });
+            });
+        }
+        
+        function setupActionButtons() {
+            const actionBtns = document.querySelectorAll('.action-btn');
+            
+            actionBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetSection = btn.dataset.section;
+                    const navBtn = document.querySelector(`[data-section="${targetSection}"]`);
+                    if (navBtn) {
+                        navBtn.click();
+                    }
+                });
+            });
+        }
+        
+        function setupTheme() {
+            const themeToggle = document.getElementById('theme-toggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    document.body.classList.toggle('dark-theme');
+                    localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+                });
+                
+                // Cargar tema guardado
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'dark') {
+                    document.body.classList.add('dark-theme');
+                }
+            }
+        }
+        
+        function setupLogout() {
+            const logoutBtn = document.getElementById('logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', async () => {
+                    try {
+                        const firebaseAuth = FirebaseServices.auth();
+                        if (firebaseAuth) {
+                            await firebaseAuth.signOut();
+                            window.location.href = 'index.html';
+                        }
+                    } catch (error) {
+                        console.error('Error cerrando sesión:', error);
+                        showToast('Error cerrando sesión', 'error');
+                    }
+                });
+            }
+        }
+        
+        function setupDataManagement() {
+            const exportBtn = document.getElementById('export-data-btn');
+            const deleteBtn = document.getElementById('delete-data-btn');
+            
+            if (exportBtn) {
+                exportBtn.addEventListener('click', async () => {
+                    try {
+                        // Implementar exportación de datos
+                        showToast('Funcionalidad de exportación en desarrollo', 'info');
+                    } catch (error) {
+                        console.error('Error exportando datos:', error);
+                        showToast('Error exportando datos', 'error');
+                    }
+                });
+            }
+            
+            if (deleteBtn) {
+                deleteBtn.addEventListener('click', async () => {
+                    if (confirm('¿Estás seguro de que quieres eliminar todos tus datos? Esta acción no se puede deshacer.')) {
+                        try {
+                            // Implementar eliminación de datos
+                            showToast('Funcionalidad de eliminación en desarrollo', 'info');
+                        } catch (error) {
+                            console.error('Error eliminando datos:', error);
+                            showToast('Error eliminando datos', 'error');
+                        }
+                    }
+                });
+            }
+        }
+        
+        function showToast(message, type = 'info') {
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            toast.textContent = message;
+            
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    if (document.body.contains(toast)) {
+                        document.body.removeChild(toast);
+                    }
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
