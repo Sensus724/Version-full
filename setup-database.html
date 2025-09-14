@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurar Base de Datos - Sensus</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+            transition: transform 0.2s;
+        }
+        .button:hover {
+            transform: translateY(-2px);
+        }
+        .button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        .status {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        .loading {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        .user-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Configuración de Base de Datos - Sensus</h1>
+        
+        <div id="status" class="status info">
+            Inicializando Firebase...
+        </div>
+        
+        <div id="user-info" class="user-info hidden">
+            <h3>Información del Usuario</h3>
+            <p><strong>UID:</strong> <span id="user-uid"></span></p>
+            <p><strong>Email:</strong> <span id="user-email"></span></p>
+            <p><strong>Nombre:</strong> <span id="user-name"></span></p>
+        </div>
+        
+        <div style="text-align: center;">
+            <button id="create-test-user" class="button" disabled>
+                👤 Crear Usuario de Prueba
+            </button>
+            
+            <button id="populate-data" class="button" disabled>
+                📊 Poblar Datos de Prueba
+            </button>
+            
+            <button id="clear-data" class="button" disabled>
+                🗑️ Limpiar Datos
+            </button>
+            
+            <button id="test-auth" class="button" disabled>
+                🔐 Probar Autenticación
+            </button>
+            
+            <button id="go-to-app" class="button" disabled>
+                🚀 Ir a la App
+            </button>
+        </div>
+        
+        <div id="logs" style="margin-top: 30px;">
+            <h3>Logs de Configuración</h3>
+            <div id="log-content" style="background: #f8f9fa; padding: 15px; border-radius: 8px; max-height: 300px; overflow-y: auto; font-family: monospace; font-size: 12px;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    
+    <script>
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyBKZiEz_291NXNQpAsuGq8qz0MSUQw41Fw",
+            authDomain: "sensus-version-pro.firebaseapp.com",
+            projectId: "sensus-version-pro",
+            storageBucket: "sensus-version-pro.firebasestorage.app",
+            messagingSenderId: "887018721709",
+            appId: "1:887018721709:web:fbf4bfa3dc89517f9b9124",
+            measurementId: "G-L9YHW52ZSK"
+        };
+        
+        // Inicializar Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const firestore = firebase.firestore();
+        
+        let currentUser = null;
+        
+        // Elementos del DOM
+        const statusDiv = document.getElementById('status');
+        const userInfoDiv = document.getElementById('user-info');
+        const logContent = document.getElementById('log-content');
+        const createTestUserBtn = document.getElementById('create-test-user');
+        const populateDataBtn = document.getElementById('populate-data');
+        const clearDataBtn = document.getElementById('clear-data');
+        const testAuthBtn = document.getElementById('test-auth');
+        const goToAppBtn = document.getElementById('go-to-app');
+        
+        // Función para mostrar logs
+        function log(message) {
+            const timestamp = new Date().toLocaleTimeString();
+            logContent.innerHTML += `[${timestamp}] ${message}<br>`;
+            logContent.scrollTop = logContent.scrollHeight;
+            console.log(message);
+        }
+        
+        // Función para actualizar estado
+        function updateStatus(message, type = 'info') {
+            statusDiv.textContent = message;
+            statusDiv.className = `status ${type}`;
+        }
+        
+        // Función para actualizar información del usuario
+        function updateUserInfo(user) {
+            if (user) {
+                document.getElementById('user-uid').textContent = user.uid;
+                document.getElementById('user-email').textContent = user.email;
+                document.getElementById('user-name').textContent = user.displayName || 'Sin nombre';
+                userInfoDiv.classList.remove('hidden');
+            } else {
+                userInfoDiv.classList.add('hidden');
+            }
+        }
+        
+        // Función para habilitar/deshabilitar botones
+        function updateButtons() {
+            const isAuthenticated = currentUser !== null;
+            createTestUserBtn.disabled = isAuthenticated;
+            populateDataBtn.disabled = !isAuthenticated;
+            clearDataBtn.disabled = !isAuthenticated;
+            testAuthBtn.disabled = !isAuthenticated;
+            goToAppBtn.disabled = !isAuthenticated;
+        }
+        
+        // Listener de autenticación
+        auth.onAuthStateChanged((user) => {
+            currentUser = user;
+            updateUserInfo(user);
+            updateButtons();
+            
+            if (user) {
+                updateStatus('Usuario autenticado correctamente', 'success');
+                log(`Usuario autenticado: ${user.email}`);
+            } else {
+                updateStatus('Usuario no autenticado', 'info');
+                log('Usuario no autenticado');
+            }
+        });
+        
+        // Crear usuario de prueba
+        createTestUserBtn.addEventListener('click', async () => {
+            const email = 'test@sensus.com';
+            const password = 'Test123!';
+            
+            try {
+                updateStatus('Creando usuario de prueba...', 'loading');
+                log('Iniciando creación de usuario de prueba...');
+                
+                const userCredential = await auth.createUserWithEmailAndPassword(email, password);
+                await userCredential.user.updateProfile({
+                    displayName: 'Usuario de Prueba'
+                });
+                
+                // Crear perfil en Firestore
+                await createUserProfile(userCredential.user.uid, {
+                    firstName: 'Usuario',
+                    lastName: 'Prueba',
+                    email: email,
+                    acceptTerms: true
+                });
+                
+                updateStatus('Usuario de prueba creado correctamente', 'success');
+                log('Usuario de prueba creado exitosamente');
+                
+            } catch (error) {
+                if (error.code === 'auth/email-already-in-use') {
+                    // Intentar iniciar sesión
+                    try {
+                        await auth.signInWithEmailAndPassword(email, password);
+                        updateStatus('Usuario de prueba ya existe, iniciando sesión...', 'info');
+                        log('Usuario de prueba ya existe, iniciando sesión...');
+                    } catch (signInError) {
+                        updateStatus('Error al iniciar sesión: ' + signInError.message, 'error');
+                        log('Error al iniciar sesión: ' + signInError.message);
+                    }
+                } else {
+                    updateStatus('Error al crear usuario: ' + error.message, 'error');
+                    log('Error al crear usuario: ' + error.message);
+                }
+            }
+        });
+        
+        // Poblar datos de prueba
+        populateDataBtn.addEventListener('click', async () => {
+            try {
+                updateStatus('Poblando datos de prueba...', 'loading');
+                log('Iniciando población de datos de prueba...');
+                
+                await populateTestData();
+                
+                updateStatus('Datos de prueba creados correctamente', 'success');
+                log('Datos de prueba creados exitosamente');
+                
+            } catch (error) {
+                updateStatus('Error al poblar datos: ' + error.message, 'error');
+                log('Error al poblar datos: ' + error.message);
+            }
+        });
+        
+        // Limpiar datos
+        clearDataBtn.addEventListener('click', async () => {
+            if (!confirm('¿Estás seguro de que quieres limpiar todos los datos?')) {
+                return;
+            }
+            
+            try {
+                updateStatus('Limpiando datos...', 'loading');
+                log('Iniciando limpieza de datos...');
+                
+                await clearAllData();
+                
+                updateStatus('Datos limpiados correctamente', 'success');
+                log('Datos limpiados exitosamente');
+                
+            } catch (error) {
+                updateStatus('Error al limpiar datos: ' + error.message, 'error');
+                log('Error al limpiar datos: ' + error.message);
+            }
+        });
+        
+        // Probar autenticación
+        testAuthBtn.addEventListener('click', async () => {
+            try {
+                updateStatus('Probando autenticación...', 'loading');
+                log('Probando autenticación...');
+                
+                // Verificar que el usuario esté autenticado
+                if (currentUser) {
+                    // Probar lectura de datos
+                    const userDoc = await firestore.collection('users').doc(currentUser.uid).get();
+                    if (userDoc.exists) {
+                        updateStatus('Autenticación y acceso a datos funcionando correctamente', 'success');
+                        log('Autenticación y acceso a datos funcionando correctamente');
+                    } else {
+                        updateStatus('Usuario autenticado pero no tiene perfil en Firestore', 'error');
+                        log('Usuario autenticado pero no tiene perfil en Firestore');
+                    }
+                } else {
+                    updateStatus('No hay usuario autenticado', 'error');
+                    log('No hay usuario autenticado');
+                }
+                
+            } catch (error) {
+                updateStatus('Error en prueba de autenticación: ' + error.message, 'error');
+                log('Error en prueba de autenticación: ' + error.message);
+            }
+        });
+        
+        // Ir a la app
+        goToAppBtn.addEventListener('click', () => {
+            window.location.href = 'app.html';
+        });
+        
+        // Crear perfil de usuario
+        async function createUserProfile(userId, userData) {
+            const userProfile = {
+                uid: userId,
+                email: userData.email,
+                firstName: userData.firstName,
+                lastName: userData.lastName,
+                displayName: `${userData.firstName} ${userData.lastName}`,
+                photoURL: null,
+                emailVerified: false,
+                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                lastLoginAt: firebase.firestore.FieldValue.serverTimestamp(),
+                preferences: {
+                    theme: 'light',
+                    notifications: true,
+                    language: 'es',
+                    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                    reminderTime: '20:00',
+                    weeklyReport: true,
+                    motivationalMessages: true,
+                    newsletter: false
+                },
+                stats: {
+                    totalDiaryEntries: 0,
+                    totalTests: 0,
+                    currentStreak: 0,
+                    longestStreak: 0,
+                    averageMood: 3,
+                    lastDiaryEntry: null,
+                    lastTestDate: null,
+                    totalTimeSpent: 0,
+                    favoriteActivities: [],
+                    goals: [],
+                    achievements: []
+                },
+                privacy: {
+                    shareData: false,
+                    anonymousMode: false,
+                    dataRetention: '1year'
+                },
+                terms: {
+                    accepted: userData.acceptTerms,
+                    acceptedAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    version: '1.0'
+                }
+            };
+            
+            await firestore.collection('users').doc(userId).set(userProfile);
+            log('Perfil de usuario creado en Firestore');
+        }
+        
+        // Poblar datos de prueba
+        async function populateTestData() {
+            if (!currentUser) throw new Error('No hay usuario autenticado');
+            
+            const userId = currentUser.uid;
+            
+            // Crear resultados de test GAD-7
+            const testResults = [
+                {
+                    score: 8,
+                    level: 'leve',
+                    date: new Date('2024-01-01'),
+                    answers: [1, 2, 1, 2, 1, 1, 0],
+                    interpretation: 'Tu puntuación es 8. Esto indica ansiedad leve. Muchas personas con este nivel mejoran con técnicas de relajación y diario emocional.',
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                },
+                {
+                    score: 5,
+                    level: 'leve',
+                    date: new Date('2024-01-15'),
+                    answers: [1, 1, 1, 1, 1, 0, 0],
+                    interpretation: 'Tu puntuación es 5. Esto indica ansiedad leve. ¡Excelente progreso! Sigue practicando las técnicas de relajación.',
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                }
+            ];
+            
+            for (const result of testResults) {
+                await firestore.collection('users').doc(userId).collection('gad7_results').add(result);
+                log(`Resultado de test GAD-7 creado: ${result.score} puntos`);
+            }
+            
+            // Crear entradas de diario
+            const journalEntries = [
+                {
+                    text: 'Hoy me siento un poco ansioso por el trabajo, pero he logrado mantener la calma usando las técnicas de respiración.',
+                    emotion: '😐',
+                    timestamp: new Date('2024-01-01'),
+                    encrypted: false,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                },
+                {
+                    text: 'Me siento mucho mejor hoy. Hice ejercicio y eso me ayudó a relajarme.',
+                    emotion: '😊',
+                    timestamp: new Date('2024-01-02'),
+                    encrypted: false,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                },
+                {
+                    text: 'Tuve un día difícil, pero recordé usar las técnicas de mindfulness que aprendí.',
+                    emotion: '😢',
+                    timestamp: new Date('2024-01-03'),
+                    encrypted: false,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                }
+            ];
+            
+            for (const entry of journalEntries) {
+                await firestore.collection('users').doc(userId).collection('journal_entries').add(entry);
+                log(`Entrada de diario creada: ${entry.emotion}`);
+            }
+            
+            // Crear insights
+            const insights = [
+                {
+                    type: 'pattern',
+                    title: 'Patrón de ansiedad detectado',
+                    description: 'Has mostrado niveles más altos de ansiedad los lunes por la tarde. Te recomendamos practicar técnicas de relajación en ese momento.',
+                    actionable: true,
+                    action: 'Activar recordatorio de relajación para los lunes a las 3 PM',
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                },
+                {
+                    type: 'achievement',
+                    title: '¡Excelente progreso!',
+                    description: 'Has completado 3 días consecutivos de diario emocional. ¡Sigue así!',
+                    actionable: false,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                }
+            ];
+            
+            for (const insight of insights) {
+                await firestore.collection('users').doc(userId).collection('insights').add(insight);
+                log(`Insight creado: ${insight.title}`);
+            }
+        }
+        
+        // Limpiar todos los datos
+        async function clearAllData() {
+            if (!currentUser) throw new Error('No hay usuario autenticado');
+            
+            const userId = currentUser.uid;
+            const collections = ['gad7_results', 'journal_entries', 'insights', 'settings', 'notifications'];
+            
+            for (const collection of collections) {
+                const snapshot = await firestore.collection('users').doc(userId).collection(collection).get();
+                const batch = firestore.batch();
+                
+                snapshot.docs.forEach(doc => {
+                    batch.delete(doc.ref);
+                });
+                
+                await batch.commit();
+                log(`Colección ${collection} limpiada`);
+            }
+            
+            // Eliminar perfil del usuario
+            await firestore.collection('users').doc(userId).delete();
+            log('Perfil de usuario eliminado');
+        }
+        
+        // Inicializar
+        log('Página de configuración de base de datos cargada');
+        updateStatus('Firebase inicializado correctamente', 'success');
+    </script>
+</body>
+</html>
