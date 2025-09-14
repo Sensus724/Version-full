@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diario Emocional | Sensus</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/credibility-improvements.css">
+        <!-- CSS del Santuario Digital -->
+    <link rel="stylesheet" href="css/sanctuary-design.css">
+    <link rel="stylesheet" href="css/warm-design.css">
+    <link rel="stylesheet" href="css/universal-warm.css">
+    <link rel="stylesheet" href="css/header-clean.css">
+    <link rel="stylesheet" href="css/mobile-menu-enhanced.css">
+    <link rel="stylesheet" href="css/static-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta name="description" content="Registra tu estado diario con emojis + texto. Nuestro sistema basado en TCC identifica patrones emocionales y te ayuda a comprender tu bienestar mental.">
     <meta name="keywords" content="ansiedad, salud mental, test GAD-7, diario emocional, bienestar, mindfulness, terapia online">
@@ -49,10 +54,11 @@
     </div>
     
     <header class="header">
+        <div class="header-container">
         <div class="container header-container">
             <div class="logo-container">
                 <div class="logo-placeholder">
-                    <i class="fas fa-brain"></i>
+                    <i class="fas fa-brain" aria-hidden="true"></i>
                     <span>SENSUS</span>
                 </div>
             </div>
@@ -63,396 +69,133 @@
                     <span class="bar"></span>
                 </button>
                 <ul class="nav-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="evaluacion.html">Evaluación</a></li>
-                    <li><a href="diario.html" class="active">Diario</a></li>
-                    <li><a href="ansiedad.html">Síntomas</a></li>
-                    <li><a href="planes.html">Planes</a></li>
-                    <li><a href="equipo.html">Equipo</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="index.html">
+                                <i class="fas fa-home" aria-hidden="true"></i>
+                                Inicio
+                            </a></li>
+                    <li><a href="evaluacion.html">
+                                <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                                Evaluación
+                            </a></li>
+                    <li><a href="diario.html">
+                                <i class="fas fa-book-open" aria-hidden="true"></i>
+                                Diario
+                            </a></li>
+                    <li><a href="ansiedad.html">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                Síntomas
+                            </a></li>
+                    <li><a href="planes.html">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                Planes
+                            </a></li>
+                    <li><a href="equipo.html">
+                                <i class="fas fa-users" aria-hidden="true"></i>
+                                Equipo
+                            </a></li>
+                    <li><a href="contacto.html">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                                Contacto
+                            </a></li>
                 </ul>
             </nav>
-            <div class="auth-buttons">
+            <div class="auth-buttons" style="display: none;">
                 <button class="btn btn-outline" id="login-btn">Iniciar sesión</button>
                 <button class="btn btn-primary" id="register-btn">Registrarse</button>
                 <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <i class="fas fa-sun" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
     </header>
+    
+    <!-- Menu Overlay -->
+    <div class="menu-overlay"></div>
 
+    
     <main>
-        <!-- Hero Section Profesional para Diario -->
-        <section class="professional-hero diary-hero">
-            <div class="hero-background">
-                <div class="hero-overlay"></div>
-                <div class="hero-pattern"></div>
-            </div>
+        <!-- Hero Section -->
+        <section class="hero-section" aria-labelledby="main-title">
             <div class="container">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <i class="fas fa-book-open"></i>
-                        <span>Bienestar Mental</span>
-                    </div>
-                    <h1 class="hero-title">Diario Emocional Inteligente</h1>
-                    <p class="hero-subtitle">Herramienta avanzada de seguimiento emocional que te permite registrar, analizar y comprender tus patrones emocionales para mejorar tu bienestar mental.</p>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">365</div>
-                            <div class="stat-label">Días de Seguimiento</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">AI</div>
-                            <div class="stat-label">Análisis Inteligente</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Privacidad</div>
-                        </div>
-                    </div>
+                <div class="hero-content fade-in-up">
+                    <h1 id="main-title" class="hero-title">Diario Emocional Inteligente</h1>
+                    <p class="hero-subtitle">Lleva un registro personalizado de tus emociones y patrones de ansiedad con nuestro sistema inteligente basado en principios de Terapia Cognitivo-Conductual.</p>
+                    
                     <div class="hero-actions">
-                        <a href="#diario" class="btn btn-primary btn-lg btn-cta">
-                            <i class="fas fa-plus"></i>
-                            COMENZAR ENTRADA
+                        <a href="evaluacion.html" class="btn-primary">
+                            <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                            Evaluación GAD-7
                         </a>
-                        <a href="#analytics" class="btn btn-outline btn-lg btn-cta">
-                            <i class="fas fa-chart-line"></i>
-                            VER ANÁLISIS
+                        <a href="diario.html" class="btn-secondary">
+                            <i class="fas fa-book-open" aria-hidden="true"></i>
+                            Iniciar Diario
                         </a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="visual-container">
-                        <div class="diary-animation">
-                            <div class="diary-book">
-                                <i class="fas fa-book"></i>
-                            </div>
-                            <div class="floating-elements">
-                                <div class="emotion-icon">😊</div>
-                                <div class="emotion-icon">😌</div>
-                                <div class="emotion-icon">😔</div>
-                                <div class="emotion-icon">😰</div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Diario Emocional Profesional Section -->
-        <section class="professional-diary-section" id="diario">
+        
+        <!-- Características del Diario Section -->
+        <section class="content-section">
             <div class="container">
-                <div class="section-header">
-                    <div class="section-badge">
-                        <i class="fas fa-heart"></i>
-                        <span>Seguimiento Emocional</span>
-                    </div>
-                    <h2 class="section-title">Registro Emocional Diario</h2>
-                    <p class="section-description">Registra tu estado diario con emojis + texto. Nuestro sistema analiza tus entradas usando principios de Terapia Cognitivo-Conductual (TCC) para identificar patrones emocionales únicos y ayudarte a comprender tu bienestar mental.</p>
-                </div>
-                
-                <div class="diary-dashboard">
-                    <div class="dashboard-stats">
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-fire"></i>
-                            </div>
-                            <div class="stat-content">
-                                <div class="stat-number">0</div>
-                                <div class="stat-label">Racha Actual</div>
-                            </div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-calendar-check"></i>
-                            </div>
-                            <div class="stat-content">
-                                <div class="stat-number">0</div>
-                                <div class="stat-label">Días Completados</div>
-                            </div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="stat-content">
-                                <div class="stat-number">0%</div>
-                                <div class="stat-label">Bienestar Promedio</div>
-                            </div>
+                <div class="content-card fade-in-up">
+                    <h2 class="content-title">Características del Diario</h2>
+                    <p class="content-description">Herramientas avanzadas para el autoconocimiento y el manejo de la ansiedad.</p>
+                    
+                    <div class="illustration-container">
+                        <div class="illustration illustration-discover">
+                            <i class="fas fa-book-open" aria-hidden="true"></i>
                         </div>
                     </div>
                     
-                    <div class="auth-required-message professional-auth-message">
-                        <div class="auth-content">
-                            <div class="auth-icon">
-                                <i class="fas fa-lock"></i>
-                            </div>
-                            <h3>Acceso Requerido</h3>
-                            <p>Para acceder a tu diario emocional personalizado y mantener un seguimiento completo de tu bienestar mental, necesitas iniciar sesión o crear una cuenta.</p>
-                            <div class="auth-benefits">
-                                <div class="benefit-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Análisis personalizado de patrones emocionales</span>
-                                </div>
-                                <div class="benefit-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Seguimiento de rachas y progreso</span>
-                                </div>
-                                <div class="benefit-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Análisis basado en principios de TCC</span>
-                                </div>
-                            </div>
-                            <div class="auth-buttons-container">
-                                <button class="btn btn-primary btn-lg" id="diary-login-btn">
-                                    <i class="fas fa-sign-in-alt"></i>
-                                    Iniciar Sesión
-                                </button>
-                                <button class="btn btn-outline btn-lg" id="diary-register-btn">
-                                    <i class="fas fa-user-plus"></i>
-                                    Crear Cuenta
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="diary-content professional-diary-content">
-                        <div class="mood-tracker-section">
-                            <div class="section-header">
-                                <h3>Estado Emocional Actual</h3>
-                                <p>Selecciona cómo te sientes en este momento para comenzar tu registro diario</p>
-                            </div>
-                            <div class="mood-selector">
-                                <div class="mood-scale">
-                                    <div class="mood-option" data-mood="muy-feliz">
-                                        <div class="mood-emoji">😄</div>
-                                        <div class="mood-label">Muy Feliz</div>
-                                        <div class="mood-value">9-10</div>
-                                    </div>
-                                    <div class="mood-option" data-mood="feliz">
-                                        <div class="mood-emoji">😊</div>
-                                        <div class="mood-label">Feliz</div>
-                                        <div class="mood-value">7-8</div>
-                                    </div>
-                                    <div class="mood-option" data-mood="bien">
-                                        <div class="mood-emoji">😌</div>
-                                        <div class="mood-label">Bien</div>
-                                        <div class="mood-value">5-6</div>
-                                    </div>
-                                    <div class="mood-option" data-mood="neutral">
-                                        <div class="mood-emoji">😐</div>
-                                        <div class="mood-label">Neutral</div>
-                                        <div class="mood-value">4-5</div>
-                                    </div>
-                                    <div class="mood-option" data-mood="triste">
-                                        <div class="mood-emoji">😔</div>
-                                        <div class="mood-label">Triste</div>
-                                        <div class="mood-value">3-4</div>
-                                    </div>
-                                    <div class="mood-option" data-mood="muy-triste">
-                                        <div class="mood-emoji">😢</div>
-                                        <div class="mood-label">Muy Triste</div>
-                                        <div class="mood-value">1-2</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="symptoms-grid">
                         
-                        <div class="diary-entry-section">
-                            <div class="section-header">
-                                <h3>Registro Detallado</h3>
-                                <p>Completa tu entrada diaria para obtener un análisis más preciso de tu bienestar</p>
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-lock" aria-hidden="true"></i>
                             </div>
-                            
-                            <form id="diary-form" class="professional-diary-form">
-                                <div class="form-sections">
-                                    <div class="form-section">
-                                        <div class="section-title">
-                                            <i class="fas fa-edit"></i>
-                                            <h4>Reflexión Personal</h4>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="diary-title">Título de tu entrada</label>
-                                            <input type="text" id="diary-title" placeholder="Ej: Un día productivo en el trabajo" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="diary-content">Describe tu día</label>
-                                            <textarea id="diary-content" rows="4" placeholder="¿Qué ha pasado hoy? ¿Cómo te has sentido? ¿Qué pensamientos has tenido?" required></textarea>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="form-section">
-                                        <div class="section-title">
-                                            <i class="fas fa-chart-pie"></i>
-                                            <h4>Factores de Influencia</h4>
-                                        </div>
-                                        <div class="factors-container">
-                                            <p>¿Qué aspectos han influido en tu estado de ánimo hoy?</p>
-                                            <div class="factors-grid">
-                                                <label class="factor-item">
-                                                    <input type="checkbox" name="factors" value="trabajo">
-                                                    <span class="factor-icon">💼</span>
-                                                    <span class="factor-label">Trabajo/Estudios</span>
-                                                </label>
-                                                <label class="factor-item">
-                                                    <input type="checkbox" name="factors" value="relaciones">
-                                                    <span class="factor-icon">👥</span>
-                                                    <span class="factor-label">Relaciones</span>
-                                                </label>
-                                                <label class="factor-item">
-                                                    <input type="checkbox" name="factors" value="salud">
-                                                    <span class="factor-icon">🏥</span>
-                                                    <span class="factor-label">Salud</span>
-                                                </label>
-                                                <label class="factor-item">
-                                                    <input type="checkbox" name="factors" value="finanzas">
-                                                    <span class="factor-icon">💰</span>
-                                                    <span class="factor-label">Finanzas</span>
-                                                </label>
-                                                <label class="factor-item">
-                                                    <input type="checkbox" name="factors" value="descanso">
-                                                    <span class="factor-icon">😴</span>
-                                                    <span class="factor-label">Descanso</span>
-                                                </label>
-                                                <label class="factor-item">
-                                                    <input type="checkbox" name="factors" value="ejercicio">
-                                                    <span class="factor-icon">🏃</span>
-                                                    <span class="factor-label">Ejercicio</span>
-                                                </label>
-                                                <label class="factor-item">
-                                                    <input type="checkbox" name="factors" value="alimentacion">
-                                                    <span class="factor-icon">🍎</span>
-                                                    <span class="factor-label">Alimentación</span>
-                                                </label>
-                                                <label class="factor-item">
-                                                    <input type="checkbox" name="factors" value="ocio">
-                                                    <span class="factor-icon">🎨</span>
-                                                    <span class="factor-label">Ocio</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="form-actions">
-                                    <button type="submit" class="btn btn-primary btn-lg">
-                                        <i class="fas fa-save"></i>
-                                        Guardar Entrada
-                                    </button>
-                                </div>
-                            </form>
+                            <h3>Privacidad Total</h3>
+                            <p>Encriptación de extremo a extremo para tus datos</p>
                         </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-chart-line" aria-hidden="true"></i>
+                            </div>
+                            <h3>Análisis de Patrones</h3>
+                            <p>Identificación automática de disparadores de ansiedad</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                            </div>
+                            <h3>Insights Personalizados</h3>
+                            <p>Recomendaciones basadas en tus patrones únicos</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                            </div>
+                            <h3>Acceso Móvil</h3>
+                            <p>Disponible en cualquier momento y lugar</p>
+                        </div>
+                    
                     </div>
                     
-                    <div class="diary-history">
-                        <h3 class="gta-style-subtitle">HISTORIAL DE ENTRADAS</h3>
-                        <div class="calendar-view">
-                            <div class="calendar-header">
-                                <button class="btn-prev-month"><i class="fas fa-chevron-left"></i></button>
-                                <h4 class="current-month">Abril 2025</h4>
-                                <button class="btn-next-month"><i class="fas fa-chevron-right"></i></button>
-                            </div>
-                            <div class="calendar-grid">
-                                <!-- Se llenará dinámicamente con JavaScript -->
-                            </div>
-                        </div>
-                        
-                        <div class="entries-list">
-                            <h4>ENTRADAS RECIENTES</h4>
-                            <div class="entries-container">
-                                <!-- Se llenará dinámicamente con JavaScript -->
-                                <div class="no-entries-message">No hay entradas registradas aún.</div>
-                            </div>
-                        </div>
+                    <div style="text-align: center; margin-top: 32px;">
+                        <a href="evaluacion.html" class="btn-primary">
+                            <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                            Evaluar Mis Síntomas
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- Estadísticas y Progreso -->
-        <section class="stats-section">
-            <div class="container">
-                <h2 class="section-title gta-style-title">TU PROGRESO</h2>
-                <div class="stats-container">
-                    <div class="stats-card">
-                        <h3>RESUMEN MENSUAL</h3>
-                        <div class="chart-container">
-                            <div class="chart-placeholder">Gráfico de estados de ánimo</div>
-                            <p class="chart-note">Se mostrará un gráfico con tus estados de ánimo del mes.</p>
-                        </div>
-                    </div>
-                    <div class="stats-card">
-                        <h3>FACTORES DE INFLUENCIA</h3>
-                        <div class="chart-container">
-                            <div class="chart-placeholder">Gráfico de factores</div>
-                            <p class="chart-note">Se mostrará un gráfico con los factores que más influyen en tu estado de ánimo.</p>
-                        </div>
-                    </div>
-                    <div class="stats-card premium-feature">
-                        <div class="premium-badge"><i class="fas fa-crown"></i> Premium</div>
-                        <h3>ANÁLISIS AVANZADO</h3>
-                        <div class="chart-container">
-                            <div class="chart-placeholder">Análisis de patrones</div>
-                            <p class="chart-note">Accede a análisis detallados y patrones de tu bienestar emocional.</p>
-                        </div>
-                        <a href="planes.html" class="btn btn-outline">Actualizar a Premium</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Beneficios del Diario -->
-        <section class="benefits-section">
-            <div class="container">
-                <h2 class="section-title gta-style-title">BENEFICIOS DEL DIARIO EMOCIONAL</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>AUTOCONOCIMIENTO</h3>
-                        <p>Identifica patrones en tus emociones y comportamientos para entender mejor tus reacciones.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3>SEGUIMIENTO</h3>
-                        <p>Monitorea tu progreso a lo largo del tiempo y observa cómo mejora tu bienestar emocional.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <h3>CLARIDAD MENTAL</h3>
-                        <p>Organiza tus pensamientos y emociones para obtener una perspectiva más clara de tu situación.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h3>REDUCCIÓN DE ESTRÉS</h3>
-                        <p>Expresar tus emociones a través de la escritura ayuda a reducir la ansiedad y el estrés.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Call to Action -->
-        <section class="cta-section">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>¿QUIERES EVALUAR TU NIVEL DE ANSIEDAD?</h2>
-                    <p>Realiza nuestro test GAD-7 validado clínicamente y recibe recomendaciones personalizadas.</p>
-                    <div class="cta-buttons">
-                        <a href="test.html" class="btn btn-primary btn-lg">REALIZAR TEST GAD-7</a>
-                        <a href="planes.html" class="btn btn-outline btn-lg">VER PLANES PREMIUM</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    
     </main>
 
     <footer class="footer">
@@ -460,7 +203,7 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <div class="logo-small-placeholder">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-brain" aria-hidden="true"></i>
                         <span>SENSUS</span>
                     </div>
                     <p>© 2025 Sensus. App de salud mental respaldada por la ciencia.</p>
@@ -589,7 +332,7 @@
     </script>
     
     <!-- Estilos responsivos -->
-    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="css/responsive.css">
     
     <!-- Scripts de la aplicación -->
     <script src="js/script.min.js" async></script>
@@ -599,5 +342,7 @@
     <script src="js/modules/auth.js"></script>
     <script src="js/modules/diario.js"></script>
     <script src="js/modules/responsive.js"></script>
+    <script src="js/mobile-menu-enhanced.js"></script>
+    <script src="js/header-interactions.js"></script>
 </body>
 </html>

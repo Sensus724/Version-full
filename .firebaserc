@@ -1,6 +1,8 @@
 {
   "projects": {
-    "default": "sensus-version-pro"
-  }
+    "default": "sensus-version-pro",
+    "e.g. staging": "sensus-version-pro"
+  },
+  "targets": {},
+  "etags": {}
 }
-

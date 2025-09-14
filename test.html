@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test GAD-7 | Sensus</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/credibility-improvements.css">
+        <!-- CSS del Santuario Digital -->
+    <link rel="stylesheet" href="css/sanctuary-design.css">
+    <link rel="stylesheet" href="css/warm-design.css">
+    <link rel="stylesheet" href="css/universal-warm.css">
+    <link rel="stylesheet" href="css/header-clean.css">
+    <link rel="stylesheet" href="css/mobile-menu-enhanced.css">
+    <link rel="stylesheet" href="css/static-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta name="description" content="Evalúa tu nivel de ansiedad con el test GAD-7 validado clínicamente y recibe recomendaciones personalizadas.">
     <meta name="keywords" content="ansiedad, salud mental, test GAD-7, diario emocional, bienestar, mindfulness, terapia online">
@@ -49,10 +54,11 @@
     </div>
     
     <header class="header">
+        <div class="header-container">
         <div class="container header-container">
             <div class="logo-container">
                 <div class="logo-placeholder">
-                    <i class="fas fa-brain"></i>
+                    <i class="fas fa-brain" aria-hidden="true"></i>
                     <span>SENSUS</span>
                 </div>
             </div>
@@ -63,318 +69,299 @@
                     <span class="bar"></span>
                 </button>
                 <ul class="nav-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="evaluacion.html">Evaluación</a></li>
-                    <li><a href="test.html" class="active">Test</a></li>
-                    <li><a href="diario.html">Diario</a></li>
-                    <li><a href="ansiedad.html">Síntomas</a></li>
-                    <li><a href="planes.html">Planes</a></li>
-                    <li><a href="equipo.html">Equipo</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="index.html">
+                                <i class="fas fa-home" aria-hidden="true"></i>
+                                Inicio
+                            </a></li>
+                    <li><a href="evaluacion.html">
+                                <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                                Evaluación
+                            </a></li>
+                    <li><a href="diario.html">
+                                <i class="fas fa-book-open" aria-hidden="true"></i>
+                                Diario
+                            </a></li>
+                    <li><a href="ansiedad.html">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                Síntomas
+                            </a></li>
+                    <li><a href="planes.html">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                Planes
+                            </a></li>
+                    <li><a href="equipo.html">
+                                <i class="fas fa-users" aria-hidden="true"></i>
+                                Equipo
+                            </a></li>
+                    <li><a href="contacto.html">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                                Contacto
+                            </a></li>
                 </ul>
             </nav>
-            <div class="auth-buttons">
+            <div class="auth-buttons" style="display: none;">
                 <button class="btn btn-outline" id="login-btn">Iniciar sesión</button>
                 <button class="btn btn-primary" id="register-btn">Registrarse</button>
                 <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <i class="fas fa-sun" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
     </header>
+    
+    <!-- Menu Overlay -->
+    <div class="menu-overlay"></div>
 
+    
     <main>
-        <!-- Hero Section para Test -->
-        <section class="page-hero gta-style test-hero">
+        <!-- Hero Section -->
+        <section class="hero-section" aria-labelledby="main-title">
             <div class="container">
-                <div class="hero-content">
-                    <h1 class="gta-title">TEST DE ANSIEDAD GAD-7</h1>
-                    <p class="hero-description">Evalúa tu nivel de ansiedad con este test clínico validado y recibe recomendaciones personalizadas.</p>
-                    <div class="test-info-cards">
-                        <div class="info-card">
-                            <i class="fas fa-clock"></i>
-                            <span>5 minutos</span>
-                        </div>
-                        <div class="info-card">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>100% Confidencial</span>
-                        </div>
-                        <div class="info-card">
-                            <i class="fas fa-certificate"></i>
-                            <span>Clínicamente Validado</span>
-                        </div>
-                    </div>
-                    <div class="hero-buttons">
-                        <button class="btn btn-primary btn-lg start-test-btn" data-test="gad7">COMENZAR EVALUACIÓN</button>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="hero-image-placeholder">
-                        <i class="fas fa-clipboard-check"></i>
-                        <span>Test GAD-7</span>
+                <div class="hero-content fade-in-up">
+                    <h1 id="main-title" class="hero-title">Comprensión Profunda de la Ansiedad</h1>
+                    <p class="hero-subtitle">Explora los diferentes tipos de trastornos de ansiedad, sus manifestaciones clínicas y estrategias de identificación basadas en evidencia científica.</p>
+                    
+                    <div class="hero-actions">
+                        <a href="evaluacion.html" class="btn-primary">
+                            <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                            Evaluación GAD-7
+                        </a>
+                        <a href="diario.html" class="btn-secondary">
+                            <i class="fas fa-book-open" aria-hidden="true"></i>
+                            Iniciar Diario
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Test de Ansiedad Section -->
-        <section class="test-section" id="test">
-            <div class="container">
-                <div class="test-container gta-style-container">
-                    <div class="auth-required-message hidden">
-                        <div class="auth-message-content">
-                            <i class="fas fa-lock"></i>
-                            <h3>Inicia sesión para acceder al test</h3>
-                            <p>Para realizar el test y guardar tus resultados, necesitas iniciar sesión o crear una cuenta.</p>
-                            <div class="auth-buttons-container">
-                                <button class="btn btn-primary" id="test-login-btn">Iniciar sesión</button>
-                                <button class="btn btn-outline" id="test-register-btn">Registrarse</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="test-progress-container">
-                        <div class="test-progress-bar">
-                            <div class="progress-fill" id="progress-fill"></div>
-                        </div>
-                        <div class="test-progress-text">
-                            <span id="current-question">1</span> de <span id="total-questions">7</span> preguntas
-                        </div>
-                    </div>
-                    
-                    <form id="anxiety-test" class="test-form">
-                        <div class="test-header">
-                            <h2 class="test-title">Test de Ansiedad GAD-7</h2>
-                            <p class="test-instructions">Durante las últimas 2 semanas, ¿con qué frecuencia ha sentido molestias por los siguientes problemas?</p>
-                        </div>
-                        
-                        <div class="question-container" data-question="1">
-                            <div class="question-header">
-                                <div class="question-number">1</div>
-                                <p class="question">¿Se ha sentido nervioso/a, ansioso/a o muy alterado/a?</p>
-                            </div>
-                            <div class="options">
-                                <label class="option-card">
-                                    <input type="radio" name="q1" value="0">
-                                    <div class="option-content">
-                                        <div class="option-icon">😌</div>
-                                        <div class="option-text">
-                                            <span class="option-label">Nunca</span>
-                                            <span class="option-description">No me he sentido así</span>
-                                        </div>
-                                    </div>
-                                </label>
-                                <label class="option-card">
-                                    <input type="radio" name="q1" value="1">
-                                    <div class="option-content">
-                                        <div class="option-icon">😐</div>
-                                        <div class="option-text">
-                                            <span class="option-label">Algunos días</span>
-                                            <span class="option-description">1-2 veces por semana</span>
-                                        </div>
-                                    </div>
-                                </label>
-                                <label class="option-card">
-                                    <input type="radio" name="q1" value="2">
-                                    <div class="option-content">
-                                        <div class="option-icon">😟</div>
-                                        <div class="option-text">
-                                            <span class="option-label">Más de la mitad de los días</span>
-                                            <span class="option-description">3-4 veces por semana</span>
-                                        </div>
-                                    </div>
-                                </label>
-                                <label class="option-card">
-                                    <input type="radio" name="q1" value="3">
-                                    <div class="option-content">
-                                        <div class="option-icon">😰</div>
-                                        <div class="option-text">
-                                            <span class="option-label">Casi todos los días</span>
-                                            <span class="option-description">5-7 veces por semana</span>
-                                        </div>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div class="question-container">
-                            <p class="question">2. ¿Ha sido incapaz de controlar sus preocupaciones?</p>
-                            <div class="options">
-                                <label class="option">
-                                    <input type="radio" name="q2" value="0"> Nunca
-                                </label>
-                                <label class="option">
-                                    <input type="radio" name="q2" value="1"> Algunos días
-                                </label>
-                                <label class="option">
-                                    <input type="radio" name="q2" value="2"> Más de la mitad de los días
-                                </label>
-                                <label class="option">
-                                    <input type="radio" name="q2" value="3"> Casi todos los días
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div class="question-container">
-                            <p class="question">3. ¿Se ha preocupado demasiado por diferentes cosas?</p>
-                            <div class="options">
-                                <label class="option">
-                                    <input type="radio" name="q3" value="0"> Nunca
-                                </label>
-                                <label class="option">
-                                    <input type="radio" name="q3" value="1"> Algunos días
-                                </label>
-                                <label class="option">
-                                    <input type="radio" name="q3" value="2"> Más de la mitad de los días
-                                </label>
-                                <label class="option">
-                                    <input type="radio" name="q3" value="3"> Casi todos los días
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div class="question-container">
-                            <p class="question">4. ¿Ha tenido dificultad para relajarse?</p>
-                            <div class="options">
-                                <label class="option">
-                                    <input type="radio" name="q4" value="0"> Nunca
-                                </label>
-                                <label class="option">
-                                    <input type="radio" name="q4" value="1"> Algunos días
-                                </label>
-                                <label class="option">
-                                    <input type="radio" name="q4" value="2"> Más de la mitad de los días
-                                </label>
-                                <label class="option">
-                                    <input type="radio" name="q4" value="3"> Casi todos los días
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div class="question-container">
-                            <p class="question">5. ¿Se ha sentido tan inquieto/a que no podía estarse quieto/a?</p>
-                            <div class="options">
-                                <label class="option">
-                                    <input type="radio" name="q5" value="0"> Nunca
-                                </label>
-                                <label class="option">
-                                    <input type="radio" name="q5" value="1"> Algunos días
-                                </label>
-                                <label class="option">
-                                    <input type="radio" name="q5" value="2"> Más de la mitad de los días
-                                </label>
-                                <label class="option">
-                                    <input type="radio" name="q5" value="3"> Casi todos los días
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div class="question-container">
-                            <p class="question">6. ¿Se ha irritado o enfadado con facilidad?</p>
-                            <div class="options">
-                                <label class="option">
-                                    <input type="radio" name="q6" value="0"> Nunca
-                                </label>
-                                <label class="option">
-                                    <input type="radio" name="q6" value="1"> Algunos días
-                                </label>
-                                <label class="option">
-                                    <input type="radio" name="q6" value="2"> Más de la mitad de los días
-                                </label>
-                                <label class="option">
-                                    <input type="radio" name="q6" value="3"> Casi todos los días
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div class="question-container">
-                            <p class="question">7. ¿Ha sentido miedo, como si fuera a suceder algo terrible?</p>
-                            <div class="options">
-                                <label class="option">
-                                    <input type="radio" name="q7" value="0"> Nunca
-                                </label>
-                                <label class="option">
-                                    <input type="radio" name="q7" value="1"> Algunos días
-                                </label>
-                                <label class="option">
-                                    <input type="radio" name="q7" value="2"> Más de la mitad de los días
-                                </label>
-                                <label class="option">
-                                    <input type="radio" name="q7" value="3"> Casi todos los días
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-lg submit-test gta-style-btn">EVALUAR RESULTADOS</button>
-                    </form>
-                    
-                    <div id="test-results" class="test-results hidden">
-                        <h3 class="gta-style-subtitle">RESULTADOS DE TU EVALUACIÓN</h3>
-                        <div class="score-container gta-style-score">
-                            <div class="score">0</div>
-                            <div class="score-label">PUNTUACIÓN TOTAL</div>
-                        </div>
-                        <div class="result-interpretation">
-                            <h4>NIVEL DE ANSIEDAD: <span class="anxiety-level">MÍNIMO</span></h4>
-                            <p class="interpretation-text"></p>
-                        </div>
-                        <div class="recommended-plan">
-                            <h4>PLAN RECOMENDADO</h4>
-                            <ul class="plan-items">
-                                <!-- Se llenará dinámicamente con JavaScript -->
-                            </ul>
-                        </div>
-                        <div class="result-actions">
-                            <button class="btn btn-primary save-results gta-style-btn">GUARDAR RESULTADOS</button>
-                            <button class="btn btn-outline retake-test gta-style-btn">VOLVER A REALIZAR EL TEST</button>
-                        </div>
-                    </div>
-                    
-                    <div id="previous-results" class="previous-results hidden">
-                        <h3 class="gta-style-subtitle">HISTORIAL DE RESULTADOS</h3>
-                        <div class="results-list">
-                            <!-- Se llenará dinámicamente con JavaScript -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         
-        <!-- Información adicional sobre el test -->
-        <section class="test-info-section">
+        <!-- Síntomas Físicos Section -->
+        <section class="content-section">
             <div class="container">
-                <h2 class="section-title gta-style-title">SOBRE EL TEST GAD-7</h2>
-                <div class="info-cards">
-                    <div class="info-card">
-                        <h3>¿QUÉ ES EL GAD-7?</h3>
-                        <p>El GAD-7 (Generalized Anxiety Disorder-7) es un cuestionario clínico validado para evaluar la presencia y severidad de síntomas de ansiedad generalizada.</p>
+                <div class="content-card fade-in-up">
+                    <h2 class="content-title">Síntomas Físicos</h2>
+                    <p class="content-description">Reconocer los signos físicos es el primer paso hacia el manejo efectivo de la ansiedad. Estos síntomas son respuestas naturales del cuerpo al estrés.</p>
+                    
+                    <div class="illustration-container">
+                        <div class="illustration illustration-discover">
+                            <i class="fas fa-heartbeat" aria-hidden="true"></i>
+                        </div>
                     </div>
-                    <div class="info-card">
-                        <h3>INTERPRETACIÓN</h3>
-                        <p>Las puntuaciones se interpretan como: 0-4 (mínima), 5-9 (leve), 10-14 (moderada) y 15-21 (severa). Una puntuación de 10 o más sugiere un posible trastorno de ansiedad.</p>
+                    
+                    <div class="symptoms-grid">
+                        
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-heartbeat" aria-hidden="true"></i>
+                            </div>
+                            <h3>Taquicardia</h3>
+                            <p>Aumento del ritmo cardíaco por encima de 100 lpm en reposo</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-lungs" aria-hidden="true"></i>
+                            </div>
+                            <h3>Hiperventilación</h3>
+                            <p>Respiración rápida y superficial que puede provocar mareos</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-tint" aria-hidden="true"></i>
+                            </div>
+                            <h3>Sudoración</h3>
+                            <p>Diaforesis excesiva sin causa aparente</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-hand-rock" aria-hidden="true"></i>
+                            </div>
+                            <h3>Temblores</h3>
+                            <p>Tremor fino en extremidades superiores</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-battery-quarter" aria-hidden="true"></i>
+                            </div>
+                            <h3>Fatiga</h3>
+                            <p>Sensación de debilidad y agotamiento persistente</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-stomach" aria-hidden="true"></i>
+                            </div>
+                            <h3>Gastrointestinales</h3>
+                            <p>Náuseas, diarrea, dolor abdominal, pérdida de apetito</p>
+                        </div>
+                    
                     </div>
-                    <div class="info-card">
-                        <h3>IMPORTANTE</h3>
-                        <p>Este test es una herramienta de evaluación, no un diagnóstico. Si experimentas síntomas de ansiedad, te recomendamos consultar con un profesional de la salud mental.</p>
+                    
+                    <div style="text-align: center; margin-top: 32px;">
+                        <a href="evaluacion.html" class="btn-primary">
+                            <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                            Evaluar Mis Síntomas
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- Call to Action -->
-        <section class="cta-section">
+    
+        <!-- Síntomas Cognitivos Section -->
+        <section class="content-section">
             <div class="container">
-                <div class="cta-content">
-                    <h2>¿QUIERES HACER SEGUIMIENTO DE TU PROGRESO?</h2>
-                    <p>Registra tus emociones diarias en nuestro Diario Emocional y mantén un seguimiento de tu bienestar mental.</p>
-                    <div class="cta-buttons">
-                        <a href="diario.html" class="btn btn-primary btn-lg">IR AL DIARIO EMOCIONAL</a>
-                        <a href="ansiedad.html" class="btn btn-outline btn-lg">CONOCER MÁS SOBRE ANSIEDAD</a>
+                <div class="content-card fade-in-up">
+                    <h2 class="content-title">Síntomas Cognitivos</h2>
+                    <p class="content-description">Los pensamientos ansiosos pueden crear un ciclo de preocupación que afecta la capacidad de concentración y toma de decisiones.</p>
+                    
+                    <div class="illustration-container">
+                        <div class="illustration illustration-discover">
+                            <i class="fas fa-brain" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="symptoms-grid">
+                        
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+                            </div>
+                            <h3>Preocupación Excesiva</h3>
+                            <p>Pensamientos recurrentes sobre situaciones futuras</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-eye" aria-hidden="true"></i>
+                            </div>
+                            <h3>Hipervigilancia</h3>
+                            <p>Estado de alerta constante ante posibles amenazas</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-question-circle" aria-hidden="true"></i>
+                            </div>
+                            <h3>Indecisión</h3>
+                            <p>Dificultad para tomar decisiones simples</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-memory" aria-hidden="true"></i>
+                            </div>
+                            <h3>Problemas de Concentración</h3>
+                            <p>Dificultad para mantener la atención en tareas</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                            </div>
+                            <h3>Pensamientos Intrusivos</h3>
+                            <p>Ideas no deseadas que aparecen repetidamente</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-clock" aria-hidden="true"></i>
+                            </div>
+                            <h3>Sensación de Urgencia</h3>
+                            <p>Sensación constante de que algo malo va a pasar</p>
+                        </div>
+                    
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 32px;">
+                        <a href="evaluacion.html" class="btn-primary">
+                            <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                            Evaluar Mis Síntomas
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
+    
+        <!-- Síntomas Emocionales Section -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-card fade-in-up">
+                    <h2 class="content-title">Síntomas Emocionales</h2>
+                    <p class="content-description">La ansiedad afecta profundamente el estado emocional, creando sentimientos intensos que pueden ser abrumadores.</p>
+                    
+                    <div class="illustration-container">
+                        <div class="illustration illustration-discover">
+                            <i class="fas fa-heart" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="symptoms-grid">
+                        
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-frown" aria-hidden="true"></i>
+                            </div>
+                            <h3>Irritabilidad</h3>
+                            <p>Respuestas emocionales exageradas a estímulos menores</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-exclamation" aria-hidden="true"></i>
+                            </div>
+                            <h3>Nerviosismo</h3>
+                            <p>Sensación de inquietud e intranquilidad constante</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                            </div>
+                            <h3>Sensación de Peligro</h3>
+                            <p>Miedo intenso sin causa aparente</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-user-times" aria-hidden="true"></i>
+                            </div>
+                            <h3>Aislamiento</h3>
+                            <p>Tendencia a evitar situaciones sociales</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-sad-tear" aria-hidden="true"></i>
+                            </div>
+                            <h3>Tristeza</h3>
+                            <p>Sentimientos de desesperanza y melancolía</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-angry" aria-hidden="true"></i>
+                            </div>
+                            <h3>Frustración</h3>
+                            <p>Sensación de impotencia ante la situación</p>
+                        </div>
+                    
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 32px;">
+                        <a href="evaluacion.html" class="btn-primary">
+                            <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                            Evaluar Mis Síntomas
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
     </main>
 
     <footer class="footer">
@@ -382,7 +369,7 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <div class="logo-small-placeholder">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-brain" aria-hidden="true"></i>
                         <span>SENSUS</span>
                     </div>
                     <p>© 2025 Sensus. App de salud mental respaldada por la ciencia.</p>
@@ -532,7 +519,7 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <div class="logo-small-placeholder">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-brain" aria-hidden="true"></i>
                         <span>SENSUS</span>
                     </div>
                     <p>© 2025 Sensus. App de salud mental respaldada por la ciencia.</p>
@@ -615,6 +602,8 @@
     <script src="js/modules/test-modal.js"></script>
     <script src="js/modules/test.js"></script>
     <script src="js/modules/responsive.js"></script>
+    <script src="js/mobile-menu-enhanced.js"></script>
+    <script src="js/header-interactions.js"></script>
     
     <!-- Service Worker -->
     <script>

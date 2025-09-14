@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planes de Suscripción | Sensus</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/credibility-improvements.css">
+        <!-- CSS del Santuario Digital -->
+    <link rel="stylesheet" href="css/sanctuary-design.css">
+    <link rel="stylesheet" href="css/warm-design.css">
+    <link rel="stylesheet" href="css/universal-warm.css">
+    <link rel="stylesheet" href="css/header-clean.css">
+    <link rel="stylesheet" href="css/mobile-menu-enhanced.css">
+    <link rel="stylesheet" href="css/static-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta name="description" content="Descubre nuestros planes de suscripción y elige el que mejor se adapte a tus necesidades para gestionar tu ansiedad.">
 </head>
 <body class="planes-page">
     <header class="header">
+        <div class="header-container">
         <div class="container header-container">
             <div class="logo-container">
                 <div class="logo-placeholder">
-                    <i class="fas fa-brain"></i>
+                    <i class="fas fa-brain" aria-hidden="true"></i>
                     <span>SENSUS</span>
                 </div>
                 <h1>Sensus</h1>
@@ -29,508 +35,299 @@
                     <span class="bar"></span>
                 </button>
                 <ul class="nav-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="evaluacion.html">Evaluación</a></li>
-                    <li><a href="diario.html">Diario</a></li>
-                    <li><a href="ansiedad.html">Síntomas</a></li>
-                    <li><a href="planes.html" class="active">Planes</a></li>
-                    <li><a href="equipo.html">Equipo</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="index.html">
+                                <i class="fas fa-home" aria-hidden="true"></i>
+                                Inicio
+                            </a></li>
+                    <li><a href="evaluacion.html">
+                                <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                                Evaluación
+                            </a></li>
+                    <li><a href="diario.html">
+                                <i class="fas fa-book-open" aria-hidden="true"></i>
+                                Diario
+                            </a></li>
+                    <li><a href="ansiedad.html">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                Síntomas
+                            </a></li>
+                    <li><a href="planes.html">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                Planes
+                            </a></li>
+                    <li><a href="equipo.html">
+                                <i class="fas fa-users" aria-hidden="true"></i>
+                                Equipo
+                            </a></li>
+                    <li><a href="contacto.html">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                                Contacto
+                            </a></li>
                 </ul>
             </nav>
-            <div class="auth-buttons">
+            <div class="auth-buttons" style="display: none;">
                 <button class="btn btn-outline" id="login-btn">Iniciar sesión</button>
                 <button class="btn btn-primary" id="register-btn">Registrarse</button>
                 <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <i class="fas fa-sun" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
     </header>
+    
+    <!-- Menu Overlay -->
+    <div class="menu-overlay"></div>
 
+    
     <main>
-        <!-- Hero Section Profesional para Planes -->
-        <section class="professional-hero plans-hero">
-            <div class="hero-background">
-                <div class="hero-overlay"></div>
-                <div class="hero-pattern"></div>
-            </div>
+        <!-- Hero Section -->
+        <section class="hero-section" aria-labelledby="main-title">
             <div class="container">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <i class="fas fa-crown"></i>
-                        <span>Planes Premium</span>
-                    </div>
-                    <h1 class="hero-title">Planes de Suscripción</h1>
-                    <p class="hero-subtitle">Elige el plan que mejor se adapte a tus necesidades de bienestar mental. Desde acceso gratuito hasta herramientas avanzadas basadas en TCC para tu crecimiento personal.</p>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">3</div>
-                            <div class="stat-label">Planes Disponibles</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">10K+</div>
-                            <div class="stat-label">Usuarios Activos</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">4.9★</div>
-                            <div class="stat-label">Valoración Media</div>
-                        </div>
-                    </div>
+                <div class="hero-content fade-in-up">
+                    <h1 id="main-title" class="hero-title">Comprensión Profunda de la Ansiedad</h1>
+                    <p class="hero-subtitle">Explora los diferentes tipos de trastornos de ansiedad, sus manifestaciones clínicas y estrategias de identificación basadas en evidencia científica.</p>
+                    
                     <div class="hero-actions">
-                        <a href="#planes" class="btn btn-primary btn-lg btn-cta">
-                            <i class="fas fa-rocket"></i>
-                            VER PLANES
+                        <a href="evaluacion.html" class="btn-primary">
+                            <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                            Evaluación GAD-7
                         </a>
-                        <a href="#comparison" class="btn btn-outline btn-lg btn-cta">
-                            <i class="fas fa-balance-scale"></i>
-                            COMPARAR
+                        <a href="diario.html" class="btn-secondary">
+                            <i class="fas fa-book-open" aria-hidden="true"></i>
+                            Iniciar Diario
                         </a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="visual-container">
-                        <div class="pricing-animation">
-                            <div class="pricing-card">
-                                <i class="fas fa-gem"></i>
-                            </div>
-                            <div class="floating-icons">
-                                <div class="feature-icon">💎</div>
-                                <div class="feature-icon">🚀</div>
-                                <div class="feature-icon">🎯</div>
-                                <div class="feature-icon">⭐</div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Planes de Suscripción Profesionales Section -->
-        <section class="professional-plans-section" id="planes">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-badge">
-                        <i class="fas fa-star"></i>
-                        <span>Opciones de Suscripción</span>
-                    </div>
-                    <h2 class="section-title">Elige tu Plan Ideal</h2>
-                    <p class="section-description">Selecciona el plan que mejor se adapte a tus necesidades de bienestar mental. Todos los planes incluyen acceso completo a nuestras herramientas básicas.</p>
-                </div>
-                
-                <div class="billing-toggle-container">
-                    <div class="billing-toggle">
-                        <span class="toggle-label" data-period="monthly">Mensual</span>
-                        <label class="switch">
-                            <input type="checkbox" id="billing-toggle">
-                            <span class="slider round"></span>
-                        </label>
-                        <span class="toggle-label" data-period="yearly">
-                            Anual 
-                            <span class="discount-badge">Ahorra 20%</span>
-                        </span>
-                    </div>
-                </div>
-                    
-                <div class="plans-grid">
-                    <div class="plan-card professional-plan-card">
-                        <div class="plan-header">
-                            <div class="plan-icon">
-                                <i class="fas fa-seedling"></i>
-                            </div>
-                            <h3 class="plan-name">Básico</h3>
-                            <p class="plan-description">Perfecto para comenzar tu viaje de bienestar mental</p>
-                        </div>
-                        <div class="plan-pricing">
-                            <div class="price-container">
-                                <span class="price">Gratis</span>
-                                <span class="period">para siempre</span>
-                            </div>
-                        </div>
-                        <div class="plan-features">
-                            <div class="feature-category">
-                                <h4>Herramientas Básicas</h4>
-                                <ul class="feature-list">
-                                    <li class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Test GAD-7 con resultados básicos</span>
-                                    </li>
-                                    <li class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Diario emocional (5 entradas/mes)</span>
-                                    </li>
-                                    <li class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Sistema de racha básico</span>
-                                    </li>
-                                    <li class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Información sobre tipos de ansiedad</span>
-                                    </li>
-                                    <li class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Acceso a la comunidad</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="feature-category">
-                                <h4>Limitaciones</h4>
-                                <ul class="feature-list disabled">
-                                    <li class="feature-item disabled">
-                                        <i class="fas fa-times"></i>
-                                        <span>Análisis avanzado de emociones</span>
-                                    </li>
-                                    <li class="feature-item disabled">
-                                        <i class="fas fa-times"></i>
-                                        <span>Ejercicios de respiración guiados</span>
-                                    </li>
-                                    <li class="feature-item disabled">
-                                        <i class="fas fa-times"></i>
-                                        <span>Meditaciones para la ansiedad</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="plan-cta">
-                            <button class="btn btn-outline btn-lg">
-                                <i class="fas fa-rocket"></i>
-                                Comenzar Gratis
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="plan-card professional-plan-card featured">
-                        <div class="plan-badge">
-                            <i class="fas fa-star"></i>
-                            Más Popular
-                        </div>
-                        <div class="plan-header">
-                            <div class="plan-icon">
-                                <i class="fas fa-crown"></i>
-                            </div>
-                            <h3 class="plan-name">Premium</h3>
-                            <p class="plan-description">Ideal para usuarios que buscan un seguimiento completo de su bienestar</p>
-                        </div>
-                        <div class="plan-pricing">
-                            <div class="price-container monthly-price">
-                                <span class="price">€9.99</span>
-                                <span class="period">/mes</span>
-                            </div>
-                            <div class="price-container annual-price hidden">
-                                <span class="price">€7.99</span>
-                                <span class="period">/mes, facturado anualmente</span>
-                                <div class="savings">Ahorra €24/año</div>
-                            </div>
-                        </div>
-                        <div class="plan-features">
-                            <div class="feature-category">
-                                <h4>Incluye todo del plan Básico</h4>
-                                <ul class="feature-list">
-                                    <li class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Diario emocional ilimitado</span>
-                                    </li>
-                                    <li class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Sistema de racha avanzado</span>
-                                    </li>
-                                    <li class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Análisis detallado de patrones emocionales</span>
-                                    </li>
-                                    <li class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Recomendaciones personalizadas con IA</span>
-                                    </li>
-                                    <li class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Ejercicios de respiración guiados</span>
-                                    </li>
-                                    <li class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>10 meditaciones para la ansiedad</span>
-                                    </li>
-                                    <li class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Soporte por email prioritario</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="plan-cta">
-                            <button class="btn btn-primary btn-lg">
-                                <i class="fas fa-gem"></i>
-                                Suscribirse
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="plan-card professional-plan-card">
-                        <div class="plan-header">
-                            <div class="plan-icon">
-                                <i class="fas fa-diamond"></i>
-                            </div>
-                            <h3 class="plan-name">Profesional</h3>
-                            <p class="plan-description">Para usuarios que buscan el máximo nivel de apoyo y personalización</p>
-                        </div>
-                        <div class="plan-pricing">
-                            <div class="price-container monthly-price">
-                                <span class="price">€19.99</span>
-                                <span class="period">/mes</span>
-                            </div>
-                            <div class="price-container annual-price hidden">
-                                <span class="price">€15.99</span>
-                                <span class="period">/mes, facturado anualmente</span>
-                                <div class="savings">Ahorra €48/año</div>
-                            </div>
-                        </div>
-                        <div class="plan-features">
-                            <div class="feature-category">
-                                <h4>Incluye todo del plan Premium</h4>
-                                <ul class="feature-list">
-                                    <li class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Biblioteca completa de meditaciones</span>
-                                    </li>
-                                    <li class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Análisis avanzado con IA</span>
-                                    </li>
-                                    <li class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Planes personalizados semanales</span>
-                                    </li>
-                                    <li class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>1 sesión mensual con especialista</span>
-                                    </li>
-                                    <li class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Soporte prioritario 24/7</span>
-                                    </li>
-                                    <li class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Acceso anticipado a nuevas funciones</span>
-                                    </li>
-                                    <li class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Exportación de datos y reportes</span>
-                                    </li>
-                                    <li class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Sin publicidad</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="plan-cta">
-                            <button class="btn btn-outline btn-lg">
-                                <i class="fas fa-diamond"></i>
-                                Suscribirse
-                            </button>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         
-        <!-- Comparativa de Planes -->
-        <section class="plan-comparison-section">
+        <!-- Síntomas Físicos Section -->
+        <section class="content-section">
             <div class="container">
-                <h2 class="section-title gta-style-title">COMPARATIVA DE PLANES</h2>
-                <div class="comparison-table-container">
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>Características</th>
-                                <th>BÁSICO</th>
-                                <th>PREMIUM</th>
-                                <th>PROFESIONAL</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Test GAD-7</td>
-                                <td><i class="fas fa-check"></i> Básico</td>
-                                <td><i class="fas fa-check"></i> Completo</td>
-                                <td><i class="fas fa-check"></i> Completo</td>
-                            </tr>
-                            <tr>
-                                <td>Diario Emocional</td>
-                                <td>5 entradas/mes</td>
-                                <td>Ilimitado</td>
-                                <td>Ilimitado</td>
-                            </tr>
-                            <tr>
-                                <td>Sistema de Racha</td>
-                                <td>Básico</td>
-                                <td>Avanzado</td>
-                                <td>Avanzado</td>
-                            </tr>
-                            <tr>
-                                <td>Análisis de Emociones</td>
-                                <td><i class="fas fa-times"></i></td>
-                                <td>Básico</td>
-                                <td>Avanzado con IA</td>
-                            </tr>
-                            <tr>
-                                <td>Ejercicios de Respiración</td>
-                                <td><i class="fas fa-times"></i></td>
-                                <td>5 ejercicios</td>
-                                <td>Biblioteca completa</td>
-                            </tr>
-                            <tr>
-                                <td>Meditaciones</td>
-                                <td><i class="fas fa-times"></i></td>
-                                <td>10 meditaciones</td>
-                                <td>Biblioteca completa</td>
-                            </tr>
-                            <tr>
-                                <td>Sesiones con Especialistas</td>
-                                <td><i class="fas fa-times"></i></td>
-                                <td><i class="fas fa-times"></i></td>
-                                <td>1 sesión/mes</td>
-                            </tr>
-                            <tr>
-                                <td>Soporte</td>
-                                <td>Comunidad</td>
-                                <td>Email</td>
-                                <td>Prioritario 24/7</td>
-                            </tr>
-                            <tr>
-                                <td>Publicidad</td>
-                                <td>Sí</td>
-                                <td>Reducida</td>
-                                <td>Sin publicidad</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Testimonios -->
-        <section class="testimonials-section">
-            <div class="container">
-                <h2 class="section-title gta-style-title">LO QUE DICEN NUESTROS USUARIOS</h2>
-                <div class="testimonials-container">
-                    <div class="testimonial-card">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Sensus ha cambiado completamente mi forma de gestionar la ansiedad. El diario emocional me ayuda a identificar patrones y las meditaciones son perfectas para momentos difíciles."</p>
-                        <div class="testimonial-author">
-                            <img src="user1.jpg" alt="Usuario" class="author-image" onerror="this.src='placeholder-user.svg'">
-                            <div class="author-info">
-                                <h4>Laura Martínez</h4>
-                                <p>Usuario Premium desde 2024</p>
-                            </div>
+                <div class="content-card fade-in-up">
+                    <h2 class="content-title">Síntomas Físicos</h2>
+                    <p class="content-description">Reconocer los signos físicos es el primer paso hacia el manejo efectivo de la ansiedad. Estos síntomas son respuestas naturales del cuerpo al estrés.</p>
+                    
+                    <div class="illustration-container">
+                        <div class="illustration illustration-discover">
+                            <i class="fas fa-heartbeat" aria-hidden="true"></i>
                         </div>
                     </div>
                     
-                    <div class="testimonial-card">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Las sesiones con especialistas del plan Profesional son increíbles. He aprendido técnicas que realmente funcionan y el seguimiento personalizado marca la diferencia."</p>
-                        <div class="testimonial-author">
-                            <img src="user2.jpg" alt="Usuario" class="author-image" onerror="this.src='placeholder-user.svg'">
-                            <div class="author-info">
-                                <h4>Carlos Rodríguez</h4>
-                                <p>Usuario Profesional desde 2023</p>
+                    <div class="symptoms-grid">
+                        
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-heartbeat" aria-hidden="true"></i>
                             </div>
+                            <h3>Taquicardia</h3>
+                            <p>Aumento del ritmo cardíaco por encima de 100 lpm en reposo</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-lungs" aria-hidden="true"></i>
+                            </div>
+                            <h3>Hiperventilación</h3>
+                            <p>Respiración rápida y superficial que puede provocar mareos</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-tint" aria-hidden="true"></i>
+                            </div>
+                            <h3>Sudoración</h3>
+                            <p>Diaforesis excesiva sin causa aparente</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-hand-rock" aria-hidden="true"></i>
+                            </div>
+                            <h3>Temblores</h3>
+                            <p>Tremor fino en extremidades superiores</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-battery-quarter" aria-hidden="true"></i>
+                            </div>
+                            <h3>Fatiga</h3>
+                            <p>Sensación de debilidad y agotamiento persistente</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-stomach" aria-hidden="true"></i>
+                            </div>
+                            <h3>Gastrointestinales</h3>
+                            <p>Náuseas, diarrea, dolor abdominal, pérdida de apetito</p>
+                        </div>
+                    
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 32px;">
+                        <a href="evaluacion.html" class="btn-primary">
+                            <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                            Evaluar Mis Síntomas
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Síntomas Cognitivos Section -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-card fade-in-up">
+                    <h2 class="content-title">Síntomas Cognitivos</h2>
+                    <p class="content-description">Los pensamientos ansiosos pueden crear un ciclo de preocupación que afecta la capacidad de concentración y toma de decisiones.</p>
+                    
+                    <div class="illustration-container">
+                        <div class="illustration illustration-discover">
+                            <i class="fas fa-brain" aria-hidden="true"></i>
                         </div>
                     </div>
                     
-                    <div class="testimonial-card">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <p class="testimonial-text">"Empecé con el plan Básico y me sorprendió lo útil que era incluso siendo gratuito. Después de unos meses, actualicé a Premium y ha sido una de las mejores inversiones para mi salud mental."</p>
-                        <div class="testimonial-author">
-                            <img src="user3.jpg" alt="Usuario" class="author-image" onerror="this.src='placeholder-user.svg'">
-                            <div class="author-info">
-                                <h4>Ana López</h4>
-                                <p>Usuario Premium desde 2024</p>
+                    <div class="symptoms-grid">
+                        
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
                             </div>
+                            <h3>Preocupación Excesiva</h3>
+                            <p>Pensamientos recurrentes sobre situaciones futuras</p>
                         </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-eye" aria-hidden="true"></i>
+                            </div>
+                            <h3>Hipervigilancia</h3>
+                            <p>Estado de alerta constante ante posibles amenazas</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-question-circle" aria-hidden="true"></i>
+                            </div>
+                            <h3>Indecisión</h3>
+                            <p>Dificultad para tomar decisiones simples</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-memory" aria-hidden="true"></i>
+                            </div>
+                            <h3>Problemas de Concentración</h3>
+                            <p>Dificultad para mantener la atención en tareas</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                            </div>
+                            <h3>Pensamientos Intrusivos</h3>
+                            <p>Ideas no deseadas que aparecen repetidamente</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-clock" aria-hidden="true"></i>
+                            </div>
+                            <h3>Sensación de Urgencia</h3>
+                            <p>Sensación constante de que algo malo va a pasar</p>
+                        </div>
+                    
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 32px;">
+                        <a href="evaluacion.html" class="btn-primary">
+                            <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                            Evaluar Mis Síntomas
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- FAQ Section -->
-        <section class="faq-section">
+    
+        <!-- Síntomas Emocionales Section -->
+        <section class="content-section">
             <div class="container">
-                <h2 class="section-title gta-style-title">PREGUNTAS FRECUENTES</h2>
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>¿Puedo cambiar de plan en cualquier momento?</h3>
-                            <button class="toggle-answer"><i class="fas fa-plus"></i></button>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Sí, puedes actualizar o cambiar tu plan en cualquier momento. Si actualizas, el cambio será efectivo inmediatamente. Si bajas de categoría, el cambio se aplicará al final de tu período de facturación actual.</p>
+                <div class="content-card fade-in-up">
+                    <h2 class="content-title">Síntomas Emocionales</h2>
+                    <p class="content-description">La ansiedad afecta profundamente el estado emocional, creando sentimientos intensos que pueden ser abrumadores.</p>
+                    
+                    <div class="illustration-container">
+                        <div class="illustration illustration-discover">
+                            <i class="fas fa-heart" aria-hidden="true"></i>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>¿Hay período de prueba para los planes de pago?</h3>
-                            <button class="toggle-answer"><i class="fas fa-plus"></i></button>
+                    
+                    <div class="symptoms-grid">
+                        
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-frown" aria-hidden="true"></i>
+                            </div>
+                            <h3>Irritabilidad</h3>
+                            <p>Respuestas emocionales exageradas a estímulos menores</p>
                         </div>
-                        <div class="faq-answer">
-                            <p>Sí, ofrecemos un período de prueba gratuito de 7 días para los planes Premium y Profesional. Puedes cancelar en cualquier momento durante este período sin cargo alguno.</p>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-exclamation" aria-hidden="true"></i>
+                            </div>
+                            <h3>Nerviosismo</h3>
+                            <p>Sensación de inquietud e intranquilidad constante</p>
                         </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                            </div>
+                            <h3>Sensación de Peligro</h3>
+                            <p>Miedo intenso sin causa aparente</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-user-times" aria-hidden="true"></i>
+                            </div>
+                            <h3>Aislamiento</h3>
+                            <p>Tendencia a evitar situaciones sociales</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-sad-tear" aria-hidden="true"></i>
+                            </div>
+                            <h3>Tristeza</h3>
+                            <p>Sentimientos de desesperanza y melancolía</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-angry" aria-hidden="true"></i>
+                            </div>
+                            <h3>Frustración</h3>
+                            <p>Sensación de impotencia ante la situación</p>
+                        </div>
+                    
                     </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>¿Cómo funciona la facturación anual?</h3>
-                            <button class="toggle-answer"><i class="fas fa-plus"></i></button>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Con la facturación anual, se te cobrará por adelantado el costo total del año con un 20% de descuento sobre el precio mensual. Esto significa un ahorro significativo comparado con la facturación mensual.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>¿Qué métodos de pago aceptan?</h3>
-                            <button class="toggle-answer"><i class="fas fa-plus"></i></button>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Aceptamos tarjetas de crédito/débito (Visa, Mastercard, American Express), PayPal, y en algunos países, transferencia bancaria. Todas las transacciones están protegidas con encriptación SSL.</p>
-                        </div>
+                    
+                    <div style="text-align: center; margin-top: 32px;">
+                        <a href="evaluacion.html" class="btn-primary">
+                            <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                            Evaluar Mis Síntomas
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- Call to Action -->
-        <section class="cta-section">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>¿LISTO PARA COMENZAR TU CAMINO HACIA EL BIENESTAR?</h2>
-                    <p>Elige el plan que mejor se adapte a tus necesidades y comienza hoy mismo.</p>
-                    <div class="cta-buttons">
-                        <a href="#planes" class="btn btn-primary btn-lg">ELEGIR PLAN</a>
-                        <a href="contacto.html" class="btn btn-outline btn-lg">CONTACTAR SOPORTE</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    
     </main>
 
     <footer class="footer">
@@ -538,7 +335,7 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <div class="logo-small-placeholder">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-brain" aria-hidden="true"></i>
                         <span>SENSUS</span>
                     </div>
                     <p>© 2025 Sensus. App de salud mental respaldada por la ciencia.</p>
@@ -646,5 +443,7 @@
     
     <!-- Scripts de la aplicación -->
     <script src="js/script.js?v=2"></script>
+    <script src="js/mobile-menu-enhanced.js"></script>
+    <script src="js/header-interactions.js"></script>
 </body>
 </html>

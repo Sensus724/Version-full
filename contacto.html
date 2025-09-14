@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto | Sensus</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/credibility-improvements.css">
+        <!-- CSS del Santuario Digital -->
+    <link rel="stylesheet" href="css/sanctuary-design.css">
+    <link rel="stylesheet" href="css/warm-design.css">
+    <link rel="stylesheet" href="css/universal-warm.css">
+    <link rel="stylesheet" href="css/header-clean.css">
+    <link rel="stylesheet" href="css/mobile-menu-enhanced.css">
+    <link rel="stylesheet" href="css/static-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta name="description" content="Contáctanos para resolver tus dudas sobre Sensus, nuestra aplicación para el manejo de la ansiedad.">
 </head>
 <body class="contacto-page">
     <header class="header">
+        <div class="header-container">
         <div class="container header-container">
             <div class="logo-container">
                 <div class="logo-placeholder">
-                    <i class="fas fa-brain"></i>
+                    <i class="fas fa-brain" aria-hidden="true"></i>
                     <span>SENSUS</span>
                 </div>
                 <h1>Sensus</h1>
@@ -29,317 +35,131 @@
                     <span class="bar"></span>
                 </button>
                 <ul class="nav-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="evaluacion.html">Evaluación</a></li>
-                    <li><a href="diario.html">Diario</a></li>
-                    <li><a href="ansiedad.html">Síntomas</a></li>
-                    <li><a href="planes.html">Planes</a></li>
-                    <li><a href="equipo.html">Equipo</a></li>
-                    <li><a href="contacto.html" class="active">Contacto</a></li>
+                    <li><a href="index.html">
+                                <i class="fas fa-home" aria-hidden="true"></i>
+                                Inicio
+                            </a></li>
+                    <li><a href="evaluacion.html">
+                                <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                                Evaluación
+                            </a></li>
+                    <li><a href="diario.html">
+                                <i class="fas fa-book-open" aria-hidden="true"></i>
+                                Diario
+                            </a></li>
+                    <li><a href="ansiedad.html">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                Síntomas
+                            </a></li>
+                    <li><a href="planes.html">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                Planes
+                            </a></li>
+                    <li><a href="equipo.html">
+                                <i class="fas fa-users" aria-hidden="true"></i>
+                                Equipo
+                            </a></li>
+                    <li><a href="contacto.html">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                                Contacto
+                            </a></li>
                 </ul>
             </nav>
-            <div class="auth-buttons">
+            <div class="auth-buttons" style="display: none;">
                 <button class="btn btn-outline" id="login-btn">Iniciar sesión</button>
                 <button class="btn btn-primary" id="register-btn">Registrarse</button>
                 <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <i class="fas fa-sun" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
     </header>
+    
+    <!-- Menu Overlay -->
+    <div class="menu-overlay"></div>
 
+    
     <main>
-        <!-- Hero Section Profesional para Contacto -->
-        <section class="professional-hero contact-hero">
-            <div class="hero-background">
-                <div class="hero-overlay"></div>
-                <div class="hero-pattern"></div>
-            </div>
+        <!-- Hero Section -->
+        <section class="hero-section" aria-labelledby="main-title">
             <div class="container">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <i class="fas fa-envelope"></i>
-                        <span>Contacto</span>
-                    </div>
-                    <h1 class="hero-title">Estamos Aquí para Ayudarte</h1>
-                    <p class="hero-subtitle">Nuestro equipo de soporte está disponible para resolver tus dudas, escuchar tus sugerencias y brindarte el apoyo que necesitas en tu viaje hacia el bienestar mental.</p>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">< 2h</div>
-                            <div class="stat-label">Tiempo de Respuesta</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">24/7</div>
-                            <div class="stat-label">Soporte Disponible</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">98%</div>
-                            <div class="stat-label">Satisfacción</div>
-                        </div>
-                    </div>
+                <div class="hero-content fade-in-up">
+                    <h1 id="main-title" class="hero-title">Contacto y Soporte</h1>
+                    <p class="hero-subtitle">Estamos aquí para acompañarte en tu camino hacia el bienestar. Nuestro equipo de profesionales está disponible para brindarte el apoyo que necesitas.</p>
+                    
                     <div class="hero-actions">
-                        <a href="#contacto" class="btn btn-primary btn-lg">
-                            <i class="fas fa-paper-plane"></i>
-                            Enviar Mensaje
+                        <a href="evaluacion.html" class="btn-primary">
+                            <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                            Evaluación GAD-7
                         </a>
-                        <a href="#informacion" class="btn btn-outline btn-lg">
-                            <i class="fas fa-info-circle"></i>
-                            Ver Información
+                        <a href="diario.html" class="btn-secondary">
+                            <i class="fas fa-book-open" aria-hidden="true"></i>
+                            Iniciar Diario
                         </a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="visual-container">
-                        <div class="contact-animation">
-                            <div class="contact-circle">
-                                <i class="fas fa-headset"></i>
-                            </div>
-                            <div class="floating-icons">
-                                <div class="contact-icon">📧</div>
-                                <div class="contact-icon">📞</div>
-                                <div class="contact-icon">💬</div>
-                                <div class="contact-icon">📱</div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contacto Profesional Section -->
-        <section class="professional-contact-section" id="contacto">
+        
+        <!-- Canales de Contacto Section -->
+        <section class="content-section">
             <div class="container">
-                <div class="section-header">
-                    <div class="section-badge">
-                        <i class="fas fa-phone"></i>
-                        <span>Información de Contacto</span>
-                    </div>
-                    <h2 class="section-title">Múltiples Formas de Contactarnos</h2>
-                    <p class="section-description">Elige la opción que mejor se adapte a tus necesidades. Nuestro equipo está disponible para ayudarte en cualquier momento.</p>
-                </div>
-                
-                <div class="contact-grid">
-                    <div class="contact-info-section" id="informacion">
-                        <div class="info-cards">
-                            <div class="info-card professional-card">
-                                <div class="info-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="info-content">
-                                    <h3>Oficina Principal</h3>
-                                    <p>Calle Innovación 123<br>28001 Madrid, España</p>
-                                    <div class="info-meta">
-                                        <i class="fas fa-building"></i>
-                                        <span>Edificio TechHub, Planta 5</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="info-card professional-card">
-                                <div class="info-icon">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
-                                <div class="info-content">
-                                    <h3>Teléfono</h3>
-                                    <p><a href="tel:+34911234567">+34 91 123 45 67</a></p>
-                                    <div class="info-meta">
-                                        <i class="fas fa-clock"></i>
-                                        <span>Lun-Vie: 9:00-18:00, Sáb: 10:00-14:00</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="info-card professional-card">
-                                <div class="info-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="info-content">
-                                    <h3>Email</h3>
-                                    <p><a href="mailto:contacto@sensus-app.com">contacto@sensus-app.com</a></p>
-                                    <div class="info-meta">
-                                        <i class="fas fa-reply"></i>
-                                        <span>Respuesta en menos de 2 horas</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="info-card professional-card">
-                                <div class="info-icon">
-                                    <i class="fas fa-headset"></i>
-                                </div>
-                                <div class="info-content">
-                                    <h3>Soporte Técnico</h3>
-                                    <p><a href="mailto:soporte@sensus-app.com">soporte@sensus-app.com</a></p>
-                                    <div class="info-meta">
-                                        <i class="fas fa-clock"></i>
-                                        <span>Disponible 24/7</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                        <div class="social-contact-section">
-                            <h3>Conecta con Nosotros</h3>
-                            <p>Síguenos en nuestras redes sociales para mantenerte al día con las últimas novedades y consejos de bienestar mental.</p>
-                            <div class="social-icons">
-                                <a href="#" class="social-link" aria-label="Facebook">
-                                    <i class="fab fa-facebook-f"></i>
-                                    <span>Facebook</span>
-                                </a>
-                                <a href="#" class="social-link" aria-label="Twitter">
-                                    <i class="fab fa-twitter"></i>
-                                    <span>Twitter</span>
-                                </a>
-                                <a href="#" class="social-link" aria-label="Instagram">
-                                    <i class="fab fa-instagram"></i>
-                                    <span>Instagram</span>
-                                </a>
-                                <a href="#" class="social-link" aria-label="LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
-                                    <span>LinkedIn</span>
-                                </a>
-                            </div>
+                <div class="content-card fade-in-up">
+                    <h2 class="content-title">Canales de Contacto</h2>
+                    <p class="content-description">Múltiples formas de comunicarte con nuestro equipo de especialistas en salud mental.</p>
+                    
+                    <div class="illustration-container">
+                        <div class="illustration illustration-discover">
+                            <i class="fas fa-phone" aria-hidden="true"></i>
                         </div>
                     </div>
                     
-                    <div class="contact-form-section">
-                        <div class="form-header">
-                            <h3>Envíanos un Mensaje</h3>
-                            <p>Completa el formulario y nos pondremos en contacto contigo lo antes posible.</p>
-                        </div>
-                        <form id="contact-form" class="professional-contact-form">
-                            <div class="form-sections">
-                                <div class="form-section">
-                                    <div class="section-title">
-                                        <i class="fas fa-user"></i>
-                                        <h4>Información Personal</h4>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group">
-                                            <label for="contact-name">Nombre completo</label>
-                                            <input type="text" id="contact-name" placeholder="Tu nombre completo" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="contact-email">Email</label>
-                                            <input type="email" id="contact-email" placeholder="tu@email.com" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="contact-subject">Asunto</label>
-                                        <select id="contact-subject" required>
-                                            <option value="">Selecciona un asunto</option>
-                                            <option value="soporte">Soporte Técnico</option>
-                                            <option value="cuenta">Problemas con la Cuenta</option>
-                                            <option value="sugerencia">Sugerencia</option>
-                                            <option value="colaboracion">Colaboración</option>
-                                            <option value="otro">Otro</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                
-                                <div class="form-section">
-                                    <div class="section-title">
-                                        <i class="fas fa-comment"></i>
-                                        <h4>Tu Mensaje</h4>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="contact-message">Mensaje</label>
-                                        <textarea id="contact-message" rows="6" placeholder="Describe tu consulta o sugerencia..." required></textarea>
-                                    </div>
-                                    <div class="form-group checkbox-group">
-                                        <label class="checkbox-container">
-                                            <input type="checkbox" id="privacy-policy" required>
-                                            <span class="checkmark"></span>
-                                            Acepto la <a href="#">política de privacidad</a> y el <a href="#">tratamiento de datos</a>
-                                        </label>
-                                    </div>
-                                </div>
+                    <div class="content-grid">
+                        <div class="info-card fade-in-up">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
                             </div>
-                            
-                            <div class="form-actions">
-                                <button type="submit" class="btn btn-primary btn-lg">
-                                    <i class="fas fa-paper-plane"></i>
-                                    Enviar Mensaje
-                                </button>
+                            <h3 class="info-title">Email de Soporte</h3>
+                            <p class="info-description">soporte@sensus.com - Respuesta en 24 horas</p>
+                        </div>
+                    
+                        <div class="info-card fade-in-up">
+                            <div class="info-icon">
+                                <i class="fas fa-phone" aria-hidden="true"></i>
                             </div>
-                        </form>
+                            <h3 class="info-title">Línea de Ayuda</h3>
+                            <p class="info-description">+34 900 123 456 - Disponible 24/7</p>
+                        </div>
+                    
+                        <div class="info-card fade-in-up">
+                            <div class="info-icon">
+                                <i class="fas fa-comments" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="info-title">Chat en Vivo</h3>
+                            <p class="info-description">Disponible de 9:00 a 21:00</p>
+                        </div>
+                    
+                        <div class="info-card fade-in-up">
+                            <div class="info-icon">
+                                <i class="fas fa-video" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="info-title">Consulta Virtual</h3>
+                            <p class="info-description">Sesiones online con especialistas</p>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 32px;">
+                        <a href="evaluacion.html" class="btn-primary">
+                            <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                            Evaluar Mis Síntomas
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- Mapa Section -->
-        <section class="map-section">
-            <div class="container">
-                <h2 class="section-title gta-style-title">ENCUÉNTRANOS</h2>
-                <div class="map-container">
-                    <div class="map-placeholder">
-                        <!-- Aquí iría un mapa interactivo -->
-                        <img src="map-placeholder.jpg" alt="Mapa de ubicación" class="map-image" onerror="this.src='placeholder-map.svg'">
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- FAQ Section -->
-        <section class="faq-section">
-            <div class="container">
-                <h2 class="section-title gta-style-title">PREGUNTAS FRECUENTES</h2>
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>¿Cómo puedo cancelar mi suscripción?</h3>
-                            <button class="toggle-answer"><i class="fas fa-plus"></i></button>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Puedes cancelar tu suscripción en cualquier momento desde tu perfil de usuario. Ve a "Mi cuenta" > "Suscripciones" y haz clic en "Cancelar suscripción". Tu acceso a las funciones premium continuará hasta el final del período de facturación.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>¿Mis datos están seguros?</h3>
-                            <button class="toggle-answer"><i class="fas fa-plus"></i></button>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Sí, la seguridad de tus datos es nuestra prioridad. Utilizamos encriptación de extremo a extremo y cumplimos con todas las normativas de protección de datos. Nunca compartimos tu información personal con terceros sin tu consentimiento explícito.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>¿Puedo usar Sensus sin conexión a internet?</h3>
-                            <button class="toggle-answer"><i class="fas fa-plus"></i></button>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Algunas funciones básicas de Sensus están disponibles sin conexión, como el registro de emociones en el diario. Sin embargo, para sincronizar tus datos y acceder a todas las funcionalidades, necesitarás conexión a internet.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>¿El test GAD-7 reemplaza la consulta con un profesional?</h3>
-                            <button class="toggle-answer"><i class="fas fa-plus"></i></button>
-                        </div>
-                        <div class="faq-answer">
-                            <p>No, el test GAD-7 es una herramienta de evaluación, no un diagnóstico. Si experimentas síntomas de ansiedad, te recomendamos consultar con un profesional de la salud mental para una evaluación completa y un tratamiento adecuado.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Call to Action -->
-        <section class="cta-section">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>¿LISTO PARA COMENZAR?</h2>
-                    <p>Únete a miles de usuarios que ya están mejorando su bienestar emocional con Sensus.</p>
-                    <div class="cta-buttons">
-                        <a href="planes.html" class="btn btn-primary btn-lg">VER PLANES</a>
-                        <a href="test.html" class="btn btn-outline btn-lg">REALIZAR TEST GRATUITO</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    
     </main>
 
     <footer class="footer">
@@ -347,7 +167,7 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <div class="logo-small-placeholder">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-brain" aria-hidden="true"></i>
                         <span>SENSUS</span>
                     </div>
                     <p>© 2025 Sensus. App de salud mental respaldada por la ciencia.</p>
@@ -455,5 +275,7 @@
     
     <!-- Scripts de la aplicación -->
     <script src="js/script.js?v=2"></script>
+    <script src="js/mobile-menu-enhanced.js"></script>
+    <script src="js/header-interactions.js"></script>
 </body>
 </html>

@@ -4,23 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Síntomas y Tipos de Ansiedad | Sensus</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/credibility-improvements.css">
+    
+    <!-- CSS del Santuario Digital -->
+    <link rel="stylesheet" href="css/sanctuary-design.css">
+    <link rel="stylesheet" href="css/warm-design.css">
+    <link rel="stylesheet" href="css/universal-warm.css">
+    <link rel="stylesheet" href="css/header-clean.css">
+    <link rel="stylesheet" href="css/mobile-menu-enhanced.css">
+    <link rel="stylesheet" href="css/static-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta name="description" content="Conoce los diferentes tipos de ansiedad, sus síntomas y cómo identificarlos para un mejor manejo de tu salud mental.">
 </head>
 <body class="ansiedad-page">
+    <!-- Header -->
     <header class="header">
-        <div class="container header-container">
+        <div class="header-container">
             <div class="logo-container">
                 <div class="logo-placeholder">
-                    <i class="fas fa-brain"></i>
+                    <i class="fas fa-brain" aria-hidden="true"></i>
                     <span>SENSUS</span>
                 </div>
             </div>
+            
             <nav class="main-nav">
                 <button class="menu-toggle" aria-label="Abrir menú">
                     <span class="bar"></span>
@@ -28,742 +36,291 @@
                     <span class="bar"></span>
                 </button>
                 <ul class="nav-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="evaluacion.html">Evaluación</a></li>
-                    <li><a href="diario.html">Diario</a></li>
-                    <li><a href="ansiedad.html" class="active">Síntomas</a></li>
-                    <li><a href="planes.html">Planes</a></li>
-                    <li><a href="equipo.html">Equipo</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="index.html">
+                                <i class="fas fa-home" aria-hidden="true"></i>
+                                Inicio
+                            </a></li>
+                    <li><a href="evaluacion.html">
+                                <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                                Evaluación
+                            </a></li>
+                    <li><a href="diario.html">
+                                <i class="fas fa-book-open" aria-hidden="true"></i>
+                                Diario
+                            </a></li>
+                    <li><a href="ansiedad.html">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                Síntomas
+                            </a></li>
+                    <li><a href="planes.html">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                Planes
+                            </a></li>
+                    <li><a href="equipo.html">
+                                <i class="fas fa-users" aria-hidden="true"></i>
+                                Equipo
+                            </a></li>
+                    <li><a href="contacto.html">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                                Contacto
+                            </a></li>
                 </ul>
             </nav>
+            
             <div class="auth-buttons">
-                <button class="btn btn-outline" id="login-btn">Iniciar sesión</button>
-                <button class="btn btn-primary" id="register-btn">Registrarse</button>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
-                </button>
+                <button class="btn-secondary" id="login-btn">Iniciar sesión</button>
+                <button class="btn-primary" id="register-btn">Registrarse</button>
             </div>
         </div>
     </header>
+    
+    <!-- Menu Overlay -->
+    <div class="menu-overlay"></div>
 
+    
     <main>
-        <!-- Hero Section Profesional -->
-        <section class="professional-hero">
-            <div class="hero-background">
-                <div class="hero-overlay"></div>
-                <div class="hero-pattern"></div>
-            </div>
+        <!-- Hero Section -->
+        <section class="hero-section" aria-labelledby="main-title">
             <div class="container">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <i class="fas fa-brain"></i>
-                        <span>Salud Mental</span>
-                    </div>
-                    <h1 class="hero-title">Comprensión Profunda de la Ansiedad</h1>
+                <div class="hero-content fade-in-up">
+                    <h1 id="main-title" class="hero-title">Comprensión Profunda de la Ansiedad</h1>
                     <p class="hero-subtitle">Explora los diferentes tipos de trastornos de ansiedad, sus manifestaciones clínicas y estrategias de identificación basadas en evidencia científica.</p>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">6</div>
-                            <div class="stat-label">Tipos Principales</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">40+</div>
-                            <div class="stat-label">Síntomas Identificados</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">15%</div>
-                            <div class="stat-label">Prevalencia Mundial</div>
-                        </div>
-                    </div>
-                    <div class="hero-actions">
-                        <a href="#sintomas" class="btn btn-primary btn-lg btn-cta">
-                            <i class="fas fa-search"></i>
-                            EXPLORAR SÍNTOMAS
+                    
+                    <div class="hero-actions fade-in-up">
+                        <a href="evaluacion.html" class="btn-primary">
+                            <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                            Evaluación GAD-7
                         </a>
-                        <a href="test.html" class="btn btn-outline btn-lg btn-cta">
-                            <i class="fas fa-clipboard-check"></i>
-                            EVALUACIÓN GAD-7
+                        <a href="diario.html" class="btn-secondary">
+                            <i class="fas fa-book-open" aria-hidden="true"></i>
+                            Iniciar Diario
                         </a>
                     </div>
                 </div>
-                <div class="hero-visual">
-                    <div class="visual-container">
-                        <div class="brain-animation">
-                            <div class="brain-circle">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <div class="pulse-ring"></div>
-                            <div class="pulse-ring delay-1"></div>
-                            <div class="pulse-ring delay-2"></div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
-        <!-- Síntomas Profesionales Section -->
-        <section class="professional-symptoms-section" id="sintomas">
+        
+        <!-- Síntomas Físicos Section -->
+        <section class="content-section" aria-labelledby="fisicos-title">
             <div class="container">
-                <div class="section-header">
-                    <div class="section-badge">
-                        <i class="fas fa-stethoscope"></i>
-                        <span>Manifestaciones Clínicas</span>
+                <div class="content-card fade-in-up">
+                    <div class="content-icon">
+                        <i class="fas fa-heartbeat" aria-hidden="true"></i>
                     </div>
-                    <h2 class="section-title">Síntomas y Manifestaciones de la Ansiedad</h2>
-                    <p class="section-description">La ansiedad se manifiesta a través de múltiples dimensiones que afectan el funcionamiento integral del individuo. Comprender estas manifestaciones es fundamental para una identificación temprana y un abordaje efectivo.</p>
-                </div>
-                
-                <div class="symptoms-categories">
-                    <div class="category-card physical">
-                        <div class="category-header">
-                            <div class="category-icon">
-                                <i class="fas fa-heartbeat"></i>
+                    <h2 id="fisicos-title" class="content-title">Síntomas Físicos</h2>
+                    <p class="content-description">Reconocer los signos físicos es el primer paso hacia el manejo efectivo de la ansiedad. Estos síntomas son respuestas naturales del cuerpo al estrés.</p>
+                    
+                    <div class="content-grid">
+                        <div class="info-card fade-in-up">
+                            <div class="info-icon">
+                                <i class="fas fa-heartbeat" aria-hidden="true"></i>
                             </div>
-                            <h3>Síntomas Físicos</h3>
-                            <p class="category-description">Manifestaciones somáticas que involucran el sistema nervioso autónomo</p>
+                            <h3 class="info-title">Taquicardia</h3>
+                            <p class="info-description">Aumento del ritmo cardíaco por encima de 100 lpm en reposo</p>
                         </div>
-                        <div class="symptoms-list">
-                            <div class="symptom-item">
-                                <div class="symptom-indicator"></div>
-                                <div class="symptom-content">
-                                    <h4>Taquicardia</h4>
-                                    <p>Aumento del ritmo cardíaco por encima de 100 lpm en reposo</p>
-                                </div>
+                    
+                        <div class="info-card fade-in-up">
+                            <div class="info-icon">
+                                <i class="fas fa-lungs" aria-hidden="true"></i>
                             </div>
-                            <div class="symptom-item">
-                                <div class="symptom-indicator"></div>
-                                <div class="symptom-content">
-                                    <h4>Hiperventilación</h4>
-                                    <p>Respiración rápida y superficial que puede provocar mareos</p>
-                                </div>
+                            <h3 class="info-title">Hiperventilación</h3>
+                            <p class="info-description">Respiración rápida y superficial que puede provocar mareos</p>
+                        </div>
+                    
+                        <div class="info-card fade-in-up">
+                            <div class="info-icon">
+                                <i class="fas fa-tint" aria-hidden="true"></i>
                             </div>
-                            <div class="symptom-item">
-                                <div class="symptom-indicator"></div>
-                                <div class="symptom-content">
-                                    <h4>Diaforesis</h4>
-                                    <p>Sudoración excesiva sin causa aparente</p>
-                                </div>
+                            <h3 class="info-title">Sudoración</h3>
+                            <p class="info-description">Diaforesis excesiva sin causa aparente</p>
+                        </div>
+                    
+                        <div class="info-card fade-in-up">
+                            <div class="info-icon">
+                                <i class="fas fa-hand-rock" aria-hidden="true"></i>
                             </div>
-                            <div class="symptom-item">
-                                <div class="symptom-indicator"></div>
-                                <div class="symptom-content">
-                                    <h4>Tremor</h4>
-                                <p>Temblores finos en extremidades superiores</p>
-                                </div>
+                            <h3 class="info-title">Temblores</h3>
+                            <p class="info-description">Tremor fino en extremidades superiores</p>
+                        </div>
+                    
+                        <div class="info-card fade-in-up">
+                            <div class="info-icon">
+                                <i class="fas fa-battery-quarter" aria-hidden="true"></i>
                             </div>
-                            <div class="symptom-item">
-                                <div class="symptom-indicator"></div>
-                                <div class="symptom-content">
-                                    <h4>Astenia</h4>
-                                    <p>Sensación de debilidad y fatiga persistente</p>
-                                </div>
+                            <h3 class="info-title">Fatiga</h3>
+                            <p class="info-description">Sensación de debilidad y agotamiento persistente</p>
+                        </div>
+                    
+                        <div class="info-card fade-in-up">
+                            <div class="info-icon">
+                                <i class="fas fa-stomach" aria-hidden="true"></i>
                             </div>
-                            <div class="symptom-item">
-                                <div class="symptom-indicator"></div>
-                                <div class="symptom-content">
-                                    <h4>Gastrointestinales</h4>
-                                    <p>Náuseas, diarrea, dolor abdominal, pérdida de apetito</p>
-                                </div>
-                            </div>
+                            <h3 class="info-title">Gastrointestinales</h3>
+                            <p class="info-description">Náuseas, diarrea, dolor abdominal, pérdida de apetito</p>
                         </div>
                     </div>
                     
-                    <div class="category-card cognitive">
-                        <div class="category-header">
-                            <div class="category-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <h3>Síntomas Cognitivos</h3>
-                            <p class="category-description">Alteraciones en los procesos de pensamiento y percepción</p>
-                        </div>
-                        <div class="symptoms-list">
-                            <div class="symptom-item">
-                                <div class="symptom-indicator"></div>
-                                <div class="symptom-content">
-                                    <h4>Rumiación</h4>
-                                    <p>Pensamientos repetitivos y persistentes sobre preocupaciones</p>
-                                </div>
-                            </div>
-                            <div class="symptom-item">
-                                <div class="symptom-indicator"></div>
-                                <div class="symptom-content">
-                                    <h4>Catastrofización</h4>
-                                    <p>Anticipación de consecuencias negativas exageradas</p>
-                                </div>
-                            </div>
-                            <div class="symptom-item">
-                                <div class="symptom-indicator"></div>
-                                <div class="symptom-content">
-                                    <h4>Déficit Atencional</h4>
-                                    <p>Dificultad para mantener la concentración y atención sostenida</p>
-                                </div>
-                            </div>
-                            <div class="symptom-item">
-                                <div class="symptom-indicator"></div>
-                                <div class="symptom-content">
-                                    <h4>Pensamientos Intrusivos</h4>
-                                    <p>Ideas no deseadas que aparecen de forma involuntaria</p>
-                                </div>
-                            </div>
-                            <div class="symptom-item">
-                                <div class="symptom-indicator"></div>
-                                <div class="symptom-content">
-                                    <h4>Hipervigilancia</h4>
-                                    <p>Estado de alerta constante ante posibles amenazas</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="category-card emotional">
-                        <div class="category-header">
-                            <div class="category-icon">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                            <h3>Síntomas Emocionales</h3>
-                            <p class="category-description">Alteraciones en la regulación y expresión emocional</p>
-                        </div>
-                        <div class="symptoms-list">
-                            <div class="symptom-item">
-                                <div class="symptom-indicator"></div>
-                                <div class="symptom-content">
-                                    <h4>Nerviosismo</h4>
-                                    <p>Sensación de inquietud y tensión interna</p>
-                                </div>
-                            </div>
-                            <div class="symptom-item">
-                                <div class="symptom-indicator"></div>
-                                <div class="symptom-content">
-                                    <h4>Irritabilidad</h4>
-                                    <p>Respuesta exagerada a estímulos menores</p>
-                                </div>
-                            </div>
-                            <div class="symptom-item">
-                                <div class="symptom-indicator"></div>
-                                <div class="symptom-content">
-                                    <h4>Pánico</h4>
-                                    <p>Miedo intenso acompañado de síntomas físicos severos</p>
-                                </div>
-                            </div>
-                            <div class="symptom-item">
-                                <div class="symptom-indicator"></div>
-                                <div class="symptom-content">
-                                    <h4>Despersonalización</h4>
-                                    <p>Sensación de estar separado de uno mismo</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="category-card behavioral">
-                        <div class="category-header">
-                            <div class="category-icon">
-                                <i class="fas fa-running"></i>
-                            </div>
-                            <h3>Síntomas Conductuales</h3>
-                            <p class="category-description">Modificaciones en el comportamiento y patrones de respuesta</p>
-                        </div>
-                        <div class="symptoms-list">
-                            <div class="symptom-item">
-                                <div class="symptom-indicator"></div>
-                                <div class="symptom-content">
-                                    <h4>Evitación</h4>
-                                    <p>Conducta de escape ante situaciones ansiógenas</p>
-                                </div>
-                            </div>
-                            <div class="symptom-item">
-                                <div class="symptom-indicator"></div>
-                                <div class="symptom-content">
-                                    <h4>Aislamiento Social</h4>
-                                    <p>Retraimiento de actividades sociales y relaciones</p>
-                                </div>
-                            </div>
-                            <div class="symptom-item">
-                                <div class="symptom-indicator"></div>
-                                <div class="symptom-content">
-                                    <h4>Conductas de Seguridad</h4>
-                                    <p>Rutinas compulsivas para reducir la ansiedad</p>
-                                </div>
-                            </div>
-                            <div class="symptom-item">
-                                <div class="symptom-indicator"></div>
-                                <div class="symptom-content">
-                                    <h4>Agitación Motora</h4>
-                                    <p>Inquietud física e incapacidad para relajarse</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div style="text-align: center; margin-top: 32px;">
+                        <a href="evaluacion.html" class="btn-primary">
+                            <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                            Evaluar Mis Síntomas
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Tipos de Ansiedad Profesionales Section -->
-        <section class="professional-anxiety-types-section" id="tipos-ansiedad">
+    
+        <!-- Síntomas Cognitivos Section -->
+        <section class="content-section">
             <div class="container">
-                <div class="section-header">
-                    <div class="section-badge">
-                        <i class="fas fa-clipboard-list"></i>
-                        <span>Clasificación DSM-5</span>
-                    </div>
-                    <h2 class="section-title">Trastornos de Ansiedad: Clasificación Clínica</h2>
-                    <p class="section-description">Según el Manual Diagnóstico y Estadístico de los Trastornos Mentales (DSM-5), los trastornos de ansiedad constituyen un grupo de condiciones psiquiátricas caracterizadas por miedo y ansiedad excesivos que interfieren significativamente con el funcionamiento diario.</p>
-                </div>
-                
-                <div class="anxiety-types-grid">
-                    <div class="anxiety-type-card professional-card">
-                        <div class="card-header">
-                            <div class="disorder-icon">
-                                <i class="fas fa-cloud-rain"></i>
-                            </div>
-                            <div class="disorder-info">
-                                <h3>Trastorno de Ansiedad Generalizada</h3>
-                                <span class="disorder-code">F41.1</span>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="disorder-description">
-                                <p>Caracterizado por preocupación excesiva y persistente sobre múltiples eventos o actividades, presente la mayoría de los días durante al menos 6 meses.</p>
-                            </div>
-                            <div class="criteria-section">
-                                <h4>Criterios Diagnósticos</h4>
-                                <div class="criteria-list">
-                                    <div class="criterion-item">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span>Preocupación excesiva difícil de controlar</span>
-                                    </div>
-                                    <div class="criterion-item">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span>Presencia de 3+ síntomas asociados</span>
-                                    </div>
-                                    <div class="criterion-item">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span>Duración mínima de 6 meses</span>
-                                    </div>
-                                    <div class="criterion-item">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span>Deterioro funcional significativo</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="symptoms-preview">
-                                <h4>Síntomas Asociados</h4>
-                                <div class="symptoms-tags">
-                                    <span class="symptom-tag">Inquietud</span>
-                                    <span class="symptom-tag">Fatiga</span>
-                                    <span class="symptom-tag">Concentración</span>
-                                    <span class="symptom-tag">Irritabilidad</span>
-                                    <span class="symptom-tag">Tensión muscular</span>
-                                    <span class="symptom-tag">Alteraciones del sueño</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="prevalence-info">
-                                <i class="fas fa-chart-pie"></i>
-                                <span>Prevalencia: 3.1% (12 meses)</span>
-                            </div>
+                <div class="content-card fade-in-up">
+                    <h2 class="content-title">Síntomas Cognitivos</h2>
+                    <p class="content-description">Los pensamientos ansiosos pueden crear un ciclo de preocupación que afecta la capacidad de concentración y toma de decisiones.</p>
+                    
+                    <div class="illustration-container">
+                        <div class="illustration illustration-discover">
+                            <i class="fas fa-brain" aria-hidden="true"></i>
                         </div>
                     </div>
                     
-                    <div class="anxiety-type-card professional-card">
-                        <div class="card-header">
-                            <div class="disorder-icon">
-                                <i class="fas fa-bolt"></i>
+                    <div class="symptoms-grid">
+                        
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
                             </div>
-                            <div class="disorder-info">
-                                <h3>Trastorno de Pánico</h3>
-                                <span class="disorder-code">F41.0</span>
-                            </div>
+                            <h3>Preocupación Excesiva</h3>
+                            <p>Pensamientos recurrentes sobre situaciones futuras</p>
                         </div>
-                        <div class="card-content">
-                            <div class="disorder-description">
-                                <p>Caracterizado por ataques de pánico recurrentes e inesperados, episodios de miedo intenso que alcanzan su pico en minutos.</p>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-eye" aria-hidden="true"></i>
                             </div>
-                            <div class="criteria-section">
-                                <h4>Criterios Diagnósticos</h4>
-                                <div class="criteria-list">
-                                    <div class="criterion-item">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span>Ataques de pánico recurrentes e inesperados</span>
-                                    </div>
-                                    <div class="criterion-item">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span>Preocupación persistente por nuevos ataques</span>
-                                    </div>
-                                    <div class="criterion-item">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span>Cambios comportamentales significativos</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="symptoms-preview">
-                                <h4>Síntomas del Ataque</h4>
-                                <div class="symptoms-tags">
-                                    <span class="symptom-tag">Taquicardia</span>
-                                    <span class="symptom-tag">Sudoración</span>
-                                    <span class="symptom-tag">Tremor</span>
-                                    <span class="symptom-tag">Dispnea</span>
-                                    <span class="symptom-tag">Náuseas</span>
-                                    <span class="symptom-tag">Despersonalización</span>
-                                </div>
-                            </div>
+                            <h3>Hipervigilancia</h3>
+                            <p>Estado de alerta constante ante posibles amenazas</p>
                         </div>
-                        <div class="card-footer">
-                            <div class="prevalence-info">
-                                <i class="fas fa-chart-pie"></i>
-                                <span>Prevalencia: 2.7% (12 meses)</span>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-question-circle" aria-hidden="true"></i>
                             </div>
+                            <h3>Indecisión</h3>
+                            <p>Dificultad para tomar decisiones simples</p>
                         </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-memory" aria-hidden="true"></i>
+                            </div>
+                            <h3>Problemas de Concentración</h3>
+                            <p>Dificultad para mantener la atención en tareas</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                            </div>
+                            <h3>Pensamientos Intrusivos</h3>
+                            <p>Ideas no deseadas que aparecen repetidamente</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-clock" aria-hidden="true"></i>
+                            </div>
+                            <h3>Sensación de Urgencia</h3>
+                            <p>Sensación constante de que algo malo va a pasar</p>
+                        </div>
+                    
                     </div>
                     
-                    <div class="anxiety-type-card professional-card">
-                        <div class="card-header">
-                            <div class="disorder-icon">
-                                <i class="fas fa-users-slash"></i>
-                            </div>
-                            <div class="disorder-info">
-                                <h3>Trastorno de Ansiedad Social</h3>
-                                <span class="disorder-code">F40.1</span>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="disorder-description">
-                                <p>Miedo o ansiedad intensa en situaciones sociales donde la persona puede ser evaluada, juzgada o rechazada por otros.</p>
-                            </div>
-                            <div class="criteria-section">
-                                <h4>Criterios Diagnósticos</h4>
-                                <div class="criteria-list">
-                                    <div class="criterion-item">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span>Miedo intenso a situaciones sociales</span>
-                                    </div>
-                                    <div class="criterion-item">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span>Evitación o resistencia con ansiedad intensa</span>
-                                    </div>
-                                    <div class="criterion-item">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span>Duración mínima de 6 meses</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="symptoms-preview">
-                                <h4>Manifestaciones</h4>
-                                <div class="symptoms-tags">
-                                    <span class="symptom-tag">Rubor</span>
-                                    <span class="symptom-tag">Tremor</span>
-                                    <span class="symptom-tag">Sudoración</span>
-                                    <span class="symptom-tag">Evitación</span>
-                                    <span class="symptom-tag">Miedo al juicio</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="prevalence-info">
-                                <i class="fas fa-chart-pie"></i>
-                                <span>Prevalencia: 7.1% (12 meses)</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="anxiety-type-card professional-card">
-                        <div class="card-header">
-                            <div class="disorder-icon">
-                                <i class="fas fa-sync-alt"></i>
-                            </div>
-                            <div class="disorder-info">
-                                <h3>Trastorno Obsesivo-Compulsivo</h3>
-                                <span class="disorder-code">F42</span>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="disorder-description">
-                                <p>Presencia de obsesiones (pensamientos intrusivos) y/o compulsiones (comportamientos repetitivos) que consumen tiempo significativo.</p>
-                            </div>
-                            <div class="criteria-section">
-                                <h4>Criterios Diagnósticos</h4>
-                                <div class="criteria-list">
-                                    <div class="criterion-item">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span>Presencia de obsesiones y/o compulsiones</span>
-                                    </div>
-                                    <div class="criterion-item">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span>Consumo de tiempo significativo (>1h/día)</span>
-                                    </div>
-                                    <div class="criterion-item">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span>Deterioro funcional o malestar clínicamente significativo</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="symptoms-preview">
-                                <h4>Tipos Comunes</h4>
-                                <div class="symptoms-tags">
-                                    <span class="symptom-tag">Limpieza</span>
-                                    <span class="symptom-tag">Verificación</span>
-                                    <span class="symptom-tag">Orden</span>
-                                    <span class="symptom-tag">Acumulación</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="prevalence-info">
-                                <i class="fas fa-chart-pie"></i>
-                                <span>Prevalencia: 1.2% (12 meses)</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="anxiety-type-card professional-card">
-                        <div class="card-header">
-                            <div class="disorder-icon">
-                                <i class="fas fa-exclamation-triangle"></i>
-                            </div>
-                            <div class="disorder-info">
-                                <h3>Trastorno de Estrés Postraumático</h3>
-                                <span class="disorder-code">F43.1</span>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="disorder-description">
-                                <p>Desarrollo de síntomas característicos tras la exposición a un evento traumático, con duración superior a 1 mes.</p>
-                            </div>
-                            <div class="criteria-section">
-                                <h4>Criterios Diagnósticos</h4>
-                                <div class="criteria-list">
-                                    <div class="criterion-item">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span>Exposición a evento traumático</span>
-                                    </div>
-                                    <div class="criterion-item">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span>Síntomas de intrusión, evitación, alteraciones cognitivas y reactividad</span>
-                                    </div>
-                                    <div class="criterion-item">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span>Duración >1 mes</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="symptoms-preview">
-                                <h4>Síntomas Clave</h4>
-                                <div class="symptoms-tags">
-                                    <span class="symptom-tag">Flashbacks</span>
-                                    <span class="symptom-tag">Pesadillas</span>
-                                    <span class="symptom-tag">Evitación</span>
-                                    <span class="symptom-tag">Hipervigilancia</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="prevalence-info">
-                                <i class="fas fa-chart-pie"></i>
-                                <span>Prevalencia: 3.5% (12 meses)</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="anxiety-type-card professional-card">
-                        <div class="card-header">
-                            <div class="disorder-icon">
-                                <i class="fas fa-spider"></i>
-                            </div>
-                            <div class="disorder-info">
-                                <h3>Fobias Específicas</h3>
-                                <span class="disorder-code">F40.2</span>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="disorder-description">
-                                <p>Miedo o ansiedad marcada y persistente ante un objeto o situación específica, desproporcionado al peligro real.</p>
-                            </div>
-                            <div class="criteria-section">
-                                <h4>Criterios Diagnósticos</h4>
-                                <div class="criteria-list">
-                                    <div class="criterion-item">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span>Miedo intenso a objeto/situación específica</span>
-                                    </div>
-                                    <div class="criterion-item">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span>Evitación activa o resistencia con ansiedad intensa</span>
-                                    </div>
-                                    <div class="criterion-item">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span>Duración ≥6 meses</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="symptoms-preview">
-                                <h4>Tipos Comunes</h4>
-                                <div class="symptoms-tags">
-                                    <span class="symptom-tag">Animales</span>
-                                    <span class="symptom-tag">Alturas</span>
-                                    <span class="symptom-tag">Sangre</span>
-                                    <span class="symptom-tag">Volar</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="prevalence-info">
-                                <i class="fas fa-chart-pie"></i>
-                                <span>Prevalencia: 7.7% (12 meses)</span>
-                            </div>
-                        </div>
+                    <div style="text-align: center; margin-top: 32px;">
+                        <a href="evaluacion.html" class="btn-primary">
+                            <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                            Evaluar Mis Síntomas
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Autodiagnóstico Section -->
-        <section class="self-diagnosis-section">
+    
+        <!-- Síntomas Emocionales Section -->
+        <section class="content-section">
             <div class="container">
-                <h2 class="section-title gta-style-title">¿CÓMO IDENTIFICAR TU TIPO DE ANSIEDAD?</h2>
-                <p class="section-description">Aunque solo un profesional de la salud mental puede diagnosticar oficialmente un trastorno de ansiedad, estas preguntas pueden ayudarte a identificar posibles patrones:</p>
-                
-                <div class="diagnosis-questions">
-                    <div class="diagnosis-question">
-                        <h3>1. ¿Te preocupas excesivamente por múltiples aspectos de tu vida diaria?</h3>
-                        <p>Si te preocupas constantemente por diferentes situaciones (trabajo, salud, familia, finanzas) y te resulta difícil controlar estas preocupaciones, podrías estar experimentando síntomas de Trastorno de Ansiedad Generalizada.</p>
-                    </div>
+                <div class="content-card fade-in-up">
+                    <h2 class="content-title">Síntomas Emocionales</h2>
+                    <p class="content-description">La ansiedad afecta profundamente el estado emocional, creando sentimientos intensos que pueden ser abrumadores.</p>
                     
-                    <div class="diagnosis-question">
-                        <h3>2. ¿Has experimentado episodios repentinos e intensos de miedo que alcanzan su máxima expresión en minutos?</h3>
-                        <p>Si has tenido ataques de pánico con síntomas físicos intensos como palpitaciones, sudoración, temblores y sensación de ahogo, podrías estar experimentando un Trastorno de Pánico.</p>
-                    </div>
-                    
-                    <div class="diagnosis-question">
-                        <h3>3. ¿Sientes un miedo intenso en situaciones sociales donde podrías ser juzgado?</h3>
-                        <p>Si evitas situaciones sociales por miedo a ser juzgado, humillado o avergonzado, podrías estar experimentando Fobia Social.</p>
-                    </div>
-                    
-                    <div class="diagnosis-question">
-                        <h3>4. ¿Tienes pensamientos intrusivos que te generan ansiedad y realizas comportamientos repetitivos para reducirla?</h3>
-                        <p>Si experimentas pensamientos no deseados y recurrentes que te causan ansiedad, y realizas acciones repetitivas para aliviarla, podrías estar experimentando síntomas de Trastorno Obsesivo-Compulsivo.</p>
-                    </div>
-                    
-                    <div class="diagnosis-question">
-                        <h3>5. ¿Has vivido un evento traumático y sigues experimentando recuerdos angustiantes, pesadillas o flashbacks?</h3>
-                        <p>Si has experimentado o presenciado un evento traumático y tienes recuerdos intrusivos, pesadillas, flashbacks o evitas situaciones relacionadas con el trauma, podrías estar experimentando Trastorno de Estrés Postraumático.</p>
-                    </div>
-                    
-                    <div class="diagnosis-question">
-                        <h3>6. ¿Tienes un miedo intenso y específico hacia un objeto o situación particular?</h3>
-                        <p>Si experimentas un miedo intenso y desproporcionado hacia algo específico (como alturas, arañas, volar, etc.) y evitas activamente estas situaciones, podrías estar experimentando una Fobia Específica.</p>
-                    </div>
-                </div>
-                
-                <div class="diagnosis-disclaimer">
-                    <div class="disclaimer-icon">
-                        <i class="fas fa-exclamation-circle"></i>
-                    </div>
-                    <div class="disclaimer-content">
-                        <h3>IMPORTANTE - INFORMACIÓN CIENTÍFICA</h3>
-                        <p><strong>Esta información está basada en el DSM-5 y criterios clínicos validados, pero NO sustituye el diagnóstico profesional.</strong> Los datos de prevalencia provienen de estudios epidemiológicos internacionales (Kessler et al., 2005; Wittchen et al., 2011). Si crees que puedes estar experimentando un trastorno de ansiedad, te recomendamos buscar ayuda de un profesional de la salud mental calificado.</p>
-                        <div class="scientific-reference">
-                            <p><strong>Referencias:</strong> American Psychiatric Association (2013). DSM-5. Kessler, R.C. et al. (2005). Arch Gen Psychiatry. Wittchen, H.U. et al. (2011). Eur Neuropsychopharmacol.</p>
+                    <div class="illustration-container">
+                        <div class="illustration illustration-discover">
+                            <i class="fas fa-heart" aria-hidden="true"></i>
                         </div>
+                    </div>
+                    
+                    <div class="symptoms-grid">
+                        
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-frown" aria-hidden="true"></i>
+                            </div>
+                            <h3>Irritabilidad</h3>
+                            <p>Respuestas emocionales exageradas a estímulos menores</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-exclamation" aria-hidden="true"></i>
+                            </div>
+                            <h3>Nerviosismo</h3>
+                            <p>Sensación de inquietud e intranquilidad constante</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                            </div>
+                            <h3>Sensación de Peligro</h3>
+                            <p>Miedo intenso sin causa aparente</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-user-times" aria-hidden="true"></i>
+                            </div>
+                            <h3>Aislamiento</h3>
+                            <p>Tendencia a evitar situaciones sociales</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-sad-tear" aria-hidden="true"></i>
+                            </div>
+                            <h3>Tristeza</h3>
+                            <p>Sentimientos de desesperanza y melancolía</p>
+                        </div>
+                    
+                        <div class="symptom-card">
+                            <div class="symptom-icon">
+                                <i class="fas fa-angry" aria-hidden="true"></i>
+                            </div>
+                            <h3>Frustración</h3>
+                            <p>Sensación de impotencia ante la situación</p>
+                        </div>
+                    
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 32px;">
+                        <a href="evaluacion.html" class="btn-primary">
+                            <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                            Evaluar Mis Síntomas
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Recursos Section -->
-        <section class="resources-section">
-            <div class="container">
-                <h2 class="section-title gta-style-title">RECURSOS PARA MANEJAR LA ANSIEDAD</h2>
-                
-                <div class="resources-grid">
-                    <div class="resource-card">
-                        <div class="resource-icon">
-                            <i class="fas fa-book"></i>
-                        </div>
-                        <h3>Libros Recomendados</h3>
-                        <ul>
-                            <li>"Adiós, Ansiedad" - David D. Burns</li>
-                            <li>"Reinventa tu vida" - Jeffrey E. Young</li>
-                            <li>"El poder del ahora" - Eckhart Tolle</li>
-                            <li>"Mindfulness para reducir el estrés" - Jon Kabat-Zinn</li>
-                            <li>"Terapia Cognitivo-Conductual para Dummies" - Rhena Branch</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="resource-card sensus-highlight">
-                        <div class="resource-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>Sensus - Tu Compañero Científico</h3>
-                        <ul>
-                            <li><strong>Test GAD-7 validado</strong> - Mismo test usado en hospitales</li>
-                            <li><strong>Diario inteligente</strong> - Análisis basado en TCC</li>
-                            <li><strong>Predicción de picos</strong> - Identifica patrones únicos</li>
-                            <li><strong>100% privado</strong> - Sin ventas de datos</li>
-                            <li><strong>Respaldado por expertos</strong> - Comité científico real</li>
-                        </ul>
-                        <a href="test.html" class="btn btn-primary btn-sm">PROBAR SENSUS</a>
-                    </div>
-                    
-                    <div class="resource-card">
-                        <div class="resource-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3>Otras Aplicaciones</h3>
-                        <ul>
-                            <li>Headspace - Meditación guiada</li>
-                            <li>Calm - Meditación y sueño</li>
-                            <li>Breathe2Relax - Ejercicios de respiración</li>
-                            <li>MindShift - Herramientas para la ansiedad</li>
-                            <li>Daylio - Diario de estado de ánimo</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="resource-card">
-                        <div class="resource-icon">
-                            <i class="fas fa-laptop"></i>
-                        </div>
-                        <h3>Sitios Web y Plataformas</h3>
-                        <ul>
-                            <li>Terapify - Terapia online</li>
-                            <li>7 Cups - Apoyo emocional</li>
-                            <li>Asociación Americana de Ansiedad y Depresión</li>
-                            <li>Psicología y Mente - Artículos sobre salud mental</li>
-                            <li>TED Talks sobre ansiedad y salud mental</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="resource-card">
-                        <div class="resource-icon">
-                            <i class="fas fa-hands-helping"></i>
-                        </div>
-                        <h3>Líneas de Ayuda</h3>
-                        <ul>
-                            <li>Teléfono de la Esperanza: 717 003 717</li>
-                            <li>Fundación ANAR: 900 20 20 10</li>
-                            <li>Servicio de atención psicológica por COVID-19: 91 700 79 88</li>
-                            <li>Cruz Roja: 900 107 917</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Call to Action -->
-        <section class="cta-section">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>¿LISTO PARA DAR EL PRIMER PASO?</h2>
-                    <p>Realiza nuestro test de ansiedad GAD-7 para evaluar tu nivel de ansiedad y recibir recomendaciones personalizadas.</p>
-                    <div class="cta-buttons">
-                        <a href="test.html" class="btn btn-primary btn-lg btn-cta">REALIZAR TEST GAD-7</a>
-                        <a href="planes.html" class="btn btn-outline btn-lg btn-cta">VER PLANES</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    
     </main>
 
     <footer class="footer">
@@ -771,7 +328,7 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <div class="logo-small-placeholder">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-brain" aria-hidden="true"></i>
                         <span>SENSUS</span>
                     </div>
                     <p>© 2025 Sensus. App de salud mental respaldada por la ciencia.</p>
@@ -871,7 +428,8 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div>    <!-- CSS Responsive -->
+    <link rel="stylesheet" href="css/responsive.css">
 
     <!-- Scripts -->
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
@@ -880,5 +438,6 @@
     <script src="js/modules/firebase-config.js"></script>
     <script src="js/script.min.js" async></script>
     <script src="js/modules/auth.js"></script>
+    <script src="js/mobile-menu-enhanced.js"></script>
 </body>
 </html>

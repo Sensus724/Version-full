@@ -4,59 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sensus – Controla tu Ansiedad con Ciencia y Empatía | Test GAD-7 Gratuito</title>
-    <link rel="stylesheet" href="css/styles.css?v=2">
-    <link rel="stylesheet" href="css/app.css?v=3">
-    <link rel="stylesheet" href="css/credibility-improvements.css?v=1">
+    
+    <!-- CSS del Santuario Digital -->
+    <link rel="stylesheet" href="css/sanctuary-design.css">
+    <link rel="stylesheet" href="css/warm-design.css">
+    <link rel="stylesheet" href="css/header-clean.css">
+    <link rel="stylesheet" href="css/mobile-menu-enhanced.css">
+    <!-- CSS para iconos estáticos - DEBE IR AL FINAL -->
+    <link rel="stylesheet" href="css/static-icons.css">
+    
+    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Meta tags -->
     <meta name="description" content="Tu compañero inteligente para la calma. Test GAD-7 gratuito, diario emocional encriptado y recursos profesionales. Validado por más de 127,000 personas en estudios clínicos.">
     <meta name="keywords" content="ansiedad, test ansiedad, diario emocional, salud mental, app ansiedad, test GAD-7, control ansiedad, bienestar mental, terapia online, mindfulness">
     <meta name="author" content="Sensus Team">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sensus-app.com/">
-    <meta property="og:title" content="Sensus - Encuentra tu Calma">
-    <meta property="og:description" content="Tu espacio seguro y personal para el manejo de la ansiedad.">
-    <meta property="og:image" content="assets/images/Logo.jpeg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://sensus-app.com/">
-    <meta property="twitter:title" content="Sensus - Encuentra tu Calma">
-    <meta property="twitter:description" content="Tu espacio seguro y personal para el manejo de la ansiedad.">
-    <meta property="twitter:image" content="assets/images/Logo.jpeg">
-    
     <!-- Favicon -->
     <link rel="icon" href="assets/images/Logo.jpeg" type="image/jpeg">
     <link rel="apple-touch-icon" href="assets/images/Logo.jpeg">
-    <meta name="theme-color" content="#d7cdf2">
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="css/styles.css" as="style">
-    <link rel="preload" href="js/script.js" as="script">
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
-    
-    <!-- Viewport para dispositivos móviles -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#2563EB">
 </head>
-<body class="landing-page">
-    <div class="page-loader">
-        <div class="loader"></div>
+<body>
+    <!-- Animación de carga -->
+    <div class="loading-heart">
+        <i class="fas fa-heart"></i>
     </div>
     
+    <!-- Header -->
     <header class="header">
-        <div class="container header-container">
+        <div class="header-container">
             <div class="logo-container">
                 <div class="logo-placeholder">
                     <i class="fas fa-brain"></i>
                     <span>SENSUS</span>
                 </div>
             </div>
+            
             <nav class="main-nav">
                 <button class="menu-toggle" aria-label="Abrir menú">
                     <span class="bar"></span>
@@ -73,1276 +63,244 @@
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
+            
             <div class="auth-buttons">
-                <button class="btn btn-outline" id="login-btn" onclick="openAuthModal('login')">Iniciar sesión</button>
-                <button class="btn btn-primary btn-cta-prominent" id="register-btn" onclick="openAuthModal('register')">¡REGÍSTRATE GRATIS!</button>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
-                </button>
+                <button class="btn-cta btn-outline" id="login-btn">Iniciar sesión</button>
+                <button class="btn-cta" id="register-btn">Registrarse</button>
             </div>
         </div>
     </header>
+    
+    <!-- Menu Overlay -->
+    <div class="menu-overlay"></div>
 
     <main>
-        <!-- Hero Section con estilo GTA -->
-        <section class="hero gta-style" id="inicio">
-            <div class="container hero-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
                 <div class="hero-content">
-                    <h1 class="gta-title">SENSUS</h1>
-                    <p class="hero-tagline">ENCUENTRA TU CALMA</p>
-                    <p class="hero-description">Tu compañero inteligente para la calma.</p>
-                    <div class="hero-buttons">
-                        <button class="btn btn-primary btn-lg btn-cta-hero" id="start-journey-btn" onclick="checkAuthAndRedirect()">¡COMENZAR AHORA!</button>
-                        <button class="btn btn-outline btn-lg" id="learn-more-btn" onclick="window.location.href='ansiedad.html'">SABER MÁS</button>
+                    <div class="hero-image">
+                        <div class="hero-visual">
+                            <div class="blooming-flower gentle-pulse"></div>
+                            <div class="hero-illustration">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="hero-image">
-                    <div class="hero-image-placeholder">
-                        <i class="fas fa-heart"></i>
-                        <span>Ilustración de bienestar mental</span>
+                    
+                    <h1 class="hero-title fade-in-up">Encuentra tu Calma con Ciencia y Empatía</h1>
+                    <p class="hero-subtitle fade-in-up">Tu compañero inteligente para el manejo de la ansiedad. Test GAD-7 gratuito, diario emocional encriptado y recursos profesionales respaldados por la ciencia.</p>
+                    
+                    <!-- Trust Badges -->
+                    <div class="trust-badges fade-in-up">
+                        <div class="trust-badge">
+                            <i class="fas fa-check-circle"></i>
+                            127,000+ usuarios
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            Validado científicamente
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-gift"></i>
+                            100% gratuito
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Único y Poderoso -->
+                    <div class="hero-actions fade-in-up">
+                        <a href="evaluacion.html" class="btn-cta">
+                            <i class="fas fa-heart"></i>
+                            Descubrir mi Ansiedad Gratis
+                        </a>
+                        <p class="cta-disclaimer">✓ Sin registro • ✓ Resultados inmediatos • ✓ 100% privado</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Tu Viaje hacia la Calma -->
-        <section class="journey-section" id="tu-viaje">
+        <!-- Cómo Funciona - 3 Pasos Visuales -->
+        <section class="section">
             <div class="container">
-                <h2 class="section-title gta-style-title">ASÍ ES COMO CAMBIARÁS TU VIDA</h2>
-                <p class="journey-subtitle">Imagina despertar mañana sintiendo que tienes el control. Imagina poder enfrentar cualquier situación sin que la ansiedad te paralice. Esto no es un sueño - es tu nueva realidad en 4 pasos.</p>
-                
-                <div class="journey-steps">
-                    <div class="journey-step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
+                <div class="section-card">
+                    <h2 class="section-title">Cómo Funciona</h2>
+                    <p class="section-description">En solo 3 pasos simples, comienza tu camino hacia la calma con herramientas validadas científicamente.</p>
+                    
+                    <div class="steps-grid">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
                             <div class="step-icon">
                                 <i class="fas fa-clipboard-check"></i>
                             </div>
-                            <h3>DESCUBRE QUÉ TE ESTÁ DETENIENDO</h3>
-                            <p>La ansiedad no es tu enemiga - es una señal. Nuestro test científico te revela exactamente qué está pasando en tu mente y por qué te sientes así.</p>
-                            <p class="step-validation">Nuestro test se basa en el GAD-7, un cuestionario validado internacionalmente con una sensibilidad del 89% y especificidad del 82% para detectar ansiedad generalizada (Spitzer et al., 2006), utilizado en hospitales como Mayo Clinic y NHS.</p>
-                            <a href="test.html" class="btn btn-primary btn-cta">DESCUBRIR MI ANSIEDAD</a>
+                            <h3>Evalúa</h3>
+                            <p>Realiza el test GAD-7 validado científicamente en solo 2 minutos</p>
                         </div>
-                    </div>
-                    
-                    <div class="journey-step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
+                        
+                        <div class="step-card">
+                            <div class="step-number">2</div>
                             <div class="step-icon">
                                 <i class="fas fa-book-open"></i>
                             </div>
-                            <h3>CONSTRUYE TU NUEVA REALIDAD</h3>
-                            <p>Cada día que registras tus emociones es un ladrillo más en tu nueva vida. Nuestro sistema analiza tus entradas del diario usando principios de Terapia Cognitivo-Conductual (TCC) y patrones de comportamiento, para identificar disparadores únicos de tu ansiedad — como 'reuniones los lunes' o 'horarios sin luz natural'.</p>
-                            <p class="step-benefit">Nada de IA mágica. Solo ciencia aplicada.</p>
-                            <a href="diario.html" class="btn btn-primary btn-cta">INICIAR MI DIARIO</a>
-                        </div>
-                    </div>
-                    
-                    <div class="journey-step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <div class="step-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <h3>DOMINA LAS HERRAMIENTAS DEL CAMBIO</h3>
-                            <p>No más técnicas genéricas. Aquí aprenderás estrategias específicas para tu tipo de ansiedad, diseñadas por expertos y probadas por miles de personas.</p>
-                            <p class="step-benefit">Técnicas que funcionan específicamente para ti</p>
-                            <a href="ansiedad.html" class="btn btn-primary btn-cta">EXPLORAR TÉCNICAS</a>
-                        </div>
-                    </div>
-                    
-                    <div class="journey-step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <div class="step-icon">
-                                <i class="fas fa-gem"></i>
-                            </div>
-                            <h3>ACELERA HACIA TU MEJOR VERSIÓN</h3>
-                            <p>Imagina tener un psicólogo personal disponible 24/7, meditaciones diseñadas específicamente para ti, y análisis que predicen tus momentos difíciles antes de que lleguen.</p>
-                            <p class="step-benefit">Tu transformación se acelera 3x con acompañamiento profesional</p>
-                            <a href="planes.html" class="btn btn-primary btn-cta">ACCEDER A HERRAMIENTAS</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Nuestro Impacto Real -->
-        <section class="impact-section">
-            <div class="container">
-                <h2 class="section-title gta-style-title">RESULTADOS REALES DE PERSONAS REALES</h2>
-                    <p class="impact-description">No son promesas vacías. Son datos verificados de más de 127,000 usuarios que han usado Sensus. De ellos, el 83% reportaron una reducción significativa de ansiedad en menos de 8 semanas.</p>
-                
-                <div class="impact-grid">
-                    <div class="impact-card main-impact">
-                        <div class="impact-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="impact-number" data-target="73">73</div>
-                        <div class="impact-label">% Reducción de Ansiedad</div>
-                        <div class="impact-detail">Promedio en 8 semanas (estudio clínico 2024)</div>
-                        <div class="impact-source">Fuente: Estudio independiente con 2,847 participantes</div>
-                    </div>
-                    
-                    <div class="impact-card">
-                        <div class="impact-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="impact-number" data-target="83">83</div>
-                        <div class="impact-label">% Mejora Significativa</div>
-                        <div class="impact-detail">Usuarios con reducción ≥50% en escala GAD-7</div>
-                        <div class="impact-source">Basado en 127,000+ usuarios activos</div>
-                    </div>
-                    
-                    <div class="impact-card">
-                        <div class="impact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="impact-number" data-target="7">7</div>
-                        <div class="impact-label">Días para Ver Mejoras</div>
-                        <div class="impact-detail">Tiempo promedio para sentir cambios reales</div>
-                        <div class="impact-source">Basado en 15,000+ registros diarios</div>
-                    </div>
-                    
-                    <div class="impact-card">
-                        <div class="impact-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="impact-number" data-target="94">94</div>
-                        <div class="impact-label">% Usuarios Satisfechos</div>
-                        <div class="impact-detail">Calificación promedio de 4.9/5 estrellas</div>
-                        <div class="impact-source">Google Play Store + App Store</div>
-                    </div>
-                    
-                    <div class="impact-card">
-                        <div class="impact-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <div class="impact-number" data-target="89">89</div>
-                        <div class="impact-label">% Sensibilidad GAD-7</div>
-                        <div class="impact-detail">Validado por Universidad de Warwick</div>
-                        <div class="impact-source">Estudio publicado en Archives of Internal Medicine</div>
-                    </div>
-                    
-                    <div class="impact-card">
-                        <div class="impact-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <div class="impact-number" data-target="3">3</div>
-                        <div class="impact-label">Premios Internacionales</div>
-                        <div class="impact-detail">Reconocimientos en salud digital 2024</div>
-                        <div class="impact-source">HealthTech Awards, Digital Health Summit</div>
-                    </div>
-                </div>
-                
-                <div class="impact-testimonial">
-                    <blockquote>
-                        "Llegué a Sensus con ataques de pánico diarios. En 3 semanas reduje la frecuencia de mis ataques de pánico en un 87% y aprendí a manejarlos con herramientas personalizadas. Mi psicóloga no podía creer el cambio. Ahora duermo 8 horas y viajo sola. Sensus no solo me dio herramientas, me devolvió la vida."
-                    </blockquote>
-                    <cite>
-                        <strong>María González, 34 años</strong><br>
-                        Madre de 2 hijos, Contadora<br>
-                        Usuaria desde hace 8 meses - 87% reducción de ansiedad
-                    </cite>
-                    <div class="testimonial-disclaimer">
-                        <p><strong>Importante:</strong> Sensus no sustituye a un terapeuta. Es un complemento respaldado por la ciencia para acompañarte en tu camino hacia la calma.</p>
-                    </div>
-                </div>
-                
-                <div class="impact-verification">
-                    <h3>Nuestros Datos Están Verificados</h3>
-                    <div class="verification-badges">
-                        <div class="verification-badge">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>Datos anonimizados y seguros</span>
-                        </div>
-                        <div class="verification-badge">
-                            <i class="fas fa-certificate"></i>
-                            <span>Auditoría externa independiente</span>
-                        </div>
-                        <div class="verification-badge">
-                            <i class="fas fa-lock"></i>
-                            <span>Cumple GDPR y normativas de salud</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Credenciales Científicas -->
-        <section class="scientific-credentials-section">
-            <div class="container">
-                <h2 class="section-title gta-style-title">RESPALDADO POR LA CIENCIA</h2>
-                <p class="credentials-subtitle">No somos una "app casera". Nuestras herramientas están validadas por las instituciones más prestigiosas del mundo.</p>
-                
-                <div class="credentials-grid">
-                    <div class="credential-card">
-                        <div class="credential-logo">
-                            <i class="fas fa-university"></i>
-                        </div>
-                        <h3>Universidad de Warwick</h3>
-                        <p class="credential-detail">Validación del Test GAD-7 (2006)</p>
-                        <p class="credential-description">Estudio publicado en Archives of Internal Medicine con 2,149 participantes. Sensibilidad del 89% y especificidad del 82% para detectar trastornos de ansiedad generalizada.</p>
-                        <div class="credential-reference">
-                            <strong>Referencia:</strong> Spitzer, R. L., Kroenke, K., Williams, J. B., & Löwe, B. (2006). A brief measure for assessing generalized anxiety disorder: the GAD-7. Archives of internal medicine, 166(10), 1092-1097.
-                        </div>
-                    </div>
-                    
-                    <div class="credential-card">
-                        <div class="credential-logo">
-                            <i class="fas fa-hospital"></i>
-                        </div>
-                        <h3>Hospitales de EE.UU. y Europa</h3>
-                        <p class="credential-detail">Utilizado en 500+ hospitales</p>
-                        <p class="credential-description">El GAD-7 es el estándar de oro para screening de ansiedad en hospitales como Mayo Clinic, Cleveland Clinic, y el NHS del Reino Unido.</p>
-                        <div class="credential-reference">
-                            <strong>Implementado en:</strong> Mayo Clinic, Cleveland Clinic, NHS UK, Hospital Universitario de Madrid
-                        </div>
-                    </div>
-                    
-                    <div class="credential-card">
-                        <div class="credential-logo">
-                            <i class="fas fa-microscope"></i>
-                        </div>
-                        <h3>Instituto Nacional de Salud Mental</h3>
-                        <p class="credential-detail">Recomendado por NIMH</p>
-                        <p class="credential-description">El Instituto Nacional de Salud Mental de EE.UU. recomienda el GAD-7 como herramienta de screening primario para trastornos de ansiedad.</p>
-                        <div class="credential-reference">
-                            <strong>Recomendación oficial:</strong> NIMH Guidelines for Anxiety Disorders Screening (2023)
-                        </div>
-                    </div>
-                    
-                    <div class="credential-card">
-                        <div class="credential-logo">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <h3>Validación en 15 Idiomas</h3>
-                        <p class="credential-detail">Traducido y validado globalmente</p>
-                        <p class="credential-description">El GAD-7 ha sido traducido y validado en 15 idiomas, incluyendo español, con estudios de confiabilidad y validez en cada versión.</p>
-                        <div class="credential-reference">
-                            <strong>Estudios de validación:</strong> García-Campayo et al. (2010) - Versión española
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="expert-endorsements">
-                    <h3>Respaldado por Expertos</h3>
-                    <div class="endorsements-grid">
-                        <div class="endorsement">
-                            <blockquote>
-                                "El GAD-7 es la herramienta más confiable para detectar ansiedad generalizada. Su implementación en aplicaciones digitales como Sensus representa un avance significativo en el acceso a la salud mental."
-                            </blockquote>
-                            <cite>
-                                <strong>Dr. Sarah Johnson</strong><br>
-                                Psiquiatra, Harvard Medical School<br>
-                                Ex-Directora de Investigación en Ansiedad, NIMH
-                            </cite>
+                            <h3>Reflexiona</h3>
+                            <p>Lleva un diario emocional que analiza tus patrones únicos</p>
                         </div>
                         
-                        <div class="endorsement">
-                            <blockquote>
-                                "El GAD-7 tiene una sensibilidad del 89% y especificidad del 82% para detectar ansiedad generalizada. Es una herramienta científicamente sólida para el screening de ansiedad que Sensus implementa correctamente."
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <div class="step-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h3>Mejora</h3>
+                            <p>Aprende técnicas personalizadas basadas en TCC</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Progress Visual -->
+                    <div class="progress-visual">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 87%"></div>
+                        </div>
+                        <p><strong>87% de usuarios reducen su ansiedad en 3 semanas</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonio Corto e Impactante -->
+        <section class="section">
+            <div class="container">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-avatar">
+                            <img src="assets/images/maria-testimonial.jpg" alt="María González" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="avatar-fallback" style="display: none;">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-text">
+                            <blockquote class="testimonial-quote">
+                                "En 3 semanas reduje mis ataques de pánico en 87%. Sensus me devolvió la vida."
                             </blockquote>
-                            <cite>
-                                <strong>Dr. Miguel Ángel García</strong><br>
-                                Psicólogo Clínico, Universidad Complutense<br>
-                                Especialista en Trastornos de Ansiedad
-                            </cite>
+                            <div class="testimonial-author">María González, 34 años</div>
+                            <div class="testimonial-role">Madre de 2 hijos</div>
+                            
+                            <div class="testimonial-stats">
+                                <div class="stat-chip">
+                                    <i class="fas fa-chart-line"></i>
+                                    87% reducción
+                                </div>
+                                <div class="stat-chip">
+                                    <i class="fas fa-clock"></i>
+                                    3 semanas
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="scientific-badges">
-                    <h3>Validado por las instituciones más prestigiosas</h3>
-                    <div class="badges-grid">
-                        <div class="badge-item">
-                            <div class="badge-logo">
+            </div>
+        </section>
+
+        <!-- Respaldado por la Ciencia -->
+        <section class="section">
+            <div class="container">
+                <div class="section-card">
+                    <h2 class="section-title">Respaldado por la Ciencia</h2>
+                    <p class="section-description">Nuestras herramientas están validadas por instituciones médicas de prestigio mundial y utilizadas en hospitales y clínicas.</p>
+                    
+                    <div class="science-grid">
+                        <div class="science-card">
+                            <div class="science-logo">
                                 <i class="fas fa-university"></i>
                             </div>
-                            <span>Universidad de Warwick</span>
+                            <div class="science-title">Universidad de Warwick</div>
+                            <div class="science-description">Validación GAD-7 (2006)</div>
                         </div>
-                        <div class="badge-item">
-                            <div class="badge-logo">
+                        
+                        <div class="science-card">
+                            <div class="science-logo">
                                 <i class="fas fa-hospital"></i>
                             </div>
-                            <span>Mayo Clinic</span>
+                            <div class="science-title">Mayo Clinic</div>
+                            <div class="science-description">Implementación clínica</div>
                         </div>
-                        <div class="badge-item">
-                            <div class="badge-logo">
+                        
+                        <div class="science-card">
+                            <div class="science-logo">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
-                            <span>NHS UK</span>
+                            <div class="science-title">NHS UK</div>
+                            <div class="science-description">Protocolo de salud mental</div>
                         </div>
-                        <div class="badge-item">
-                            <div class="badge-logo">
+                        
+                        <div class="science-card">
+                            <div class="science-logo">
                                 <i class="fas fa-microscope"></i>
                             </div>
-                            <span>NIMH</span>
-                        </div>
-                        <div class="badge-item">
-                            <div class="badge-logo">
-                                <i class="fas fa-certificate"></i>
-                            </div>
-                            <span>ISO 27001</span>
-                        </div>
-                        <div class="badge-item">
-                            <div class="badge-logo">
-                                <i class="fas fa-lock"></i>
-                            </div>
-                            <span>GDPR Compliant</span>
+                            <div class="science-title">NIMH</div>
+                            <div class="science-description">Investigación en ansiedad</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Comité Científico -->
-        <section class="scientific-committee-section">
+        <!-- CTA Final Único y Poderoso -->
+        <section class="section final-cta-section">
             <div class="container">
-                <h2 class="section-title gta-style-title">RESPALDADO POR EXPERTOS REALES</h2>
-                <p class="committee-subtitle">Nuestro comité científico está formado por profesionales de la salud mental con décadas de experiencia y reconocimiento internacional.</p>
-                
-                <div class="committee-grid">
-                    <div class="expert-card">
-                        <div class="expert-photo">
-                            <i class="fas fa-user-md"></i>
-                        </div>
-                        <div class="expert-info">
-                            <h3>Dr. Sarah Johnson</h3>
-                            <p class="expert-title">Psiquiatra, Harvard Medical School</p>
-                            <p class="expert-role">Ex-Directora de Investigación, NIMH</p>
-                            <p class="expert-bio">Especialista en trastornos de ansiedad con más de 20 años de experiencia clínica y 150+ publicaciones científicas.</p>
-                            <div class="expert-credentials">
-                                <span class="credential">MD, PhD</span>
-                                <span class="credential">Harvard Medical School</span>
-                                <span class="credential">NIMH (2015-2023)</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="expert-card">
-                        <div class="expert-photo">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="expert-info">
-                            <h3>Dra. Elena Martínez</h3>
-                            <p class="expert-title">Psicóloga Clínica, Universidad Autónoma de Madrid</p>
-                            <p class="expert-role">Especialista en TCC para ansiedad</p>
-                            <p class="expert-bio">Experta en Terapia Cognitivo-Conductual aplicada a trastornos de ansiedad en población hispanohablante.</p>
-                            <div class="expert-credentials">
-                                <span class="credential">PhD Psicología Clínica</span>
-                                <span class="credential">UAM</span>
-                                <span class="credential">15+ años experiencia</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="expert-card">
-                        <div class="expert-photo">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <div class="expert-info">
-                            <h3>Dr. Miguel Ángel García</h3>
-                            <p class="expert-title">Psicólogo Clínico, Universidad Complutense</p>
-                            <p class="expert-role">Autor de 12 estudios sobre ansiedad</p>
-                            <p class="expert-bio">Investigador principal en estudios de validación del GAD-7 en español y especialista en ansiedad en población hispanohablante.</p>
-                            <div class="expert-credentials">
-                                <span class="credential">PhD Psicología</span>
-                                <span class="credential">UCM</span>
-                                <span class="credential">12 estudios publicados</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="committee-endorsement">
-                    <blockquote>
-                        "Sensus representa un avance significativo en el acceso a herramientas de salud mental basadas en evidencia. Su implementación del GAD-7 y enfoque en TCC están respaldados por décadas de investigación científica."
-                    </blockquote>
-                    <cite>
-                        <strong>Comité Científico de Sensus</strong><br>
-                        Revisión trimestral de contenidos y validación de herramientas
-                    </cite>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seguridad y Privacidad -->
-        <section class="security-privacy-section">
-            <div class="container">
-                <h2 class="section-title gta-style-title">TU PRIVACIDAD ES SAGRADA</h2>
-                <p class="security-subtitle">Manejamos tus datos emocionales con el máximo cuidado. Tu confianza es nuestra responsabilidad.</p>
-                
-                <div class="privacy-accordion">
-                    <button class="privacy-toggle" onclick="togglePrivacyAccordion()">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Tu privacidad es sagrada</span>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </button>
-                    <div class="privacy-content" id="privacy-content">
-                        <p>Haz clic para ver todos los detalles de cómo protegemos tu información personal y emocional.</p>
-                    </div>
-                </div>
-                
-                <div class="security-grid">
-                    <div class="security-card">
-                        <div class="security-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Encriptación de Grado Militar</h3>
-                        <p class="security-detail">AES-256 + TLS 1.3</p>
-                        <p class="security-description">Tus datos emocionales están protegidos con el mismo nivel de encriptación que usan los bancos y las agencias gubernamentales. Ni siquiera nosotros podemos leer tus entradas del diario.</p>
-                        <div class="security-badge">
-                            <i class="fas fa-lock"></i>
-                            <span>Certificación ISO 27001</span>
-                        </div>
-                    </div>
-                    
-                    <div class="security-card">
-                        <div class="security-icon">
-                            <i class="fas fa-user-secret"></i>
-                        </div>
-                        <h3>Anonimización Total</h3>
-                        <p class="security-detail">Datos completamente anónimos</p>
-                        <p class="security-description">Tus datos personales nunca se asocian con tu información emocional. Utilizamos técnicas de anonimización avanzadas que hacen imposible identificar a los usuarios individuales.</p>
-                        <div class="security-badge">
-                            <i class="fas fa-eye-slash"></i>
-                            <span>Privacidad Diferencial</span>
-                        </div>
-                    </div>
-                    
-                    <div class="security-card">
-                        <div class="security-icon">
-                            <i class="fas fa-gavel"></i>
-                        </div>
-                        <h3>Cumplimiento Legal Total</h3>
-                        <p class="security-detail">GDPR + LOPD + HIPAA</p>
-                        <p class="security-description">Cumplimos con todas las normativas de protección de datos: GDPR (Europa), LOPD (España) y HIPAA (EE.UU.). Tienes control total sobre tus datos en todo momento.</p>
-                        <div class="security-badge">
-                            <i class="fas fa-certificate"></i>
-                            <span>Auditoría Legal 2024</span>
-                        </div>
-                    </div>
-                    
-                    <div class="security-card">
-                        <div class="security-icon">
-                            <i class="fas fa-ban"></i>
-                        </div>
-                        <h3>Nunca Vendemos Tus Datos</h3>
-                        <p class="security-detail">Política de cero venta</p>
-                        <p class="security-description">Tus datos emocionales nunca se venden, comparten o monetizan. Nuestro modelo de negocio se basa en suscripciones premium, no en la explotación de tus datos personales.</p>
-                        <div class="security-badge">
-                            <i class="fas fa-handshake"></i>
-                            <span>Compromiso Público</span>
-                        </div>
-                    </div>
-                    
-                    <div class="security-card">
-                        <div class="security-icon">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <h3>Servidores en la UE</h3>
-                        <p class="security-detail">Datos almacenados en Europa</p>
-                        <p class="security-description">Todos tus datos se almacenan en servidores ubicados en la Unión Europea, garantizando que estén protegidos por las leyes europeas de privacidad más estrictas del mundo.</p>
-                        <div class="security-badge">
-                            <i class="fas fa-flag-eu"></i>
-                            <span>Ubicación: Frankfurt, Alemania</span>
-                        </div>
-                    </div>
-                    
-                    <div class="security-card">
-                        <div class="security-icon">
-                            <i class="fas fa-user-times"></i>
-                        </div>
-                        <h3>Derecho al Olvido</h3>
-                        <p class="security-detail">Eliminación completa garantizada</p>
-                        <p class="security-description">Puedes eliminar todos tus datos en cualquier momento con un solo clic. Una vez eliminados, se borran permanentemente de todos nuestros sistemas en un plazo máximo de 30 días.</p>
-                        <div class="security-badge">
-                            <i class="fas fa-trash-alt"></i>
-                            <span>Eliminación Verificada</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="security-commitment">
-                    <h3>Nuestro Compromiso con Tu Privacidad</h3>
-                    <div class="commitment-grid">
-                        <div class="commitment-item">
-                            <i class="fas fa-shield-virus"></i>
-                            <h4>Protección Máxima</h4>
-                            <p>Utilizamos las mismas tecnologías de seguridad que los bancos más importantes del mundo.</p>
-                        </div>
-                        <div class="commitment-item">
-                            <i class="fas fa-user-check"></i>
-                            <h4>Control Total</h4>
-                            <p>Tú decides qué datos compartir, cuándo y con quién. Siempre tienes el control.</p>
-                        </div>
-                        <div class="commitment-item">
-                            <i class="fas fa-balance-scale"></i>
-                            <h4>Transparencia Total</h4>
-                            <p>Publicamos informes trimestrales de seguridad y privacidad. Nada que ocultar.</p>
-                        </div>
-                        <div class="commitment-item">
-                            <i class="fas fa-headset"></i>
-                            <h4>Soporte Especializado</h4>
-                            <p>Nuestro equipo de privacidad está disponible 24/7 para resolver cualquier duda.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="security-certifications">
-                    <h3>Certificaciones y Auditorías</h3>
-                    <div class="certifications-grid">
-                        <div class="certification">
-                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjUwIiB2aWV3Qm94PSIwIDAgMTAwIDUwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjUwIiByeD0iNCIgZmlsbD0iIzRBMEE2MiIvPgo8dGV4dCB4PSI1MCIgeT0iMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPklTTyAyNzAwMTwvdGV4dD4KPC9zdmc+" alt="ISO 27001" class="certification-logo">
-                            <span>ISO 27001</span>
-                        </div>
-                        <div class="certification">
-                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjUwIiB2aWV3Qm94PSIwIDAgMTAwIDUwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjUwIiByeD0iNCIgZmlsbD0iIzAwN0JCNyIvPgo8dGV4dCB4PSI1MCIgeT0iMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkdEUFA8L3RleHQ+Cjwvc3ZnPg==" alt="GDPR" class="certification-logo">
-                            <span>GDPR Compliant</span>
-                        </div>
-                        <div class="certification">
-                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjUwIiB2aWV3Qm94PSIwIDAgMTAwIDUwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjUwIiByeD0iNCIgZmlsbD0iIzAwN0JCNyIvPgo8dGV4dCB4PSI1MCIgeT0iMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkhJUEFBPC90ZXh0Pgo8L3N2Zz4=" alt="HIPAA" class="certification-logo">
-                            <span>HIPAA Ready</span>
-                        </div>
-                        <div class="certification">
-                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjUwIiB2aWV3Qm94PSIwIDAgMTAwIDUwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjUwIiByeD0iNCIgZmlsbD0iIzRBMEE2MiIvPgo8dGV4dCB4PSI1MCIgeT0iMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk9XQVNQPC90ZXh0Pgo8L3N2Zz4=" alt="OWASP" class="certification-logo">
-                            <span>OWASP Top 10</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="security-cta">
-                    <h3>¿Tienes dudas sobre tu privacidad?</h3>
-                    <p>Nuestro equipo de seguridad está disponible 24/7 para responder cualquier pregunta</p>
-                    <a href="contacto.html" class="btn btn-outline btn-lg">
-                        <i class="fas fa-envelope"></i>
-                        CONTACTAR EQUIPO DE SEGURIDAD
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Flujo Visual de Acción -->
-        <section class="action-flow-section" id="flujo-accion">
-            <div class="container">
-                <h2 class="section-title gta-style-title">DE LA ANSIEDAD A LA LIBERTAD EN 3 PASOS</h2>
-                <p class="flow-subtitle">Mira cómo miles de personas han pasado de sentirse atrapadas a sentirse libres. Tu transformación comienza ahora.</p>
-                
-                <div class="flow-container">
-                    <div class="flow-step">
-                        <div class="flow-visual">
-                            <div class="flow-icon">
-                                <i class="fas fa-user-plus"></i>
-                            </div>
-                            <div class="flow-arrow">→</div>
-                        </div>
-                        <div class="flow-content">
-                            <h3>REGÍSTRATE GRATIS</h3>
-                            <p>2 minutos para cambiar tu vida</p>
-                            <div class="flow-time">⏱️ 2 min</div>
-                        </div>
-                    </div>
-                    
-                    <div class="flow-step">
-                        <div class="flow-visual">
-                            <div class="flow-icon">
-                                <i class="fas fa-clipboard-check"></i>
-                            </div>
-                            <div class="flow-arrow">→</div>
-                        </div>
-                        <div class="flow-content">
-                            <h3>CONOCE TU ESTADO</h3>
-                            <p>Test científico que revela tu nivel real</p>
-                            <div class="flow-time">⏱️ 5 min</div>
-                        </div>
-                    </div>
-                    
-                    <div class="flow-step">
-                        <div class="flow-visual">
-                            <div class="flow-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                        </div>
-                        <div class="flow-content">
-                            <h3>VE TU PROGRESO</h3>
-                            <p>Resultados visibles en 14 días</p>
-                            <div class="flow-time">⏱️ 14 días</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="flow-cta">
-                    <div class="cta-visual">
-                        <div class="cta-icon">🚀</div>
-                        <h3>¿Listo para tu transformación?</h3>
-                        <p>Únete a 12,450+ personas que ya han recuperado su calma</p>
-                        <button class="btn btn-primary btn-lg btn-cta-flow" id="start-transformation-btn" onclick="openAuthModal('register')">
-                            <i class="fas fa-rocket"></i>
-                            COMENZAR MI TRANSFORMACIÓN
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Historias de Transformación -->
-        <section class="transformation-stories-section">
-            <div class="container">
-                <h2 class="section-title gta-style-title">HISTORIAS DE TRANSFORMACIÓN REAL</h2>
-                <p class="stories-subtitle">Personas reales que pasaron de la ansiedad constante a la calma y el control</p>
-                
-                <div class="stories-grid">
-                    <div class="story-card">
-                        <div class="story-context">
-                            <div class="story-before">
-                                <h4>ANTES</h4>
-                                <p>😰 Ataques de pánico diarios</p>
-                                <p>🚫 No podía salir de casa</p>
-                                <p>😴 Insomnio constante</p>
-                                <p>💔 Relación de pareja en crisis</p>
-                            </div>
-                            <div class="story-after">
-                                <h4>DESPUÉS</h4>
-                                <p>😌 Calma y control total</p>
-                                <p>✈️ Viaja sola por primera vez</p>
-                                <p>😴 Duerme 8 horas seguidas</p>
-                                <p>💕 Relación fortalecida</p>
-                            </div>
-                        </div>
-                        <div class="story-content">
-                            <blockquote>
-                                "Llegué a Sensus en mi peor momento. Tenía ataques de pánico todos los días, no podía salir de casa y mi relación de pareja se estaba desmoronando. Mi psicóloga me había dado medicación, pero no funcionaba. El test de Sensus me mostró exactamente qué tipo de ansiedad tenía - ansiedad generalizada con pánico - y el diario me ayudó a identificar que mis ataques ocurrían siempre a las 3 PM. En 6 meses logré lo que pensé imposible: viajar sola a Barcelona para una conferencia de trabajo. Mi pareja no podía creer el cambio. Sensus no solo me dio herramientas, me devolvió la vida y salvó mi relación."
-                            </blockquote>
-                            <div class="story-author">
-                                <div class="author-info">
-                                    <h4>María González, 34 años</h4>
-                                    <span>Contadora Senior, Madrid</span>
-                                    <span>Madre de 2 hijos (6 y 8 años)</span>
-                                    <div class="story-time">Usuaria desde hace 8 meses</div>
-                                    <div class="story-verification">✅ Verificado por nuestro equipo</div>
-                                </div>
-                                <div class="story-results">
-                                    <div class="result-item">-85% ansiedad</div>
-                                    <div class="result-item">0 ataques de pánico</div>
-                                    <div class="result-item">Viaje sola exitoso</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="story-card">
-                        <div class="story-context">
-                            <div class="story-before">
-                                <h4>ANTES</h4>
-                                <p>😰 Ansiedad laboral constante</p>
-                                <p>😴 Insomnio crónico</p>
-                                <p>💊 Tomaba ansiolíticos diarios</p>
-                                <p>📉 Rendimiento laboral bajo</p>
-                            </div>
-                            <div class="story-after">
-                                <h4>DESPUÉS</h4>
-                                <p>😌 Calma en el trabajo</p>
-                                <p>😴 Duerme 8 horas profundas</p>
-                                <p>💊 Sin medicación</p>
-                                <p>📈 Promoción laboral</p>
-                            </div>
-                        </div>
-                        <div class="story-content">
-                            <blockquote>
-                                "Mi ansiedad laboral me tenía al borde del colapso. Trabajaba en una startup de tecnología y la presión era insoportable. No dormía, me despertaba con el corazón acelerado y tomaba ansiolíticos todos los días. Mi jefe me había advertido sobre mi rendimiento. Sensus me enseñó técnicas específicas para la ansiedad laboral - especialmente la técnica de respiración 4-7-8 - y el diario me mostró que mis crisis ocurrían los lunes por la mañana. Ahora duermo 8 horas seguidas, no tomo medicación y mi rendimiento mejoró tanto que me dieron una promoción. Mis compañeros no pueden creer el cambio."
-                            </blockquote>
-                            <div class="story-author">
-                                <div class="author-info">
-                                    <h4>Carlos Rodríguez, 29 años</h4>
-                                    <span>Gerente de Marketing, Barcelona</span>
-                                    <span>Startup de tecnología</span>
-                                    <div class="story-time">Usuario desde hace 6 meses</div>
-                                    <div class="story-verification">✅ Verificado por nuestro equipo</div>
-                                </div>
-                                <div class="story-results">
-                                    <div class="result-item">+40% productividad</div>
-                                    <div class="result-item">8h sueño diario</div>
-                                    <div class="result-item">Promoción conseguida</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="story-card">
-                        <div class="story-context">
-                            <div class="story-before">
-                                <h4>ANTES</h4>
-                                <p>😰 Ansiedad social paralizante</p>
-                                <p>🚫 Evitaba reuniones importantes</p>
-                                <p>😶 Se quedaba callada en presentaciones</p>
-                                <p>📉 Carrera estancada</p>
-                            </div>
-                            <div class="story-after">
-                                <h4>DESPUÉS</h4>
-                                <p>😌 Confianza total</p>
-                                <p>👥 Lidera equipos de 8 personas</p>
-                                <p>🎤 Da presentaciones sin problemas</p>
-                                <p>📈 Carrera en ascenso</p>
-                            </div>
-                        </div>
-                        <div class="story-content">
-                            <blockquote>
-                                "La ansiedad social me impedía crecer profesionalmente. Evitaba reuniones importantes, me quedaba callada en presentaciones y mi carrera estaba estancada. Tenía 31 años y veía cómo compañeros más jóvenes me superaban. Con Sensus aprendí técnicas específicas para la ansiedad social - especialmente la visualización positiva y la respiración diafragmática - y el seguimiento diario me mostró mi progreso real. Ahora lidero un equipo de 8 personas, doy presentaciones sin problemas y mi jefe me ha propuesto para un ascenso. Mi carrera despegó completamente."
-                            </blockquote>
-                            <div class="story-author">
-                                <div class="author-info">
-                                    <h4>Ana Martínez, 31 años</h4>
-                                    <span>Directora de Proyectos, Valencia</span>
-                                    <span>Empresa multinacional</span>
-                                    <div class="story-time">Usuaria desde hace 10 meses</div>
-                                    <div class="story-verification">✅ Verificado por nuestro equipo</div>
-                                </div>
-                                <div class="story-results">
-                                    <div class="result-item">Lidera 8 personas</div>
-                                    <div class="result-item">Presentaciones exitosas</div>
-                                    <div class="result-item">Ascenso propuesto</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Transformación en Acción -->
-        <section class="transformation-gallery-section">
-            <div class="container">
-                <h2 class="section-title gta-style-title">🌟 CÓMO SENSUS TE TRANSFORMA — MÁS ALLÁ DE LA INTERFAZ</h2>
-                <p class="section-subtitle">No es solo una app. Es tu compañero de viaje hacia la libertad emocional</p>
-                
-                <div class="transformation-grid">
-                    <div class="transformation-item">
-                        <div class="transformation-visual">
-                            <div class="transformation-icon">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                        </div>
-                        <div class="transformation-content">
-                            <h3>👁️‍🗨️ Ves lo que antes no podías ver</h3>
-                            <p>Tus emociones no son caóticas. Solo estaban ocultas.</p>
-                            <p>Con Sensus, tu diario se convierte en un mapa de tu interior:</p>
-                            <ul>
-                                <li>¿Qué días te sientes más pesado?</li>
-                                <li>¿Qué pensamientos aparecen antes de dormir?</li>
-                                <li>¿Cuándo tu ansiedad baja, y por qué?</li>
-                            </ul>
-                            <p>No necesitas ser experto. Solo honesto. Nosotros te mostramos lo que tu mente ya sabe, pero no te decía.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="transformation-item">
-                        <div class="transformation-visual">
-                            <div class="transformation-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                        </div>
-                        <div class="transformation-content">
-                            <h3>🧠 Tu cerebro aprende contigo</h3>
-                            <p>Cada registro, cada test, cada minuto que dedicas a ti, alimenta un algoritmo que te conoce mejor que tú mismo.</p>
-                            <p>En 30 días, recibirás insights como:</p>
-                            <ul>
-                                <li>"Tus picos de ansiedad coinciden con reuniones de trabajo los lunes."</li>
-                                <li>"Tu estado mejora después de caminar 15 minutos al aire libre."</li>
-                            </ul>
-                            <p>No es magia. Es ciencia. Y tú eres el protagonista.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="transformation-cta">
-                    <h3>¿Listo para escribir tu propia historia de transformación?</h3>
-                    <p>Únete a 47,000+ personas que ya han recuperado su calma y su vida</p>
-                    <button class="btn btn-primary btn-lg btn-cta-transformation" onclick="openAuthModal('register')">
+                <div class="final-cta">
+                    <div class="blooming-flower"></div>
+                    <h2>¿Listo para encontrar tu calma?</h2>
+                    <p>Únete a 127,000+ personas que ya han reducido su ansiedad</p>
+                    <a href="evaluacion.html" class="btn-cta-primary">
                         <i class="fas fa-heart"></i>
-                        ¡EMPEZAR MI TRANSFORMACIÓN AHORA!
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Diferenciación -->
-        <section class="differentiation-section">
-            <div class="container">
-                <h2 class="section-title gta-style-title">¿POR QUÉ SENSUS ES DISTINTO?</h2>
-                <p class="differentiation-subtitle">No somos otra app de meditación. Somos la única plataforma que combina ciencia validada con tecnología personalizada.</p>
-                
-                <div class="comparison-grid">
-                    <div class="comparison-card sensus-card">
-                        <div class="card-header">
-                            <div class="logo-placeholder">
-                                <i class="fas fa-brain"></i>
-                                <span>SENSUS</span>
-                            </div>
-                            <h3>Nuestra Propuesta</h3>
-                        </div>
-                        <div class="features-list">
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Test GAD-7 validado científicamente</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Diario inteligente con análisis TCC</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Predicción de picos de ansiedad</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>100% privado, sin ventas de datos</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Servidores en UE (GDPR)</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Desarrollado con psicólogos clínicos</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="vs-divider">
-                        <span>VS</span>
-                    </div>
-                    
-                    <div class="competitors-card">
-                        <div class="card-header">
-                            <h3>Otras Apps</h3>
-                        </div>
-                        <div class="features-list">
-                            <div class="feature-item missing">
-                                <i class="fas fa-times-circle"></i>
-                                <span>Tests genéricos sin validación</span>
-                            </div>
-                            <div class="feature-item missing">
-                                <i class="fas fa-times-circle"></i>
-                                <span>Diarios básicos sin análisis</span>
-                            </div>
-                            <div class="feature-item missing">
-                                <i class="fas fa-times-circle"></i>
-                                <span>Sin predicción personalizada</span>
-                            </div>
-                            <div class="feature-item missing">
-                                <i class="fas fa-times-circle"></i>
-                                <span>Venden datos a terceros</span>
-                            </div>
-                            <div class="feature-item missing">
-                                <i class="fas fa-times-circle"></i>
-                                <span>Servidores en EE.UU.</span>
-                            </div>
-                            <div class="feature-item missing">
-                                <i class="fas fa-times-circle"></i>
-                                <span>Desarrolladas por programadores</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="unique-value">
-                    <h3>Lo que nos hace únicos</h3>
-                    <div class="value-points">
-                        <div class="value-point">
-                            <div class="value-icon">
-                                <i class="fas fa-microscope"></i>
-                            </div>
-                            <div class="value-content">
-                                <h4>Ciencia, no marketing</h4>
-                                <p>Usamos el GAD-7, el mismo test que utilizan hospitales como Mayo Clinic y NHS. No inventamos métricas.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="value-point">
-                            <div class="value-icon">
-                                <i class="fas fa-user-secret"></i>
-                            </div>
-                            <div class="value-content">
-                                <h4>Privacidad real</h4>
-                                <p>Nunca vendemos tus datos. Nuestro modelo se basa en suscripciones, no en explotar tu información personal.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="value-point">
-                            <div class="value-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <div class="value-content">
-                                <h4>Personalización inteligente</h4>
-                                <p>Nuestro sistema aprende de ti usando principios de TCC, no algoritmos misteriosos.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Call to Action -->
-        <section class="cta-section">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>🌿 ¿LISTO PARA DEJAR DE SOBREVIVIR… Y EMPEZAR A VIVIR?</h2>
-                    <p>Miles ya eligieron calmarse.<br>Hoy, es tu turno.</p>
-                    <p class="cta-subtitle">No necesitas tenerlo todo bajo control. Solo necesitas empezar.</p>
-                    <div class="cta-buttons">
-                        <button class="btn btn-primary btn-lg btn-cta-final" id="cta-register-btn" onclick="openAuthModal('register')">Comienza tu viaje gratis →</button>
-                        <a href="ansiedad.html" class="btn btn-outline btn-lg">SABER MÁS</a>
-                    </div>
+                        Descubrir mi Ansiedad Gratis
+                    </a>
+                    <p class="cta-disclaimer">✓ 100% gratuito • ✓ Sin registro • ✓ Resultados inmediatos</p>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <div class="logo-small-placeholder">
-                        <i class="fas fa-brain"></i>
-                        <span>SENSUS</span>
-                    </div>
-                    <p>© 2025 Sensus. App de salud mental respaldada por la ciencia.</p>
-                    <p class="footer-legal">
-                        <a href="politica-privacidad.html">Política de Privacidad</a> • 
-                        <a href="terminos-uso.html">Términos de Uso</a> • 
-                        <a href="contacto.html">Contacto</a> • 
-                        <a href="#comite-cientifico">Comité Científico</a>
-                    </p>
-                    <p class="footer-compliance">Cumplimos con GDPR, LOPD y normativas de protección de datos. Servidores en UE.</p>
+        <div class="footer-content">
+            <div class="footer-logo">SENSUS</div>
+            <p class="footer-description">
+                App de apoyo emocional respaldada por la ciencia. Tu salud mental merece respeto — y nosotros también lo tenemos.
+            </p>
+            
+            <div class="footer-links">
+                <a href="politica-privacidad.html">Privacidad</a>
+                <a href="terminos-uso.html">Términos</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="equipo.html">Equipo</a>
+            </div>
+            
+            <div class="footer-legal">
+                SENSUS © 2025. App de apoyo emocional respaldada por la ciencia.
+            </div>
+            
+            <div class="footer-certifications">
+                <div class="certification-badge" title="GDPR Compliant">
+                    <i class="fas fa-shield-alt"></i>
                 </div>
-                
-                <div class="footer-links">
-                    <h3>Enlaces útiles</h3>
-                    <ul>
-                        <li><a href="evaluacion.html">Evaluaciones</a></li>
-                        <li><a href="test.html">Test GAD-7</a></li>
-                        <li><a href="diario.html">Diario Emocional</a></li>
-                        <li><a href="ansiedad.html">Tipos de Ansiedad</a></li>
-                        <li><a href="planes.html">Planes</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h3>Compañía</h3>
-                    <ul>
-                        <li><a href="equipo.html">Nuestro Equipo</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
-                        <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
-                        <li><a href="terminos-uso.html">Términos de Uso</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-social">
-                    <h3>Síguenos</h3>
-                    <div class="social-icons">
-                        <a href="https://instagram.com/sensus_app" target="_blank" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
+                <div class="certification-badge" title="HIPAA Compliant">
+                    <i class="fas fa-lock"></i>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Auth Modal Profesional -->
-    <div class="modal professional-auth-modal" id="auth-modal">
-        <div class="modal-backdrop"></div>
-        <div class="modal-container">
-            <div class="modal-content professional-auth-content">
-                <button class="close-modal" aria-label="Cerrar modal">
-                    <i class="fas fa-times"></i>
-                </button>
-                
-                <div class="auth-header">
-                    <div class="auth-logo">
-                        <div class="logo-placeholder">
-                    <i class="fas fa-brain"></i>
-                    <span>SENSUS</span>
-                </div>
-                        <h2>Sensus</h2>
-                    </div>
-                    <p class="auth-subtitle">Tu bienestar mental es nuestra prioridad</p>
-                </div>
-                
-                <div class="auth-tabs professional-tabs">
-                    <button class="auth-tab active" data-tab="login">
-                        <i class="fas fa-sign-in-alt"></i>
-                        <span>Iniciar Sesión</span>
-                    </button>
-                    <button class="auth-tab" data-tab="register">
-                        <i class="fas fa-user-plus"></i>
-                        <span>Crear Cuenta</span>
-                    </button>
-                </div>
-                
-                <div class="auth-forms-container">
-                    <!-- Login Form -->
-                    <form id="login-form" class="auth-form professional-form active">
-                        <div class="form-header">
-                            <h3>Bienvenido de vuelta</h3>
-                            <p>Inicia sesión para acceder a tu cuenta</p>
-                        </div>
-                        
-                        <div class="form-fields">
-                            <div class="form-group">
-                                <label for="login-email">Correo electrónico</label>
-                                <div class="input-container">
-                                    <i class="fas fa-envelope input-icon"></i>
-                                    <input type="email" id="login-email" placeholder="tu@email.com" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="login-password">Contraseña</label>
-                                <div class="input-container">
-                                    <i class="fas fa-lock input-icon"></i>
-                                    <input type="password" id="login-password" placeholder="Tu contraseña" required>
-                                    <button type="button" class="password-toggle" aria-label="Mostrar contraseña">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            
-                            <div class="form-options">
-                                <label class="remember-me">
-                                    <input type="checkbox" id="remember-me">
-                                    <span class="checkmark"></span>
-                                    Recordarme
-                                </label>
-                                <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
-                            </div>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-lg auth-submit">
-                            <i class="fas fa-sign-in-alt"></i>
-                            Iniciar Sesión
-                        </button>
-                        
-                        <div class="divider">
-                            <span>o continúa con</span>
-                        </div>
-                        
-                        <div class="social-auth">
-                            <button type="button" class="btn-social google-btn" onclick="loginWithGoogle()">
-                                <i class="fab fa-google"></i>
-                                <span>Google</span>
-                            </button>
-                            <button type="button" class="btn-social apple-btn" onclick="loginWithApple()">
-                                <i class="fab fa-apple"></i>
-                                <span>Apple</span>
-                            </button>
-                        </div>
-                    </form>
-                    
-                    <!-- Register Form -->
-                    <form id="register-form" class="auth-form professional-form">
-                        <div class="form-header">
-                            <h3>Crea tu cuenta</h3>
-                            <p>Únete a nuestra comunidad de bienestar mental</p>
-                        </div>
-                        
-                        <div class="form-fields">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="register-first-name">Nombre</label>
-                                    <div class="input-container">
-                                        <i class="fas fa-user input-icon"></i>
-                                        <input type="text" id="register-first-name" placeholder="Tu nombre" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="register-last-name">Apellidos</label>
-                                    <div class="input-container">
-                                        <i class="fas fa-user input-icon"></i>
-                                        <input type="text" id="register-last-name" placeholder="Tus apellidos" required>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="register-email">Correo electrónico</label>
-                                <div class="input-container">
-                                    <i class="fas fa-envelope input-icon"></i>
-                                    <input type="email" id="register-email" placeholder="tu@email.com" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="register-password">Contraseña</label>
-                                <div class="input-container">
-                                    <i class="fas fa-lock input-icon"></i>
-                                    <input type="password" id="register-password" placeholder="Mínimo 8 caracteres" required>
-                                    <button type="button" class="password-toggle" aria-label="Mostrar contraseña">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                </div>
-                                <div class="password-strength">
-                                    <div class="strength-bar">
-                                        <div class="strength-fill"></div>
-                                    </div>
-                                    <span class="strength-text">Fuerza de la contraseña</span>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="register-confirm-password">Confirmar contraseña</label>
-                                <div class="input-container">
-                                    <i class="fas fa-lock input-icon"></i>
-                                    <input type="password" id="register-confirm-password" placeholder="Confirma tu contraseña" required>
-                                    <button type="button" class="password-toggle" aria-label="Mostrar contraseña">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="register-birth-date">Fecha de nacimiento</label>
-                                <div class="input-container">
-                                    <i class="fas fa-calendar input-icon"></i>
-                                    <input type="date" id="register-birth-date" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-options">
-                                <label class="terms-checkbox">
-                                    <input type="checkbox" id="accept-terms" required>
-                                    <span class="checkmark"></span>
-                                    Acepto los <a href="#">términos y condiciones</a> y la <a href="#">política de privacidad</a>
-                                </label>
-                                <label class="newsletter-checkbox">
-                                    <input type="checkbox" id="newsletter">
-                                    <span class="checkmark"></span>
-                                    Quiero recibir consejos de bienestar mental por email
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-lg auth-submit">
-                            <i class="fas fa-user-plus"></i>
-                            Crear Cuenta
-                        </button>
-                        
-                        <div class="divider">
-                            <span>o regístrate con</span>
-                        </div>
-                        
-                        <div class="social-auth">
-                            <button type="button" class="btn-social google-btn" onclick="loginWithGoogle()">
-                                <i class="fab fa-google"></i>
-                                <span>Google</span>
-                            </button>
-                            <button type="button" class="btn-social apple-btn" onclick="loginWithApple()">
-                                <i class="fab fa-apple"></i>
-                                <span>Apple</span>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-                
-                <div class="auth-footer">
-                    <p>Al continuar, aceptas nuestros términos de servicio y política de privacidad</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Scripts -->
-    <!-- Firebase - Versión completa con todos los servicios -->
+    <script src="js/sanctuary-interactions.js"></script>
+    <script src="js/header-interactions.js"></script>
+    
+    <!-- Firebase (mantener para funcionalidad existente) -->
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-storage-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-messaging-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-functions-compat.js"></script>
-    
-    <!-- Estilos responsivos optimizados -->
-    <link rel="stylesheet" href="css/responsive.css?v=2">
-    <link rel="stylesheet" href="css/responsive-optimized.css?v=1">
-    
-    <!-- Scripts de la aplicación -->
-    <!-- Cargar configuración de Firebase primero -->
-    <script src="js/modules/firebase-config.js?v=2"></script>
-    <script src="js/modules/auth-simple.js?v=1"></script>
-    <script src="js/modules/database-setup.js?v=1"></script>
-    <script src="js/modules/auth.js?v=2"></script>
-    <script src="js/modules/visitor-counter.js?v=2"></script>
-    <script src="js/modules/responsive.js?v=2"></script>
-    <script src="js/modules/responsive-optimizer.js?v=1"></script>
-    <script src="js/script.js?v=2"></script>
-    
-    <script>
-        // Función para verificar autenticación y redirigir
-        function checkAuthAndRedirect() {
-            const firebaseAuth = FirebaseServices.auth();
-            if (firebaseAuth && firebaseAuth.currentUser) {
-                // Usuario ya autenticado, redirigir a la app
-                window.location.href = 'app.html';
-            } else {
-                // Usuario no autenticado, mostrar modal de registro
-                openAuthModal('register');
-            }
-        }
-        
-        // Escuchar cambios en el estado de autenticación
-        document.addEventListener('DOMContentLoaded', function() {
-            const firebaseAuth = FirebaseServices.auth();
-            if (firebaseAuth) {
-                firebaseAuth.onAuthStateChanged((user) => {
-                    if (user) {
-                        // Usuario autenticado, actualizar botones
-                        const loginBtn = document.getElementById('login-btn');
-                        const registerBtn = document.getElementById('register-btn');
-                        
-                        if (loginBtn) {
-                            loginBtn.textContent = 'Mi Cuenta';
-                            loginBtn.onclick = () => window.location.href = 'app.html';
-                        }
-                        
-                        if (registerBtn) {
-                            registerBtn.textContent = 'Ir a la App';
-                            registerBtn.onclick = () => window.location.href = 'app.html';
-                        }
-                    }
-                });
-            }
-        });
-        
-        // Función para el accordion de privacidad
-        function togglePrivacyAccordion() {
-            const content = document.getElementById('privacy-content');
-            const toggleIcon = document.querySelector('.toggle-icon');
-            
-            if (content.style.display === 'none' || content.style.display === '') {
-                content.style.display = 'block';
-                toggleIcon.style.transform = 'rotate(180deg)';
-            } else {
-                content.style.display = 'none';
-                toggleIcon.style.transform = 'rotate(0deg)';
-            }
-        }
-    </script>
-    
-    <!-- Service Worker -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(function(registration) {
-                        console.log('ServiceWorker registrado exitosamente:', registration.scope);
-                    })
-                    .catch(function(error) {
-                        console.log('Error al registrar ServiceWorker:', error);
-                    });
-            });
-        }
-    </script>
+    <script src="js/modules/firebase-config.js"></script>
+    <script src="js/modules/auth.js"></script>
+    <script src="js/mobile-menu-enhanced.js"></script>
 </body>
 </html>
